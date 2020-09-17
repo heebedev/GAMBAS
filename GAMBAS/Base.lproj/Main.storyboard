@@ -194,7 +194,7 @@
             </objects>
             <point key="canvasLocation" x="2709" y="-17"/>
         </scene>
-        <!--View Controller-->
+        <!--subslist-->
         <scene sceneID="A1H-yK-bm5">
             <objects>
                 <viewController id="jxZ-NV-MC8" sceneMemberID="viewController">
@@ -204,7 +204,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="a6H-jR-1zj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GFV-lA-cgJ"/>
+                    <navigationItem key="navigationItem" title="subslist" id="GFV-lA-cgJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN8-Tf-v0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
