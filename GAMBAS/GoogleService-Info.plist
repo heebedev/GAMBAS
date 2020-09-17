@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>603129724251-2jt6osupmo04n30lm1j7rbb4rukn2c53.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.603129724251-2jt6osupmo04n30lm1j7rbb4rukn2c53</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAM9EaHEkln_WhRxWBgwFnEWG2I2a8IukQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>603129724251</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ios.GAMBAS</string>
+	<key>PROJECT_ID</key>
+	<string>gambas-174df</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gambas-174df.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:603129724251:ios:4ee154ed9f82217f5b2e7e</string>
+	<key>DATABASE_URL</key>
+	<string>https://gambas-174df.firebaseio.com</string>
+</dict>
+</plist>
