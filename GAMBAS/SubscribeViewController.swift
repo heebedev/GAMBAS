@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChannelViewController: UIViewController {
+class SubscribeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
