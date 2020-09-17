@@ -3,19 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */; };
 		32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0812511B52300FE4CDD /* AppDelegate.swift */; };
 		32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0832511B52300FE4CDD /* SceneDelegate.swift */; };
 		32A8A0892511B52300FE4CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A8A0872511B52300FE4CDD /* Main.storyboard */; };
 		32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A08A2511B52300FE4CDD /* GAMBAS.xcdatamodeld */; };
 		32A8A08E2511B53400FE4CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32A8A08D2511B53400FE4CDD /* Assets.xcassets */; };
 		32A8A0912511B53400FE4CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A8A08F2511B53400FE4CDD /* LaunchScreen.storyboard */; };
+		D3B048C7D68EC4E946B59B83 /* Pods_GAMBAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D9F7964BC5B638A020B10E /* Pods_GAMBAS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10D9F7964BC5B638A020B10E /* Pods_GAMBAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GAMBAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32A8A07E2511B52300FE4CDD /* GAMBAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAMBAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A8A0812511B52300FE4CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32A8A0832511B52300FE4CDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		32A8A08D2511B53400FE4CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32A8A0902511B53400FE4CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32A8A0922511B53400FE4CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		957B4048A8BF8CC01EEBAFBA /* Pods-GAMBAS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAMBAS.release.xcconfig"; path = "Target Support Files/Pods-GAMBAS/Pods-GAMBAS.release.xcconfig"; sourceTree = "<group>"; };
+		DC3275FC3D48C487695FBB04 /* Pods-GAMBAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAMBAS.debug.xcconfig"; path = "Target Support Files/Pods-GAMBAS/Pods-GAMBAS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B048C7D68EC4E946B59B83 /* Pods_GAMBAS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				32A8A0802511B52300FE4CDD /* GAMBAS */,
 				32A8A07F2511B52300FE4CDD /* Products */,
+				F6726D8DB477CEF749779038 /* Pods */,
+				3E088890E9FF30341522A2EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +65,7 @@
 		32A8A0802511B52300FE4CDD /* GAMBAS */ = {
 			isa = PBXGroup;
 			children = (
+				30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */,
 				32A8A09C2511BFFB00FE4CDD /* MAKE */,
 				32A8A09B2511BFF600FE4CDD /* DETAIL */,
 				32A8A09A2511BFEB00FE4CDD /* MYINFO */,
@@ -107,6 +117,23 @@
 			path = MAKE;
 			sourceTree = "<group>";
 		};
+		3E088890E9FF30341522A2EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10D9F7964BC5B638A020B10E /* Pods_GAMBAS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6726D8DB477CEF749779038 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC3275FC3D48C487695FBB04 /* Pods-GAMBAS.debug.xcconfig */,
+				957B4048A8BF8CC01EEBAFBA /* Pods-GAMBAS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32A8A0952511B53400FE4CDD /* Build configuration list for PBXNativeTarget "GAMBAS" */;
 			buildPhases = (
+				5F4786753F963616DCA780DD /* [CP] Check Pods Manifest.lock */,
 				32A8A07A2511B52300FE4CDD /* Sources */,
 				32A8A07B2511B52300FE4CDD /* Frameworks */,
 				32A8A07C2511B52300FE4CDD /* Resources */,
+				D4583661204B9D75C39596F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,12 +195,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				32A8A0912511B53400FE4CDD /* LaunchScreen.storyboard in Resources */,
+				30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */,
 				32A8A08E2511B53400FE4CDD /* Assets.xcassets in Resources */,
 				32A8A0892511B52300FE4CDD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F4786753F963616DCA780DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GAMBAS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4583661204B9D75C39596F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GAMBAS/Pods-GAMBAS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GAMBAS/Pods-GAMBAS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GAMBAS/Pods-GAMBAS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32A8A07A2511B52300FE4CDD /* Sources */ = {
@@ -322,6 +394,7 @@
 		};
 		32A8A0962511B53400FE4CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC3275FC3D48C487695FBB04 /* Pods-GAMBAS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -330,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AAA.GAMBAS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GAMBAS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -339,6 +412,7 @@
 		};
 		32A8A0972511B53400FE4CDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 957B4048A8BF8CC01EEBAFBA /* Pods-GAMBAS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -347,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AAA.GAMBAS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.GAMBAS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
