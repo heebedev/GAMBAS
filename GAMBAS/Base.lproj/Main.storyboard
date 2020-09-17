@@ -204,9 +204,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="a6H-jR-1zj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GFV-lA-cgJ">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ellipsis" catalog="system" id="nqK-JQ-623"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="GFV-lA-cgJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN8-Tf-v0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,7 +267,4 @@
             <point key="canvasLocation" x="-1749.2753623188407" y="-388.39285714285711"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
-    </resources>
 </document>
