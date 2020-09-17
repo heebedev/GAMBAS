@@ -27,7 +27,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kw9-CF-cPL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="173.91304347826087" y="-388.39285714285711"/>
+            <point key="canvasLocation" x="174" y="-388"/>
         </scene>
         <!--HOME-->
         <scene sceneID="hpM-Xt-89j">
@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1648" y="-1377"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="0zQ-S2-raL">
             <objects>
-                <viewController id="3e3-Gg-zWX" sceneMemberID="viewController">
+                <viewController id="3e3-Gg-zWX" customClass="LoginViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UY3-gN-Lv6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,6 +60,9 @@
                                 <rect key="frame" x="188" y="433" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="btnLogin:" destination="3e3-Gg-zWX" eventType="touchUpInside" id="4Tn-i2-e4H"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpm-Bs-yPh">
                                 <rect key="frame" x="186" y="548" width="50" height="30"/>
@@ -94,7 +97,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="L8Q-Lc-JCI" kind="presentation" modalPresentationStyle="fullScreen" id="z1a-SO-2pr"/>
+                        <segue destination="L8Q-Lc-JCI" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="z1a-SO-2pr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkD-ux-xKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="-400" y="323"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="T7t-Ck-HXL">
             <objects>
-                <viewController id="eIT-YY-4iJ" sceneMemberID="viewController">
+                <viewController id="eIT-YY-4iJ" customClass="HomeViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eH9-7J-8UI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="2709" y="-1377"/>
         </scene>
-        <!--View Controller-->
+        <!--Notice View Controller-->
         <scene sceneID="7No-yq-Yxv">
             <objects>
-                <viewController id="VbO-1T-C48" sceneMemberID="viewController">
+                <viewController id="VbO-1T-C48" customClass="NoticeViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U6q-uc-Cmf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="1648" y="-692"/>
         </scene>
-        <!--View Controller-->
+        <!--Channel View Controller-->
         <scene sceneID="7BW-8A-dF9">
             <objects>
-                <viewController id="YDu-Ip-jDj" sceneMemberID="viewController">
+                <viewController id="YDu-Ip-jDj" customClass="ChannelViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NCA-zK-80u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="2709" y="-17"/>
         </scene>
-        <!--View Controller-->
+        <!--My Info View Controller-->
         <scene sceneID="A1H-yK-bm5">
             <objects>
-                <viewController id="jxZ-NV-MC8" sceneMemberID="viewController">
+                <viewController id="jxZ-NV-MC8" customClass="MyInfoViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nNu-cN-H4c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,11 +219,11 @@
             </objects>
             <point key="canvasLocation" x="2709" y="694"/>
         </scene>
-        <!--GAMBAS-->
+        <!--CHANNEL-->
         <scene sceneID="hg1-Bg-Ytd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zfq-el-cqf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="GAMBAS" id="qbz-EP-s7U"/>
+                    <tabBarItem key="tabBarItem" title="CHANNEL" id="qbz-EP-s7U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X1t-0s-bWw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -299,7 +302,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Dk-0v-n7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3083" y="-388"/>
+            <point key="canvasLocation" x="174" y="-1807"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="WZa-Tq-Xc8">
@@ -318,7 +321,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QV2-51-PAh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2774" y="-1061"/>
+            <point key="canvasLocation" x="174" y="-1110"/>
         </scene>
     </scenes>
 </document>

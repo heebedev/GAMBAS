@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30A513A825132EC000F81B8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513A725132EC000F81B8B /* LoginViewController.swift */; };
+		30A513AA25132ECE00F81B8B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513A925132ECE00F81B8B /* HomeViewController.swift */; };
+		30A513AC25132EDB00F81B8B /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */; };
+		30A513B025132F1F00F81B8B /* MakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AF25132F1F00F81B8B /* MakeViewController.swift */; };
+		30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513B42513301600F81B8B /* NoticeViewController.swift */; };
+		30A513B72513304600F81B8B /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513B62513304600F81B8B /* ChannelViewController.swift */; };
 		30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */; };
 		32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0812511B52300FE4CDD /* AppDelegate.swift */; };
 		32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0832511B52300FE4CDD /* SceneDelegate.swift */; };
@@ -19,6 +25,12 @@
 
 /* Begin PBXFileReference section */
 		10D9F7964BC5B638A020B10E /* Pods_GAMBAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GAMBAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30A513A725132EC000F81B8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = GAMBAS/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		30A513A925132ECE00F81B8B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = GAMBAS/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyInfoViewController.swift; path = GAMBAS/MyInfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		30A513AF25132F1F00F81B8B /* MakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MakeViewController.swift; path = GAMBAS/MakeViewController.swift; sourceTree = SOURCE_ROOT; };
+		30A513B42513301600F81B8B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeViewController.swift; path = GAMBAS/NoticeViewController.swift; sourceTree = SOURCE_ROOT; };
+		30A513B62513304600F81B8B /* ChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChannelViewController.swift; path = GAMBAS/ChannelViewController.swift; sourceTree = SOURCE_ROOT; };
 		30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32A8A07E2511B52300FE4CDD /* GAMBAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAMBAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A8A0812511B52300FE4CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +56,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30A513B125132F3200F81B8B /* QueryModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QueryModel;
+			sourceTree = "<group>";
+		};
+		30A513B225132F3B00F81B8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30A513B325132FEF00F81B8B /* NOTICE */ = {
+			isa = PBXGroup;
+			children = (
+				30A513B42513301600F81B8B /* NoticeViewController.swift */,
+			);
+			path = NOTICE;
+			sourceTree = "<group>";
+		};
 		32A8A0752511B52300FE4CDD = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +99,12 @@
 		32A8A0802511B52300FE4CDD /* GAMBAS */ = {
 			isa = PBXGroup;
 			children = (
+				30A513B325132FEF00F81B8B /* NOTICE */,
+				30A513B225132F3B00F81B8B /* Model */,
+				30A513B125132F3200F81B8B /* QueryModel */,
 				30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */,
 				32A8A09C2511BFFB00FE4CDD /* MAKE */,
-				32A8A09B2511BFF600FE4CDD /* DETAIL */,
+				32A8A09B2511BFF600FE4CDD /* CHANNEL */,
 				32A8A09A2511BFEB00FE4CDD /* MYINFO */,
 				32A8A0992511BFD600FE4CDD /* HOME */,
 				32A8A0982511BFCB00FE4CDD /* LOGIN */,
@@ -85,6 +122,7 @@
 		32A8A0982511BFCB00FE4CDD /* LOGIN */ = {
 			isa = PBXGroup;
 			children = (
+				30A513A725132EC000F81B8B /* LoginViewController.swift */,
 			);
 			path = LOGIN;
 			sourceTree = "<group>";
@@ -92,6 +130,7 @@
 		32A8A0992511BFD600FE4CDD /* HOME */ = {
 			isa = PBXGroup;
 			children = (
+				30A513A925132ECE00F81B8B /* HomeViewController.swift */,
 			);
 			path = HOME;
 			sourceTree = "<group>";
@@ -99,20 +138,23 @@
 		32A8A09A2511BFEB00FE4CDD /* MYINFO */ = {
 			isa = PBXGroup;
 			children = (
+				30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */,
 			);
 			path = MYINFO;
 			sourceTree = "<group>";
 		};
-		32A8A09B2511BFF600FE4CDD /* DETAIL */ = {
+		32A8A09B2511BFF600FE4CDD /* CHANNEL */ = {
 			isa = PBXGroup;
 			children = (
+				30A513B62513304600F81B8B /* ChannelViewController.swift */,
 			);
-			path = DETAIL;
+			path = CHANNEL;
 			sourceTree = "<group>";
 		};
 		32A8A09C2511BFFB00FE4CDD /* MAKE */ = {
 			isa = PBXGroup;
 			children = (
+				30A513AF25132F1F00F81B8B /* MakeViewController.swift */,
 			);
 			path = MAKE;
 			sourceTree = "<group>";
@@ -250,8 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A513B025132F1F00F81B8B /* MakeViewController.swift in Sources */,
+				30A513B72513304600F81B8B /* ChannelViewController.swift in Sources */,
+				30A513AA25132ECE00F81B8B /* HomeViewController.swift in Sources */,
+				30A513A825132EC000F81B8B /* LoginViewController.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
+				30A513AC25132EDB00F81B8B /* MyInfoViewController.swift in Sources */,
+				30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
