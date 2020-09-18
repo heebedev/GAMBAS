@@ -196,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="cgT-JZ-c9X">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subsListCell" rowHeight="150" id="cgT-JZ-c9X" customClass="SubsListTableViewCell" customModule="GAMBAS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cgT-JZ-c9X" id="nGA-Ur-DAf">
@@ -231,7 +231,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTH-Pi-9Er">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="releaseDay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTH-Pi-9Er">
                                             <rect key="frame" x="201" y="95" width="183" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -256,7 +256,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Ht6-r5-EOV" kind="show" id="4wo-Tk-zvt"/>
+                                    <outlet property="iv_prdImage" destination="qMO-yy-Qht" id="aqU-fH-7Q0"/>
+                                    <outlet property="lbl_chNickname" destination="B6M-O7-sxJ" id="4HC-s2-oW6"/>
+                                    <outlet property="lbl_prdTitle" destination="zfC-H9-R5G" id="RkI-Mr-cgm"/>
+                                    <outlet property="lbl_releaseDay" destination="JTH-Pi-9Er" id="WHI-9m-D9W"/>
+                                    <outlet property="lbl_term" destination="76I-M0-JQh" id="4ha-Gm-Zz2"/>
+                                    <segue destination="Ht6-r5-EOV" kind="show" identifier="sgContentsList" id="4wo-Tk-zvt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -266,6 +271,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="subscribeTableView" id="hsw-ml-Ewh"/>
+                    <connections>
+                        <outlet property="subsListTableView" destination="0rC-4d-GgT" id="T2u-bZ-NH1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3p-Uv-jEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="c5e-0K-WFJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contentsListCell" rowHeight="60" id="c5e-0K-WFJ" customClass="ContentsListTableViewCell" customModule="GAMBAS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c5e-0K-WFJ" id="fWd-18-fVs">
@@ -296,7 +304,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ctReleaseDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzK-G3-mwV">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ctReleaseDate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzK-G3-mwV">
                                             <rect key="frame" x="270" y="19.5" width="114" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -314,7 +322,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ODR-DC-RKc" kind="show" id="w5C-lT-vcf"/>
+                                    <outlet property="lbl_ctReleaseDate" destination="qzK-G3-mwV" id="Ddw-Gc-o88"/>
+                                    <outlet property="lbl_ctTitle" destination="kIW-w6-u9I" id="XZX-i0-UPC"/>
+                                    <segue destination="ODR-DC-RKc" kind="show" identifier="sgDetailContents" id="w5C-lT-vcf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -324,6 +334,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="contentsTableView" id="g0S-GN-h3d"/>
+                    <connections>
+                        <outlet property="contentsListTableView" destination="c86-xR-rM0" id="5Km-h1-KbU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hu5-XK-LHZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
