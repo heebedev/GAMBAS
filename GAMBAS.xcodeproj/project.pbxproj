@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */; };
+		3246E7292514979F00524164 /* MyChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E7282514979F00524164 /* MyChannelModel.swift */; };
+		3246E72C251497B100524164 /* MyProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E72B251497B100524164 /* MyProductModel.swift */; };
+		3246E72F251497C000524164 /* MyContentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E72E251497BF00524164 /* MyContentsModel.swift */; };
+		3246E732251499A400524164 /* MyChannelSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E731251499A400524164 /* MyChannelSelect.swift */; };
+		3246E735251499B600524164 /* MyProductSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E734251499B600524164 /* MyProductSelect.swift */; };
+		3246E738251499D500524164 /* MyContentsSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E737251499D500524164 /* MyContentsSelect.swift */; };
+		3285DAFF25134150003C8E3B /* MyChannelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285DAFE25134150003C8E3B /* MyChannelTableViewController.swift */; };
+		3285DB03251341E5003C8E3B /* MyContentsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3285DB02251341E5003C8E3B /* MyContentsListTableViewCell.swift */; };
 		32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0812511B52300FE4CDD /* AppDelegate.swift */; };
 		32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0832511B52300FE4CDD /* SceneDelegate.swift */; };
 		32A8A0892511B52300FE4CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A8A0872511B52300FE4CDD /* Main.storyboard */; };
@@ -20,6 +28,14 @@
 /* Begin PBXFileReference section */
 		10D9F7964BC5B638A020B10E /* Pods_GAMBAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GAMBAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3246E7282514979F00524164 /* MyChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelModel.swift; sourceTree = "<group>"; };
+		3246E72B251497B100524164 /* MyProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductModel.swift; sourceTree = "<group>"; };
+		3246E72E251497BF00524164 /* MyContentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContentsModel.swift; sourceTree = "<group>"; };
+		3246E731251499A400524164 /* MyChannelSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelSelect.swift; sourceTree = "<group>"; };
+		3246E734251499B600524164 /* MyProductSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductSelect.swift; sourceTree = "<group>"; };
+		3246E737251499D500524164 /* MyContentsSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContentsSelect.swift; sourceTree = "<group>"; };
+		3285DAFE25134150003C8E3B /* MyChannelTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelTableViewController.swift; sourceTree = "<group>"; };
+		3285DB02251341E5003C8E3B /* MyContentsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContentsListTableViewCell.swift; sourceTree = "<group>"; };
 		32A8A07E2511B52300FE4CDD /* GAMBAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAMBAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A8A0812511B52300FE4CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32A8A0832511B52300FE4CDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,11 +89,19 @@
 				32A8A0982511BFCB00FE4CDD /* LOGIN */,
 				32A8A0812511B52300FE4CDD /* AppDelegate.swift */,
 				32A8A0832511B52300FE4CDD /* SceneDelegate.swift */,
+				3285DAFE25134150003C8E3B /* MyChannelTableViewController.swift */,
+				3285DB02251341E5003C8E3B /* MyContentsListTableViewCell.swift */,
 				32A8A0872511B52300FE4CDD /* Main.storyboard */,
 				32A8A08D2511B53400FE4CDD /* Assets.xcassets */,
 				32A8A08F2511B53400FE4CDD /* LaunchScreen.storyboard */,
 				32A8A0922511B53400FE4CDD /* Info.plist */,
 				32A8A08A2511B52300FE4CDD /* GAMBAS.xcdatamodeld */,
+				3246E7282514979F00524164 /* MyChannelModel.swift */,
+				3246E72B251497B100524164 /* MyProductModel.swift */,
+				3246E72E251497BF00524164 /* MyContentsModel.swift */,
+				3246E731251499A400524164 /* MyChannelSelect.swift */,
+				3246E734251499B600524164 /* MyProductSelect.swift */,
+				3246E737251499D500524164 /* MyContentsSelect.swift */,
 			);
 			path = GAMBAS;
 			sourceTree = "<group>";
@@ -252,7 +276,15 @@
 			files = (
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
+				3246E732251499A400524164 /* MyChannelSelect.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
+				3246E7292514979F00524164 /* MyChannelModel.swift in Sources */,
+				3246E735251499B600524164 /* MyProductSelect.swift in Sources */,
+				3285DB03251341E5003C8E3B /* MyContentsListTableViewCell.swift in Sources */,
+				3246E72F251497C000524164 /* MyContentsModel.swift in Sources */,
+				3285DAFF25134150003C8E3B /* MyChannelTableViewController.swift in Sources */,
+				3246E738251499D500524164 /* MyContentsSelect.swift in Sources */,
+				3246E72C251497B100524164 /* MyProductModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
