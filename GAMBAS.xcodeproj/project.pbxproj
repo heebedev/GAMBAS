@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3206A16E25186EE500809801 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206A16D25186EE500809801 /* SubViewController.swift */; };
+		3296F2C625186BC20002AF01 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296F2C525186BC20002AF01 /* LoginModel.swift */; };
+		3296F2C825186C0A0002AF01 /* SigupDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296F2C725186C0A0002AF01 /* SigupDBModel.swift */; };
+		3296F2CA25186C5B0002AF01 /* SigupInsertDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296F2C925186C5B0002AF01 /* SigupInsertDBModel.swift */; };
+		3296F2CC25186C8B0002AF01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296F2CB25186C8B0002AF01 /* MainViewController.swift */; };
+		3296F2CE25186CFE0002AF01 /* SigupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296F2CD25186CFE0002AF01 /* SigupViewController.swift */; };
 		32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0812511B52300FE4CDD /* AppDelegate.swift */; };
 		32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8A0832511B52300FE4CDD /* SceneDelegate.swift */; };
 		32A8A0892511B52300FE4CDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A8A0872511B52300FE4CDD /* Main.storyboard */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3206A16D25186EE500809801 /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = SOURCE_ROOT; };
+		3296F2C525186BC20002AF01 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = SOURCE_ROOT; };
+		3296F2C725186C0A0002AF01 /* SigupDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigupDBModel.swift; sourceTree = SOURCE_ROOT; };
+		3296F2C925186C5B0002AF01 /* SigupInsertDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigupInsertDBModel.swift; sourceTree = SOURCE_ROOT; };
+		3296F2CB25186C8B0002AF01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		3296F2CD25186CFE0002AF01 /* SigupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigupViewController.swift; sourceTree = SOURCE_ROOT; };
 		32A8A07E2511B52300FE4CDD /* GAMBAS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GAMBAS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A8A0812511B52300FE4CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32A8A0832511B52300FE4CDD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +87,12 @@
 		32A8A0982511BFCB00FE4CDD /* LOGIN */ = {
 			isa = PBXGroup;
 			children = (
+				3296F2CB25186C8B0002AF01 /* MainViewController.swift */,
+				3296F2CD25186CFE0002AF01 /* SigupViewController.swift */,
+				3206A16D25186EE500809801 /* SubViewController.swift */,
+				3296F2C525186BC20002AF01 /* LoginModel.swift */,
+				3296F2C725186C0A0002AF01 /* SigupDBModel.swift */,
+				3296F2C925186C5B0002AF01 /* SigupInsertDBModel.swift */,
 			);
 			path = LOGIN;
 			sourceTree = "<group>";
@@ -178,9 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3296F2CC25186C8B0002AF01 /* MainViewController.swift in Sources */,
+				3296F2C825186C0A0002AF01 /* SigupDBModel.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
+				3296F2CE25186CFE0002AF01 /* SigupViewController.swift in Sources */,
+				3296F2C625186BC20002AF01 /* LoginModel.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
+				3206A16E25186EE500809801 /* SubViewController.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
+				3296F2CA25186C5B0002AF01 /* SigupInsertDBModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
