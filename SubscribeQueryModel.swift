@@ -79,7 +79,8 @@ class SubsListQueryModel: NSObject{
                 let chNickname = jsonElement["chNickname"] as? String,
                 let chImage = jsonElement["chImage"] as? String,
                 let chValidation = jsonElement["chValidation"] as? String,
-                let createrUSeqno = jsonElement["createrUSeqno"] as? String
+                let createrUSeqno = jsonElement["createrUSeqno"] as? String,
+                let cgName = jsonElement["cgName"] as? String
             
             {
                 query.subsSeqno = subsSeqno
@@ -100,6 +101,7 @@ class SubsListQueryModel: NSObject{
                 query.chImage = chImage
                 query.chValidation = chValidation
                 query.createrUSeqno = createrUSeqno
+                query.cgName = cgName
             }
             
             // 배열에 넣어줌

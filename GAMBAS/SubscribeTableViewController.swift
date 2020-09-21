@@ -112,6 +112,7 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
         cell.lbl_chNickname?.text = "\(item.chNickname!)"
         cell.lbl_term?.text = "\(item.term!)"
         cell.lbl_releaseDay?.text = "\(item.releaseDay!)"
+        cell.lbl_cgName?.text = "\(item.cgName!)"
         
         return cell
     }
@@ -193,4 +194,6 @@ class SubsListTableViewCell: UITableViewCell {
     @IBOutlet weak var lbl_chNickname: UILabel!
     @IBOutlet weak var lbl_term: UILabel!
     @IBOutlet weak var lbl_releaseDay: UILabel!
+    @IBOutlet weak var lbl_cgName: UILabel!
+    
 }

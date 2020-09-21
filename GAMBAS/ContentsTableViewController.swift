@@ -73,7 +73,6 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
         // Configure the cell...
         let item: SubscribeDBModel = contentsListFeedItem[indexPath.row] as! SubscribeDBModel // DB 모델타입으로 바꾸고, data 뽑아 쓸 수 있음
 
-
         //text
         cell.lbl_ctTitle?.text = "\(item.ctTitle!)"
         
@@ -83,7 +82,6 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
 
         let result = String(formatReleaseDate[...endIdx])
         cell.lbl_ctReleaseDate?.text = result
-        
 
         return cell
     }
@@ -145,7 +143,7 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
             
             
             // ctSeqno 보내줌
-           // contentsListView.contentsInfoReceiveItems(ctSeqno) // 펑션만들기
+            // contentsListView.contentsInfoReceiveItems(ctSeqno) // 펑션만들기
             
         }
         
@@ -160,7 +158,6 @@ class ContentsListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbl_ctTitle: UILabel!
     @IBOutlet weak var lbl_ctReleaseDate: UILabel!
-    
     
 }
 

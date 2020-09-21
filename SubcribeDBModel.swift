@@ -29,6 +29,7 @@ class SubscribeDBModel: NSObject{
     var chImage: String?
     var chValidation: String?
     var createrUSeqno: String?
+    var cgName: String?
     
     // ContentsList 추가
     var ctSeqno: String?
@@ -44,7 +45,7 @@ class SubscribeDBModel: NSObject{
     }
     
     // Constructor : SubsList
-    init(subsSeqno: String, subsRegistDate:String, subsValidation:String, uSeqno:String, prdSeqno: String, term:String, releaseDay:String, prdTitle:String, prdPrice: String, prdImage:String, prdRegistDate:String, cgSeqno: String, chSeqno:String, chContext:String, chNickname: String, chImage:String, chValidation: String, createrUSeqno: String) {
+    init(subsSeqno: String, subsRegistDate:String, subsValidation:String, uSeqno:String, prdSeqno: String, term:String, releaseDay:String, prdTitle:String, prdPrice: String, prdImage:String, prdRegistDate:String, cgSeqno: String, chSeqno:String, chContext:String, chNickname: String, chImage:String, chValidation: String, createrUSeqno: String, cgName: String) {
         self.subsSeqno = subsSeqno
         self.subsRegistDate = subsRegistDate
         self.subsValidation = subsValidation
@@ -63,6 +64,7 @@ class SubscribeDBModel: NSObject{
         self.chImage = chImage
         self.chValidation = chValidation
         self.createrUSeqno = createrUSeqno
+        self.cgName = cgName
     }
     
     // Constructor : SubsList
