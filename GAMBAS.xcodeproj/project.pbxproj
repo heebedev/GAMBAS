@@ -15,6 +15,15 @@
 		32A8A08E2511B53400FE4CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32A8A08D2511B53400FE4CDD /* Assets.xcassets */; };
 		32A8A0912511B53400FE4CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A8A08F2511B53400FE4CDD /* LaunchScreen.storyboard */; };
 		D3B048C7D68EC4E946B59B83 /* Pods_GAMBAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D9F7964BC5B638A020B10E /* Pods_GAMBAS.framework */; };
+		FA0BB6A22514518900440FF4 /* shkMyInfoAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */; };
+		FA0BB6A42514521600440FF4 /* shkMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A32514521600440FF4 /* shkMyInfoViewController.swift */; };
+		FA0BB6A625147AB200440FF4 /* SKHmyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A525147AB200440FF4 /* SKHmyInfoModel.swift */; };
+		FA0BB6AA25148EE000440FF4 /* SKHmyInfoUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A925148EE000440FF4 /* SKHmyInfoUpdateModel.swift */; };
+		FA0BB6CF2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6CE2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift */; };
+		FA0BB6D325159BAD00440FF4 /* SKHstatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D225159BAD00440FF4 /* SKHstatic.swift */; };
+		FA0BB6D52515B90800440FF4 /* SKHmyInfoPwCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */; };
+		FA0BB6D72516048900440FF4 /* SKHmyInfopwChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */; };
+		FA0BB6D9251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +39,15 @@
 		32A8A0922511B53400FE4CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		957B4048A8BF8CC01EEBAFBA /* Pods-GAMBAS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAMBAS.release.xcconfig"; path = "Target Support Files/Pods-GAMBAS/Pods-GAMBAS.release.xcconfig"; sourceTree = "<group>"; };
 		DC3275FC3D48C487695FBB04 /* Pods-GAMBAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAMBAS.debug.xcconfig"; path = "Target Support Files/Pods-GAMBAS/Pods-GAMBAS.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shkMyInfoAllViewController.swift; sourceTree = "<group>"; };
+		FA0BB6A32514521600440FF4 /* shkMyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shkMyInfoViewController.swift; sourceTree = "<group>"; };
+		FA0BB6A525147AB200440FF4 /* SKHmyInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoModel.swift; sourceTree = "<group>"; };
+		FA0BB6A925148EE000440FF4 /* SKHmyInfoUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoUpdateModel.swift; sourceTree = "<group>"; };
+		FA0BB6CE2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPasswordViewController.swift; sourceTree = "<group>"; };
+		FA0BB6D225159BAD00440FF4 /* SKHstatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHstatic.swift; sourceTree = "<group>"; };
+		FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwCheckModel.swift; sourceTree = "<group>"; };
+		FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfopwChangeModel.swift; sourceTree = "<group>"; };
+		FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwChangeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +96,15 @@
 				32A8A08F2511B53400FE4CDD /* LaunchScreen.storyboard */,
 				32A8A0922511B53400FE4CDD /* Info.plist */,
 				32A8A08A2511B52300FE4CDD /* GAMBAS.xcdatamodeld */,
+				FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */,
+				FA0BB6A32514521600440FF4 /* shkMyInfoViewController.swift */,
+				FA0BB6A525147AB200440FF4 /* SKHmyInfoModel.swift */,
+				FA0BB6A925148EE000440FF4 /* SKHmyInfoUpdateModel.swift */,
+				FA0BB6CE2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift */,
+				FA0BB6D225159BAD00440FF4 /* SKHstatic.swift */,
+				FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */,
+				FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */,
+				FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */,
 			);
 			path = GAMBAS;
 			sourceTree = "<group>";
@@ -250,9 +277,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0BB6D325159BAD00440FF4 /* SKHstatic.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
+				FA0BB6A42514521600440FF4 /* shkMyInfoViewController.swift in Sources */,
+				FA0BB6D72516048900440FF4 /* SKHmyInfopwChangeModel.swift in Sources */,
+				FA0BB6D9251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift in Sources */,
+				FA0BB6CF2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift in Sources */,
+				FA0BB6D52515B90800440FF4 /* SKHmyInfoPwCheckModel.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
+				FA0BB6A22514518900440FF4 /* shkMyInfoAllViewController.swift in Sources */,
+				FA0BB6A625147AB200440FF4 /* SKHmyInfoModel.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
+				FA0BB6AA25148EE000440FF4 /* SKHmyInfoUpdateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
