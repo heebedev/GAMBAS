@@ -18,6 +18,7 @@ class CategoryDBModel: NSObject{
     var prdPrice: String?
     var chNickname: String?
     var count: String?
+    var prdImage: String?
     
     //Empty Constructor
     override init() {

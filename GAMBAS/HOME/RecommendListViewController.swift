@@ -9,16 +9,15 @@
 import UIKit
 class RecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QueryModelProtocol {
     
+    let uSeqno: Int = 2 // ***Test용
     @IBOutlet weak var listCollectionView: UICollectionView!
-    
     @IBOutlet weak var lblrecentSellProduct: UILabel!
     @IBOutlet weak var lbl2: UILabel!
     @IBOutlet weak var lbl3: UILabel!
-    
+
     let viewModel = RecommentListViewModel()
     var feedItem: NSArray = NSArray()
     var receiveCategory = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,24 +36,36 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let uQueryModel = UCategoryQueryModel()
         let queryModel = CategoryQueryModel()
         queryModel.delegate = self
         
         if receiveCategory == "추천" {
-            
-            
+            uQueryModel.getUserCategoryList(uSeqno: uSeqno) { (returnList) in
+                DispatchQueue.main.async { () -> Void in
+                    if returnList != nil {
+                        let arraytostring = returnList?.joined(separator: ",")
+                        queryModel.downloadRecommendItems(category: arraytostring!) {isValid in
+                            DispatchQueue.main.async { () -> Void in
+                                if isValid {
+                                    print("Data is downloaded")
+                                } else {
+                                    print("Failed to download data") }
+                            } } } } }
             
         } else {
             queryModel.downloadItems(category: receiveCategory) {isValid in
                 DispatchQueue.main.async { () -> Void in
                     if isValid {
-                        print("success")
+                        print("Data is downloaded")
                     } else {
-                        print("fail") }
+                        print("Failed to download data") }
                 }
             }
         }
+        
     }
+
     
     func updateUI() {
         lblrecentSellProduct.text = viewModel.type.title
@@ -78,7 +89,6 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         let item: CategoryDBModel = feedItem[indexPath.item] as! CategoryDBModel
         
         cell.title.text = item.prdTitle
-        //cell.title.text = receiveCategory
         cell.chnnelNickname.text = item.chNickname
         cell.releaseDay.text = item.releaseDay
         cell.term.text = "(\(item.term!))"
@@ -88,12 +98,48 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         cell.imgView.layer.cornerRadius = 5
         cell.imgView.layer.masksToBounds = true
         
-        //let movie = viewModel.item(at: indexPath.item)
-        //cell.updateUI(movie: movie)
+        let url = URL(string: "http://localhost:8080/ftp/\(item.prdImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
+            let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+
+            let task = defaultSession.dataTask(with: url){(data, response, error) in
+                if error != nil{
+                    print("Failed to download data")
+                }else{
+                    print("Data is downloaded")
+                    DispatchQueue.main.async {
+                        cell.imgView?.image = UIImage(data: data!)
+                        // jpg
+                        if let image = UIImage(data: data!){
+                            if let data = image.jpegData(compressionQuality: 0.8){// 일반적으로 80% 압축
+                                let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
+                                try? data.write(to: filename)
+                                print("Data is writed")
+
+                            }
+                        }
+
+                        // png 쓸 때 사용
+                        if let image = UIImage(data: data!){
+                            if let data = image.pngData() {//
+                                let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // // 다운받을때 이미지이름
+                                try? data.write(to: filename)
+                                print("Data is writed")
+
+
+                            }
+                        }
+                    }
+                }
+            }
+            task.resume() // task 실행
+            return cell
+        }
         
-        //let url = URL(string: "http://192.168.0.5:8080/ftp/\(item.sbImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
-        //let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-        return cell
+        
+        // write 위치 (스마트폰의)
+    func getDecumentDirectory() -> URL{
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0] // 첫번째 값 앱에 설정한 것의 위치
     }
     
     
