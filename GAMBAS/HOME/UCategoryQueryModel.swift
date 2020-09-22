@@ -8,26 +8,33 @@
 
 import Foundation
 
+protocol CategoryProtocol: class {
+    func categoryDownloaded(items: [String])
+}
+
 class UCategoryQueryModel: NSObject{
+    var delegate: CategoryProtocol!
     var urlPath = "http://localhost:8080/gambas/getUserCategoryList.jsp"
     
-    func getUserCategoryList(uSeqno: Int, completion: @escaping ([String]?)->()) {
+    func getUserCategoryList(uSeqno: Int, completion: @escaping (Bool)->()) {
         let urlAdd = "?seq=\(uSeqno)"
         urlPath += urlAdd
+        print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url) {(data, respone, error) in
             if error != nil {
-                completion(nil)
+                completion(false)
             } else {
-                completion(self.parseJSON2(data!))
+                self.parseJSON2(data!)
+                completion(true)
             }
         }
         task.resume()
     }
     
-    func parseJSON2(_ data: Data) -> [String] {
+    func parseJSON2(_ data: Data) {
         var jsonResult = String(data: data, encoding: .utf8)!
         jsonResult = jsonResult.replacingOccurrences(of: "\r\n", with: "")
         let splitedList = jsonResult.components(separatedBy: ",")
@@ -35,8 +42,10 @@ class UCategoryQueryModel: NSObject{
         for i in 0..<splitedList.count {
             resultList.append(splitedList[i])
         }
-        
-        return resultList
+        print(resultList)
+        DispatchQueue.main.async(execute: {() -> Void in
+            self.delegate.categoryDownloaded(items: resultList)
+        })
     }
     
     

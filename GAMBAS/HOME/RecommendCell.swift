@@ -17,6 +17,7 @@ class RecommendCell: UICollectionViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var subsNumber: UILabel!
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var totalLike: UILabel!
     
  
     

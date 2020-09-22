@@ -15,22 +15,40 @@ protocol QueryModelProtocol: class{
 class CategoryQueryModel: NSObject{
     
     var delegate: QueryModelProtocol!
-    var urlPath = "http://localhost:8080/gambas/getCategoryData.jsp"
     
-    
-    func downloadItems(category: String, completion: @escaping (Bool)->()){
+    func downloadItems(category: String){
+        var urlPath = "http://localhost:8080/gambas/getCategoryData.jsp"
         let urlAdd = "?category=\(category)"
         urlPath += urlAdd
-        // jsp에서 데이터에 한글이 들어갈 경우 
+        print(urlPath)
+        // jsp에서 데이터에 한글이 들어갈 경우
         if let encodedPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-        let url:URL = URL(string: encodedPath) {
+            let url:URL = URL(string: encodedPath) {
             let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-            print(url)
+            //print(url)
             let task = defaultSession.dataTask(with: url) {(data, response, error) in
                 if error != nil {
-                    print("Failed to download data")
                 } else {
-                    print("Data is downloaded")
+                    self.parseJSON(data!)
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    func downloadRecommendItems(category: String){
+        var urlPath = "http://localhost:8080/gambas/getRecommendData.jsp"
+        let urlAdd = "?category=\(category)"
+        urlPath += urlAdd
+        print("추천:\(urlPath)")
+        // jsp에서 데이터에 한글이 들어갈 경우
+        if let encodedPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url:URL = URL(string: encodedPath) {
+            let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+            //print(url)
+            let task = defaultSession.dataTask(with: url) {(data, response, error) in
+                if error != nil {
+                } else {
                     self.parseJSON(data!)
                 }
             }
@@ -59,16 +77,21 @@ class CategoryQueryModel: NSObject{
                 let releaseDay = jsonElement["releaseDay"] as? String,
                 let term = jsonElement["term"] as? String,
                 let prdPrice = jsonElement["prdPrice"] as? String,
+                let prdImage = jsonElement["prdImage"] as? String,
                 let chNickname = jsonElement["chNickname"] as? String,
-                let count = jsonElement["count"] as? String {
+                let prdcount = jsonElement["prdcount"] as? String,
+                let clike = jsonElement["clike"] as? String
+            {
                 
                 query.prdSeqno = prdSeqno
                 query.prdTitle = prdTitle
                 query.releaseDay = releaseDay
                 query.term = term
                 query.prdPrice = prdPrice
+                query.prdImage = prdImage
                 query.chNickname = chNickname
-                query.count = count // 구독자수
+                query.prdcount = prdcount // prdboard 구독자수
+                query.clike = clike //content 좋아요 수
                 
             }
             
