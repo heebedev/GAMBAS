@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController{
+class HomeViewController: UIViewController, CategoryProtocol{
     
-    let uSeqno: Int = 2 // ***Test용
+    let uSeqno: Int = UserDefaults.standard.integer(forKey: "uSeqno")
     let queryModel = UCategoryQueryModel()
     
     @IBOutlet weak var recommendView: UIView!
@@ -38,42 +38,46 @@ class HomeViewController: UIViewController{
         } else if segue.identifier == "drawing" {
             recentRecommendListViewController.viewModel.updateType(.drawing)
             destinationVC?.receiveCategory = "그림"
-
+            
         } else if segue.identifier == "video" {
             recentRecommendListViewController.viewModel.updateType(.vdieo)
             destinationVC?.receiveCategory = "영상"
-
+            
         } else if segue.identifier == "music" {
             recentRecommendListViewController.viewModel.updateType(.music)
             destinationVC?.receiveCategory = "음악"
-
+            
         } else if segue.identifier == "other" {
             recentRecommendListViewController.viewModel.updateType(.other)
             destinationVC?.receiveCategory = "기타"
-
+            
         }
         
         
     }
     
+    func categoryDownloaded(items: [String]) {
+        categories = items
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        
-        queryModel.getUserCategoryList(uSeqno: uSeqno) { (returnList) in
+        let queryModel = UCategoryQueryModel()
+        queryModel.delegate = self
+        queryModel.getUserCategoryList(uSeqno: uSeqno) {isValid in
             DispatchQueue.main.async { () -> Void in
-                if returnList != nil {
-                    for category in returnList! {
+                if isValid {
+                    for category in self.categories {
                         let index = Int(category)
-                        self.cView[index!-1].isHidden = false }
+                        self.cView[index!-1].isHidden = false
+                    }
                 }
             }
         }
-
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         cView = [writingView, drawingView, videoView, musicView, otherView]
         
         for i in 0..<5 {

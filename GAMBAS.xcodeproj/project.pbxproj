@@ -142,10 +142,10 @@
 			children = (
 				54E54729251856E500914586 /* CategoryDBModel.swift */,
 				54E54727251856E500914586 /* CategoryQueryModel.swift */,
-				54E54725251856E500914586 /* HomeViewController.swift */,
-				54E54728251856E500914586 /* RecommendCell.swift */,
-				54E54726251856E500914586 /* RecommendListViewController.swift */,
 				54E5472A251856E500914586 /* UCategoryQueryModel.swift */,
+				54E54725251856E500914586 /* HomeViewController.swift */,
+				54E54726251856E500914586 /* RecommendListViewController.swift */,
+				54E54728251856E500914586 /* RecommendCell.swift */,
 			);
 			path = HOME;
 			sourceTree = "<group>";
