@@ -12,6 +12,7 @@
 		30A513B025132F1F00F81B8B /* MakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AF25132F1F00F81B8B /* MakeViewController.swift */; };
 		30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513B42513301600F81B8B /* NoticeViewController.swift */; };
 		30CE930D251891DC00556BE0 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CE930C251891DC00556BE0 /* appstore.png */; };
+		30CE930F25189A9B00556BE0 /* LoginQuaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */; };
 		30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */; };
 		3246E7292514979F00524164 /* MyChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E7282514979F00524164 /* MyChannelModel.swift */; };
 		3246E72C251497B100524164 /* MyProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3246E72B251497B100524164 /* MyProductModel.swift */; };
@@ -48,6 +49,7 @@
 		30A513AF25132F1F00F81B8B /* MakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MakeViewController.swift; path = GAMBAS/MakeViewController.swift; sourceTree = SOURCE_ROOT; };
 		30A513B42513301600F81B8B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeViewController.swift; path = GAMBAS/NoticeViewController.swift; sourceTree = SOURCE_ROOT; };
 		30CE930C251891DC00556BE0 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = GAMBAS/appstore.png; sourceTree = SOURCE_ROOT; };
+		30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginQuaryModel.swift; path = GAMBAS/LoginQuaryModel.swift; sourceTree = SOURCE_ROOT; };
 		30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3246E7282514979F00524164 /* MyChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelModel.swift; sourceTree = "<group>"; };
 		3246E72B251497B100524164 /* MyProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductModel.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				30A513A725132EC000F81B8B /* LoginViewController.swift */,
+				30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */,
 			);
 			path = LOGIN;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				54E5472F251856E500914586 /* CategoryDBModel.swift in Sources */,
 				54E5472D251856E500914586 /* CategoryQueryModel.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
+				30CE930F25189A9B00556BE0 /* LoginQuaryModel.swift in Sources */,
 				6B58DAAB25135B6000B67DC4 /* ContentsViewController.swift in Sources */,
 				3246E732251499A400524164 /* MyChannelSelect.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
