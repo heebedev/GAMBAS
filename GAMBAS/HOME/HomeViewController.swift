@@ -56,19 +56,19 @@ class HomeViewController: UIViewController{
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        queryModel.getUserCategoryList(uSeqno: uSeqno) { (returnList) in
-//            DispatchQueue.main.async { () -> Void in
-//                if returnList != nil {
-//                    for category in returnList! {
-//                        let index = Int(category)
-//                        self.cView[index!-1].isHidden = false }
-//                }
-//            }
-//        }
-//
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        queryModel.getUserCategoryList(uSeqno: uSeqno) { (returnList) in
+            DispatchQueue.main.async { () -> Void in
+                if returnList != nil {
+                    for category in returnList! {
+                        let index = Int(category)
+                        self.cView[index!-1].isHidden = false }
+                }
+            }
+        }
+
+    }
     
     
     override func viewDidLoad() {

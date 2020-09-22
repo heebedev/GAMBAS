@@ -11,6 +11,7 @@
 		30A513AC25132EDB00F81B8B /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */; };
 		30A513B025132F1F00F81B8B /* MakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AF25132F1F00F81B8B /* MakeViewController.swift */; };
 		30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513B42513301600F81B8B /* NoticeViewController.swift */; };
+		30C051A52519D0850038939D /* FirebaseFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C051A42519D0850038939D /* FirebaseFileManager.swift */; };
 		30CE930D251891DC00556BE0 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CE930C251891DC00556BE0 /* appstore.png */; };
 		30CE930F25189A9B00556BE0 /* LoginQuaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */; };
 		30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */; };
@@ -39,7 +40,6 @@
 		6B58DAAD25135CE000B67DC4 /* ContentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B58DAAC25135CE000B67DC4 /* ContentsTableViewController.swift */; };
 		6B7A0F87251448A900A3896A /* SubscribeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A0F86251448A900A3896A /* SubscribeQueryModel.swift */; };
 		6B7A0F892514610100A3896A /* SubcribeDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7A0F882514610100A3896A /* SubcribeDBModel.swift */; };
-		D3B048C7D68EC4E946B59B83 /* Pods_GAMBAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D9F7964BC5B638A020B10E /* Pods_GAMBAS.framework */; };
 		9DCAD6592518511000D48783 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCAD6582518511000D48783 /* FirstViewController.swift */; };
 		9DCAD65C2518511500D48783 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCAD65B2518511500D48783 /* SecondViewController.swift */; };
 		9DCAD65F2518512500D48783 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCAD65E2518512500D48783 /* ContainerViewController.swift */; };
@@ -85,6 +85,7 @@
 		30A513AF25132F1F00F81B8B /* MakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MakeViewController.swift; path = GAMBAS/MakeViewController.swift; sourceTree = SOURCE_ROOT; };
 		30A513B42513301600F81B8B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeViewController.swift; path = GAMBAS/NoticeViewController.swift; sourceTree = SOURCE_ROOT; };
 		30C051892519BC3C0038939D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		30C051A42519D0850038939D /* FirebaseFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFileManager.swift; sourceTree = "<group>"; };
 		30CE930C251891DC00556BE0 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = GAMBAS/appstore.png; sourceTree = SOURCE_ROOT; };
 		30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginQuaryModel.swift; path = GAMBAS/LoginQuaryModel.swift; sourceTree = SOURCE_ROOT; };
 		30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 				FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */,
 				FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */,
 				FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */,
+				30C051A42519D0850038939D /* FirebaseFileManager.swift */,
 			);
 			path = GAMBAS;
 			sourceTree = "<group>";
@@ -480,6 +482,7 @@
 				3285DB03251341E5003C8E3B /* MyContentsListTableViewCell.swift in Sources */,
 				3246E72F251497C000524164 /* MyContentsModel.swift in Sources */,
 				3285DAFF25134150003C8E3B /* MyChannelTableViewController.swift in Sources */,
+				30C051A52519D0850038939D /* FirebaseFileManager.swift in Sources */,
 				3246E738251499D500524164 /* MyContentsSelect.swift in Sources */,
 				3246E72C251497B100524164 /* MyProductModel.swift in Sources */,
 				54E5472C251856E500914586 /* RecommendListViewController.swift in Sources */,
