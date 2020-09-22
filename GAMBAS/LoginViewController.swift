@@ -11,10 +11,12 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
 
-class LoginViewController: UIViewController, LoginQuaryModelProtocol {
+class LoginViewController: UIViewController, LoginQuaryModelProtocol, KakaoLoginQueryModelProtocol {
+    
 
     @IBOutlet weak var tfKSHloginId: UITextField!
     @IBOutlet weak var tfKSHloginPw: UITextField!
+    
     
     var userId:String?
     var userPw:String?
@@ -81,6 +83,16 @@ class LoginViewController: UIViewController, LoginQuaryModelProtocol {
         kakaoLoginAction()
     }
     
+    func itemDownloaded(uSeqno: String) {
+        self.uSeqno = uSeqno
+        if(self.uSeqno == "0"){
+            self.performSegue(withIdentifier: "sgSignUp", sender: nil)
+        }else{
+            UserDefaults.standard.set(Int(uSeqno), forKey: "uSeqno")
+            self.performSegue(withIdentifier: "sgLogin", sender: nil)
+        }
+    }
+    
     func kakaoLoginAction(){
             AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
@@ -95,19 +107,20 @@ class LoginViewController: UIViewController, LoginQuaryModelProtocol {
                 if let error = error {
                     print(error)
                 }
-//                else {
-//                    print("me() success.")
-//                    //do something
-//                    _ = user
-//                    self.userEmail = user?.kakaoAccount?.email
-//                    if(self.userEmail == nil || self.userEmail == ""){
-//
-//                    }else{
-//                    let queryModel = KakaoLoginQueryModel()
-//                    queryModel.delegate = self
-//                    queryModel.downloadItems(uEmail: self.userEmail!)
-//                    }
-//                }
+                else {
+                    print("me() success.")
+                    //do something
+                    _ = user
+                    self.userId = user?.kakaoAccount?.email
+                    print(self.userId as Any)
+                    if(self.userId == nil || self.userId == ""){
+
+                    }else{
+                    let queryModel = KakaoLoginQueryModel()
+                    queryModel.delegate = self
+                    queryModel.downloadItems(uEmail: self.userId!)
+                    }
+                }
             }
         }
     }

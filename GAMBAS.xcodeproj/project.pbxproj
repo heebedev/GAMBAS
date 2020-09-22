@@ -53,6 +53,7 @@
 		9DCAD69C25188E5A00D48783 /* movie2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCAD69A25188E5A00D48783 /* movie2.png */; };
 		9DCAD6C42518AB8A00D48783 /* Pods_GAMBAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; };
 		9DCAD6C52518AB8A00D48783 /* Pods_GAMBAS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9DCAD6E12519EF7400D48783 /* KakaoLoginQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCAD6E02519EF7300D48783 /* KakaoLoginQueryModel.swift */; };
 		9DF22F682513408700199FBE /* prdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF22F672513408700199FBE /* prdDetailViewController.swift */; };
 		FA0BB6A22514518900440FF4 /* shkMyInfoAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */; };
 		FA0BB6A42514521600440FF4 /* shkMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A32514521600440FF4 /* shkMyInfoViewController.swift */; };
@@ -132,6 +133,7 @@
 		9DCAD6BF2518AB5B00D48783 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Pods/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_GAMBAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCAD6C62518ABA600D48783 /* KakaoOpenSDK-1.23.4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "KakaoOpenSDK-1.23.4"; path = "Pods/KakaoOpenSDK-1.23.4"; sourceTree = "<group>"; };
+		9DCAD6E02519EF7300D48783 /* KakaoLoginQueryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoLoginQueryModel.swift; sourceTree = "<group>"; };
 		9DF22F672513408700199FBE /* prdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prdDetailViewController.swift; sourceTree = "<group>"; };
 		DC3275FC3D48C487695FBB04 /* Pods-GAMBAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAMBAS.debug.xcconfig"; path = "Target Support Files/Pods-GAMBAS/Pods-GAMBAS.debug.xcconfig"; sourceTree = "<group>"; };
 		FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shkMyInfoAllViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				30A513A725132EC000F81B8B /* LoginViewController.swift */,
 				30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */,
+				9DCAD6E02519EF7300D48783 /* KakaoLoginQueryModel.swift */,
 			);
 			path = LOGIN;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				6B7A0F87251448A900A3896A /* SubscribeQueryModel.swift in Sources */,
 				30A513A825132EC000F81B8B /* LoginViewController.swift in Sources */,
 				54E5472E251856E500914586 /* RecommendCell.swift in Sources */,
+				9DCAD6E12519EF7400D48783 /* KakaoLoginQueryModel.swift in Sources */,
 				54E54730251856E500914586 /* UCategoryQueryModel.swift in Sources */,
 				FA0BB6D325159BAD00440FF4 /* SKHstatic.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,

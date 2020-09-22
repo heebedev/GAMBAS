@@ -69,7 +69,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="회원가입"/>
                                 <connections>
-                                    <segue destination="Wqk-wx-Hy6" kind="show" id="V70-ft-BLM"/>
+                                    <segue destination="Wqk-wx-Hy6" kind="show" identifier="" id="V70-ft-BLM"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appstore.png" translatesAutoresizingMaskIntoConstraints="NO" id="L3s-Du-uug">
@@ -111,6 +111,7 @@
                         <outlet property="tfKSHloginId" destination="Vb4-ZB-pHg" id="C7n-hG-hcI"/>
                         <outlet property="tfKSHloginPw" destination="Y0f-bz-MAf" id="Kdl-B0-VKv"/>
                         <segue destination="L8Q-Lc-JCI" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="z1a-SO-2pr"/>
+                        <segue destination="Wqk-wx-Hy6" kind="show" identifier="sgSignUp" id="Wta-Go-KE2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkD-ux-xKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1647,6 +1648,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ATS-gI-hZG"/>
+        <segue reference="Wta-Go-KE2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="KakaoTalk_Photo_2020-09-21-04-09-5" width="16" height="16"/>
