@@ -7,6 +7,9 @@
 //  Copyright © 2020 com.joonwon. All rights reserved.
 //
 import UIKit
+import Firebase
+
+
 class RecommendListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, QueryModelProtocol, CategoryProtocol {
     
     
@@ -96,38 +99,20 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         cell.imgView.layer.cornerRadius = 5
         cell.imgView.layer.masksToBounds = true
         
-        let url = URL(string: "http://localhost:8080/ftp/\(item.prdImage!)")! // 원래이름 ( tomcat 서버에 넣어놓음)
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        //Firebase image download
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("prdImage").child(item.prdImage!)
         
-        let task = defaultSession.dataTask(with: url){(data, response, error) in
-            if error != nil{
-            }else{
-                DispatchQueue.main.async {
-                    cell.imgView?.image = UIImage(data: data!)
-                    // jpg
-                    if let image = UIImage(data: data!){
-                        if let data = image.jpegData(compressionQuality: 0.8){// 일반적으로 80% 압축
-                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // 다운받을때 이미지이름 설정(동일한이름 들어가면 1,2 로변함)
-                            try? data.write(to: filename)
-                            print("Data is writed")
-                            
-                        }
-                    }
-                    
-                    // png 쓸 때 사용
-                    if let image = UIImage(data: data!){
-                        if let data = image.pngData() {//
-                            let filename = self.getDecumentDirectory().appendingPathComponent("recent.jpg") // // 다운받을때 이미지이름
-                            try? data.write(to: filename)
-                            print("Data is writed")
-                            
-                            
-                        }
-                    }
-                }
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                
+            } else {
+                cell.imgView?.image = UIImage(data: data!)
             }
         }
-        task.resume() // task 실행
+        
+        
         return cell
     }
     
@@ -176,6 +161,25 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         
         
     }
+    
+    // 셀이 클릭되었을때 어쩔꺼야? >> DetailView로 sellSeqno 넘겨줌
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let board = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let detailVC = board.instantiateViewController(withIdentifier: "prdDetail") as? prdDetailViewController else {return}
+        let item: CategoryDBModel = feedItem[(indexPath as NSIndexPath).item] as! CategoryDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
+        // 필요한 값 넘겨줌
+        let prdSeqno = String(item.prdSeqno!)
+        
+        
+        // 디테일뷰에 넣어줌
+        detailVC.receiveItems(prdSeqno)
+        detailVC.modalPresentationStyle = .fullScreen
+        
+        // 이동
+        self.present(detailVC, animated: true, completion: nil)
+        
+    }
+    
     
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
 
@@ -14,30 +15,38 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     var feedItem: NSArray = NSArray()
     let formatter = DateFormatter()
     
+    var prdSeqno:String?
+    let uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+    
     @IBOutlet weak var btnSubs: UIButton!
     @IBOutlet weak var lblChName: UILabel!
     @IBOutlet weak var ivPrdImage: UIImageView!
     @IBOutlet weak var lblPrdPrice: UILabel!
     @IBOutlet weak var lblPrdName: UILabel!
     
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         let queryModel = prdDetailQueryModel()
+        
+        
         queryModel.delegate = self
-        queryModel.downloadItems(prdSeqno: "1", uSeqno: "2")
+        queryModel.downloadItems(prdSeqno: prdSeqno!, uSeqno: uSeqno)
         container!.segueIdentifierReceivedFromParent("second")
 
         
         formatter.dateFormat = "yyyy-MM-dd"
 
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func receiveItems(_ prdSeq:String){
+        self.prdSeqno = prdSeq
+       }
+    
     func itemDownloaded(items: NSArray) {
         feedItem = items
         let item: prdDetailDBModel = feedItem[0] as! prdDetailDBModel
@@ -47,6 +56,20 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         if(Int(item.uSeqCount!) != 0){
             btnSubs.isHidden = true
         }
+        
+        //Firebase image download
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("prdImage").child(item.prdImage!)
+
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+
+            } else {
+                self.ivPrdImage.image = UIImage(data: data!)
+            }
+        }
+        
     }
 
 
