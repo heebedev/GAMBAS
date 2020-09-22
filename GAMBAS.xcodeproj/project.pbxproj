@@ -54,6 +54,15 @@
 		9DCAD6C42518AB8A00D48783 /* Pods_GAMBAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; };
 		9DCAD6C52518AB8A00D48783 /* Pods_GAMBAS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9DF22F682513408700199FBE /* prdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF22F672513408700199FBE /* prdDetailViewController.swift */; };
+		FA0BB6A22514518900440FF4 /* shkMyInfoAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */; };
+		FA0BB6A42514521600440FF4 /* shkMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A32514521600440FF4 /* shkMyInfoViewController.swift */; };
+		FA0BB6A625147AB200440FF4 /* SKHmyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A525147AB200440FF4 /* SKHmyInfoModel.swift */; };
+		FA0BB6AA25148EE000440FF4 /* SKHmyInfoUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6A925148EE000440FF4 /* SKHmyInfoUpdateModel.swift */; };
+		FA0BB6CF2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6CE2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift */; };
+		FA0BB6D325159BAD00440FF4 /* SKHstatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D225159BAD00440FF4 /* SKHstatic.swift */; };
+		FA0BB6D52515B90800440FF4 /* SKHmyInfoPwCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */; };
+		FA0BB6D72516048900440FF4 /* SKHmyInfopwChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */; };
+		FA0BB6D9251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -124,6 +133,15 @@
 		9DCAD6C62518ABA600D48783 /* KakaoOpenSDK-1.23.4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "KakaoOpenSDK-1.23.4"; path = "Pods/KakaoOpenSDK-1.23.4"; sourceTree = "<group>"; };
 		9DF22F672513408700199FBE /* prdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prdDetailViewController.swift; sourceTree = "<group>"; };
 		DC3275FC3D48C487695FBB04 /* Pods-GAMBAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAMBAS.debug.xcconfig"; path = "Target Support Files/Pods-GAMBAS/Pods-GAMBAS.debug.xcconfig"; sourceTree = "<group>"; };
+		FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shkMyInfoAllViewController.swift; sourceTree = "<group>"; };
+		FA0BB6A32514521600440FF4 /* shkMyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shkMyInfoViewController.swift; sourceTree = "<group>"; };
+		FA0BB6A525147AB200440FF4 /* SKHmyInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoModel.swift; sourceTree = "<group>"; };
+		FA0BB6A925148EE000440FF4 /* SKHmyInfoUpdateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoUpdateModel.swift; sourceTree = "<group>"; };
+		FA0BB6CE2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPasswordViewController.swift; sourceTree = "<group>"; };
+		FA0BB6D225159BAD00440FF4 /* SKHstatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHstatic.swift; sourceTree = "<group>"; };
+		FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwCheckModel.swift; sourceTree = "<group>"; };
+		FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfopwChangeModel.swift; sourceTree = "<group>"; };
+		FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwChangeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +238,15 @@
 				3246E731251499A400524164 /* MyChannelSelect.swift */,
 				3246E734251499B600524164 /* MyProductSelect.swift */,
 				3246E737251499D500524164 /* MyContentsSelect.swift */,
+				FA0BB6A12514518900440FF4 /* shkMyInfoAllViewController.swift */,
+				FA0BB6A32514521600440FF4 /* shkMyInfoViewController.swift */,
+				FA0BB6A525147AB200440FF4 /* SKHmyInfoModel.swift */,
+				FA0BB6A925148EE000440FF4 /* SKHmyInfoUpdateModel.swift */,
+				FA0BB6CE2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift */,
+				FA0BB6D225159BAD00440FF4 /* SKHstatic.swift */,
+				FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */,
+				FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */,
+				FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */,
 			);
 			path = GAMBAS;
 			sourceTree = "<group>";
@@ -428,7 +455,13 @@
 				30A513A825132EC000F81B8B /* LoginViewController.swift in Sources */,
 				54E5472E251856E500914586 /* RecommendCell.swift in Sources */,
 				54E54730251856E500914586 /* UCategoryQueryModel.swift in Sources */,
+				FA0BB6D325159BAD00440FF4 /* SKHstatic.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
+				FA0BB6A42514521600440FF4 /* shkMyInfoViewController.swift in Sources */,
+				FA0BB6D72516048900440FF4 /* SKHmyInfopwChangeModel.swift in Sources */,
+				FA0BB6D9251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift in Sources */,
+				FA0BB6CF2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift in Sources */,
+				FA0BB6D52515B90800440FF4 /* SKHmyInfoPwCheckModel.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
 				54E5472B251856E500914586 /* HomeViewController.swift in Sources */,
 				30A513AC25132EDB00F81B8B /* MyInfoViewController.swift in Sources */,
@@ -451,6 +484,10 @@
 				3246E72C251497B100524164 /* MyProductModel.swift in Sources */,
 				54E5472C251856E500914586 /* RecommendListViewController.swift in Sources */,
 				9DCAD6592518511000D48783 /* FirstViewController.swift in Sources */,
+				FA0BB6A22514518900440FF4 /* shkMyInfoAllViewController.swift in Sources */,
+				FA0BB6A625147AB200440FF4 /* SKHmyInfoModel.swift in Sources */,
+				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
+				FA0BB6AA25148EE000440FF4 /* SKHmyInfoUpdateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
