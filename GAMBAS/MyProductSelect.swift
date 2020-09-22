@@ -12,7 +12,7 @@ import Foundation
 // 프로토콜은 따로 스위프트 만들어서 써도 됨.
 protocol MyProductSelectProtocol: class {
     // 함수
-    func itemDownload_myProduct(item: NSArray)
+    func itemDownload_myProduct(itemProduct: NSArray)
 }
 
 // 클래스 하나 필요하죠.
@@ -95,7 +95,8 @@ class MyProductSelect: NSObject{
                 let prdRegistDate = jsonElement["productRegisterDate"] as? String,
                 let prdValidation = jsonElement["productValidation"] as? String,
                 let chSeqno = jsonElement["channelSeqno"] as? String,
-                let cgSeqno = jsonElement["categorySeqno"] as? String{
+                let cgSeqno = jsonElement["categorySeqno"] as? String,
+                let cgName = jsonElement["categoryName"] as? String{
                 
                 query.prdSeqno = prdSeqno
                 query.term = term
@@ -108,6 +109,7 @@ class MyProductSelect: NSObject{
                 query.prdValidation = prdValidation
                 query.chSeqno = chSeqno
                 query.cgSeqno = cgSeqno
+                query.cgName = cgName
             }
             // for문 안에 if 문 하나 끝남.
             
@@ -117,7 +119,7 @@ class MyProductSelect: NSObject{
         
         // Async로 넣어준다.
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.itemDownload_myProduct(item: locations)
+            self.delegate.itemDownload_myProduct(itemProduct: locations)
         })
 
     }

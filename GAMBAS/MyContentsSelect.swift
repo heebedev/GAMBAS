@@ -12,7 +12,7 @@ import Foundation
 // 프로토콜은 따로 스위프트 만들어서 써도 됨.
 protocol MyContentsSelectProtocol: class {
     // 함수
-    func itemDownload_myContents(item: NSArray)
+    func itemDownload_myContents(itemContents: NSArray)
 }
 
 // 클래스 하나 필요하죠.
@@ -57,6 +57,22 @@ class MyContentsSelect: NSObject{
         return result
     }
    
+    func searchItem_myContents(productSeqno : String, keyword : String){
+        let urlAdd = "MyContentsSearch.jsp?productSeqno=\(productSeqno)&keyword=\(keyword)"
+        urlPath += urlAdd
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url: URL = URL(string: urlPath)!
+        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        let task = defaultSession.dataTask(with: url){(data, response, error) in
+            if error != nil{ // '에러 코드가 있었다'라는 걸 의미
+                print("Failed to download data")
+            }else{
+                print("Data is downloaded")
+                self.parseJSON(data!)
+            }
+        }
+        task.resume()
+    }
     
     func parseJSON(_ data: Data){
         // 제이슨은 기본적으로 어레이 값이니깐..
@@ -100,7 +116,6 @@ class MyContentsSelect: NSObject{
                 query.ctRegistDate = ctRegistDate
                 query.ctValidation = ctValidation
                 query.prdSeqno = prdSeqno
-
             }
             // for문 안에 if 문 하나 끝남.
             
@@ -110,7 +125,7 @@ class MyContentsSelect: NSObject{
         
         // Async로 넣어준다.
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.itemDownload_myContents(item: locations)
+            self.delegate.itemDownload_myContents(itemContents: locations)
         })
 
     }

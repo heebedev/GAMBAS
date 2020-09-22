@@ -10,7 +10,7 @@ import Foundation
 
 class MyProductModel: NSObject{
     
-//    prdSeqno, term, releaseDay, prdTitle, prdPrice, prdContext, prdImage, prdRegistDate, prdValidation, chSeqno, cgSeqno
+//    prdSeqno, term, releaseDay, prdTitle, prdPrice, prdContext, prdImage, prdRegistDate, prdValidation, chSeqno, cgSeqno, (cgName)
     
     var prdSeqno: String?
     var term: String?
@@ -23,12 +23,13 @@ class MyProductModel: NSObject{
     var prdValidation: String?
     var chSeqno: String?
     var cgSeqno: String?
+    var cgName: String?
     
     override init() {
         
     }
     
-    init(prdSeqno: String, term: String, releaseDay: String, prdTitle: String, prdPrice: String, prdContext: String, prdImage: String, prdRegistDate: String, prdValidation: String, chSeqno: String, cgSeqno: String) {
+    init(prdSeqno: String, term: String, releaseDay: String, prdTitle: String, prdPrice: String, prdContext: String, prdImage: String, prdRegistDate: String, prdValidation: String, chSeqno: String, cgSeqno: String, cgName: String) {
         self.prdSeqno = prdSeqno
         self.term = term
         self.releaseDay = releaseDay
@@ -40,6 +41,7 @@ class MyProductModel: NSObject{
         self.prdValidation = prdValidation
         self.chSeqno = chSeqno
         self.cgSeqno = cgSeqno
+        self.cgName = cgName
     }
     
 }//----

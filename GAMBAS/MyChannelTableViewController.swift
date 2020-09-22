@@ -9,7 +9,9 @@
 import UIKit
 
 class MyChannelTableViewController: UITableViewController, MyChannelSelectProtocol, MyProductSelectProtocol, MyContentsSelectProtocol{
-
+    
+    @IBOutlet weak var MyContentsListSearchBar: UISearchBar!
+    
     @IBOutlet weak var ivLJHChannelImage: UIImageView!
     @IBOutlet weak var lblLJHChannelName: UILabel!
     @IBOutlet weak var lblLJHChannelContent: UILabel!
@@ -26,23 +28,24 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
     
     @IBOutlet var tvLJHContentsList: UITableView!
         
-    var channelSeqno: String?
-    var channelContent: String?
-    var channelName: String?
-    var channelImage: String?
-    var channelRegisterDate: String?
-    var channelValidation: String?
+    var channelSeqno = ""
+    var channelContent = ""
+    var channelName = ""
+    var channelImage = ""
+    var channelRegisterDate = ""
+    var channelValidation = ""
     
-    var productSeqno: String?
-    var ProductTerm: String?
-    var ProductReleaseDay: String?
-    var ProductTitle: String?
-    var ProductPrice: String?
-    var ProductContent: String?
-    var productImage: String?
-    var ProductRegisterDate: String?
-    var ProductValidation: String?
-    var ProductCategory: String?
+    var productSeqno = ""
+    var productTerm = ""
+    var productReleaseDay = ""
+    var productTitle = ""
+    var productPrice = ""
+    var productContent = ""
+    var productImage = ""
+    var productRegisterDate = ""
+    var productValidation = ""
+    var productCategorySeqno = ""
+    var productCategoryName = ""
 
     var feeditems_channel: NSArray = NSArray()
     var feeditems_product: NSArray = NSArray()
@@ -57,6 +60,7 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        self.MyContentsListSearchBar.delegate = self
         self.tvLJHContentsList.delegate = self
         self.tvLJHContentsList.dataSource = self
         self.tvLJHContentsList.rowHeight = 124
@@ -77,36 +81,83 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         print("viewDidLoad()")
     }
     
-    func itemDownload_myChannel(item: NSArray) {
-        feeditems_channel = item
-        let myChannel: MyChannelModel = feeditems_channel[0] as! MyChannelModel
+    func itemDownload_myChannel(itemChannel: NSArray) {
+        feeditems_channel = itemChannel
+
+        for i in 0..<feeditems_channel.count{
+            let myChannel: MyChannelModel = feeditems_channel[i] as! MyChannelModel
+
+        channelSeqno = myChannel.chSeqno!
+        channelContent = myChannel.chContext!
+        channelName = myChannel.chNickname!
+        channelImage =  myChannel.chImage!
+        channelRegisterDate = myChannel.chRegistDate!
+        channelValidation = myChannel.chValidation!
+        }
+
+//        if channelImage!.isEmpty {
+//            let urlString = "http://127.0.0.1:8080/gambas/imgs/\(channelImage)"
+//            let url = URL(string: urlString)
+//            let data = try? Data(contentsOf: url!)
+//            ivLJHChannelImage.image = UIImage(data: data!)
+//        }
+
+        lblLJHChannelName.text = channelName
+        lblLJHChannelContent.text = channelContent
+        lblLJHChannelRegisterDate.text = channelRegisterDate
         
-        channelSeqno = myChannel.chSeqno
-        channelContent = myChannel.chContext
-        channelName = myChannel.chNickname
-        channelImage =  myChannel.chImage
-        channelRegisterDate = myChannel.chRegistDate
-        channelValidation = myChannel.chValidation
     }
     
-    func itemDownload_myProduct(item: NSArray) {
-        feeditems_product = item
-        let myProduct: MyProductModel = feeditems_product[0] as! MyProductModel
+    func itemDownload_myProduct(itemProduct: NSArray) {
+        feeditems_product = itemProduct
         
-//        productSeqno = myProduct.prdSeqno
-//        ProductTerm = myProduct.
-//        ProductReleaseDay = myProduct.prdSeqno
-//        ProductTitle = myProduct.prdSeqno
-//        ProductPrice = myProduct.prdSeqno
-//        ProductContent = myProduct.prdSeqno
-//        productImage = myProduct.prdSeqno
-//        ProductRegisterDate = myProduct.prdSeqno
-//        ProductValidation = myProduct.prdSeqno
-//        ProductCategory = myProduct.prdSeqno
+        for i in 0..<feeditems_product.count{
+            let myProduct: MyProductModel = feeditems_product[i] as! MyProductModel
+                       
+            productSeqno = myProduct.prdSeqno!
+            productTerm = myProduct.term!
+            productReleaseDay = myProduct.releaseDay!
+            productTitle = myProduct.prdTitle!
+            productPrice = myProduct.prdPrice!
+            productContent = myProduct.prdContext!
+            productImage = myProduct.prdImage!
+            productRegisterDate = myProduct.prdRegistDate!
+            productValidation = myProduct.prdValidation!
+            productCategorySeqno = myProduct.cgSeqno!
+            productCategoryName = myProduct.cgName!
+            
+        }
+        
+//            if productImage!.isEmpty {
+//                let urlString = "http://127.0.0.1:8080/gambas/imgs/\(productImage)"
+//                let url = URL(string: urlString)
+//                let data = try? Data(contentsOf: url!)
+//                ivLJHProductImage.image = UIImage(data: data!)
+//            }
+
+        if productSeqno.isEmpty {
+            ivLJHProductImage.isHidden = true
+            lblLJHProductName.isHidden = true
+            lblLJHProductContent.isHidden = true
+            lblLJHProductCategory.isHidden = true
+            lblLJHProductRegisterDate.isHidden = true
+            lblLJHProductTerm.isHidden = true
+            lblLJHProductDay.isHidden = true
+            lblLJHProductPrice.isHidden = true
+        }else{
+            lblLJHProductName.text = productTitle
+            lblLJHProductContent.text = productContent
+            lblLJHProductCategory.text = productCategoryName
+            lblLJHProductRegisterDate.text = productRegisterDate
+            lblLJHProductTerm.text = productTerm
+            lblLJHProductDay.text = productReleaseDay
+            lblLJHProductPrice.text = productPrice
+        }
+
     }
     
-    func itemDownload_myContents(item: NSArray) {
-        feeditems_contents = item
+    func itemDownload_myContents(itemContents: NSArray) {
+        feeditems_contents = itemContents
         self.tvLJHContentsList.reloadData()
     }
 
@@ -173,14 +224,57 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
 
+        if segue.identifier == "sgMyChannelProductEdit"{
+            let myChannelProductEditViewController = segue.destination as! MyChannelProductEditViewController
+
+            myChannelProductEditViewController.receiveItems_myChannelProduct(channelSeqno, channelContent, channelName, channelImage, channelRegisterDate, channelValidation, productSeqno, productTerm, productReleaseDay, productTitle, productPrice, productContent, productImage, productRegisterDate, productValidation, productCategorySeqno, productCategoryName)
+            
+            print("prepare()")
+        }
+        
+        if segue.identifier == "sgMyContentsAdd"{
+            let myContentsAddViewController = segue.destination as! MyContentsAddViewController
+
+            myContentsAddViewController.receiveItems_myProductSeqno(productSeqno)
+            
+            print("prepare()")
+        }
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let myChannelSelect = MyChannelSelect()
+        myChannelSelect.delegate = self
+        myChannelSelect.downloadItem_myChannel(userSeqno: "1") // 절대값***
+        
+        let myProductSelect = MyProductSelect()
+        myProductSelect.delegate = self
+        myProductSelect.downloadItem_myProduct(channelSeqno: "1") // 절대값***
+        
+        let myContentsSelect = MyContentsSelect()
+        myContentsSelect.delegate = self
+        myContentsSelect.downloadItem_myContents(productSeqno: "1") // 절대값***
+        
+        print("viewWillAppear()")
+    }
+    
+}//----
+
+
+extension MyChannelTableViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let myContentsSelect = MyContentsSelect()
+        myContentsSelect.delegate = self
+        myContentsSelect.searchItem_myContents(productSeqno: productSeqno, keyword: searchBar.text!)
+    }
 }
