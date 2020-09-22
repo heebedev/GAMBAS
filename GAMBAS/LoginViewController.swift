@@ -56,12 +56,13 @@ class LoginViewController: UIViewController, LoginQuaryModelProtocol {
     @IBAction func btnLogin(_ sender: UIButton) {
         self.userId = tfKSHloginId.text!
         self.userPw = tfKSHloginPw.text!
+        print("ID \(String(describing: userId)) PW \(String(describing: userPw))")
         if(self.userId == nil || self.userId == ""){
             myAlert(alertTitle: "오류", alertMessage: "아이디 비밀번호를 확인해주세요.", actionTitle: "OK", handler: nil)
         } else {
         let queryModel = LoginQuaryModel()
             queryModel.delegate = self
-            queryModel.IdCheckItems(uId: userId!)
+            queryModel.IdCheckItems(userId!)
             
         }
         

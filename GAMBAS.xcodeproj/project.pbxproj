@@ -48,6 +48,7 @@
 		30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyInfoViewController.swift; path = GAMBAS/MyInfoViewController.swift; sourceTree = SOURCE_ROOT; };
 		30A513AF25132F1F00F81B8B /* MakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MakeViewController.swift; path = GAMBAS/MakeViewController.swift; sourceTree = SOURCE_ROOT; };
 		30A513B42513301600F81B8B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeViewController.swift; path = GAMBAS/NoticeViewController.swift; sourceTree = SOURCE_ROOT; };
+		30C051892519BC3C0038939D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		30CE930C251891DC00556BE0 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = GAMBAS/appstore.png; sourceTree = SOURCE_ROOT; };
 		30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginQuaryModel.swift; path = GAMBAS/LoginQuaryModel.swift; sourceTree = SOURCE_ROOT; };
 		30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		32A8A0802511B52300FE4CDD /* GAMBAS */ = {
 			isa = PBXGroup;
 			children = (
+				30C051892519BC3C0038939D /* KakaoOpenSDK-Bridging-Header.h */,
 				30CE930C251891DC00556BE0 /* appstore.png */,
 				30A513B325132FEF00F81B8B /* NOTICE */,
 				30A513B225132F3B00F81B8B /* Model */,
