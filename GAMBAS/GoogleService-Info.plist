@@ -32,5 +32,6 @@
 	<string>1:603129724251:ios:4ee154ed9f82217f5b2e7e</string>
 	<key>DATABASE_URL</key>
 	<string>https://gambas-174df.firebaseio.com</string>
+
 </dict>
 </plist>

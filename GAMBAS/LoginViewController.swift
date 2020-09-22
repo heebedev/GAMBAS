@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginViewController: UIViewController, LoginQuaryModelProtocol {
 
     @IBOutlet weak var tfKSHloginId: UITextField!
     @IBOutlet weak var tfKSHloginPw: UITextField!
-    @IBOutlet weak var btnKSHkakaoLogin: UIButton!
     
     var userId:String?
     var userPw:String?
@@ -28,11 +30,10 @@ class LoginViewController: UIViewController, LoginQuaryModelProtocol {
         UserDefaults.standard.removeObject(forKey: "uSeqno")
 
         //******************* 버튼 모양
-        btnKSHkakaoLogin.layer.cornerRadius = 20
         self.reloadInputViews()
 
     }
-
+    
     func LoginChkDownloaded(uSeqno: String, uResult: String) {
         if uResult == "false" {
             myAlert(alertTitle: "확인", alertMessage: "등록되지 않은 정보입니다.", actionTitle: "OK", handler: nil)
@@ -53,6 +54,7 @@ class LoginViewController: UIViewController, LoginQuaryModelProtocol {
         // Pass the selected object to the new view controller.
     }
     */
+    
     @IBAction func btnLogin(_ sender: UIButton) {
         self.userId = tfKSHloginId.text!
         self.userPw = tfKSHloginPw.text!
@@ -63,17 +65,52 @@ class LoginViewController: UIViewController, LoginQuaryModelProtocol {
         let queryModel = LoginQuaryModel()
             queryModel.delegate = self
             queryModel.IdCheckItems(userId!)
-            
         }
-        
     }
     
     // ********************** 기본 ALERT
     func myAlert(alertTitle: String, alertMessage: String, actionTitle: String, handler:((UIAlertAction) -> Void)?) {
-          let resultAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
-          let onAction = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: handler)
-          resultAlert.addAction(onAction)
-          present(resultAlert, animated: true, completion: nil)
-      }
+        let resultAlert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+        let onAction = UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: handler)
+        resultAlert.addAction(onAction)
+        present(resultAlert, animated: true, completion: nil)
+    }
     
+    
+    @IBAction func kakaoLoginButton(_ sender: UIButton) {
+        kakaoLoginAction()
+    }
+    
+    func kakaoLoginAction(){
+            AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoAccount() success.")
+                //do something
+                let _ = oauthToken
+            }
+            UserApi.shared.me() {(user, error) in
+                if let error = error {
+                    print(error)
+                }
+//                else {
+//                    print("me() success.")
+//                    //do something
+//                    _ = user
+//                    self.userEmail = user?.kakaoAccount?.email
+//                    if(self.userEmail == nil || self.userEmail == ""){
+//
+//                    }else{
+//                    let queryModel = KakaoLoginQueryModel()
+//                    queryModel.delegate = self
+//                    queryModel.downloadItems(uEmail: self.userEmail!)
+//                    }
+//                }
+            }
+        }
+    }
+    
+
 }
