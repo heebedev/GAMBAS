@@ -12,7 +12,7 @@ import Foundation
 // 프로토콜은 따로 스위프트 만들어서 써도 됨.
 protocol MyChannelSelectProtocol: class {
     // 함수
-    func itemDownload_myChannel(item: NSArray)
+    func itemDownload_myChannel(itemChannel: NSArray)
 }
 
 // 클래스 하나 필요하죠.
@@ -109,7 +109,7 @@ class MyChannelSelect: NSObject{
         
         // Async로 넣어준다.
         DispatchQueue.main.async(execute: {() -> Void in
-            self.delegate.itemDownload_myChannel(item: locations)
+            self.delegate.itemDownload_myChannel(itemChannel: locations)
         })
 
     }
