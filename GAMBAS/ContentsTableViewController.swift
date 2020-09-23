@@ -144,11 +144,8 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
             
             // ctSeqno, prdSeqno 보내
             contentsListView.contentsInfoReceiveItems(ctSeqno, prdSeqno: prdSeqno) // 펑션만들기
-            
         }
-        
     }
-    
 }
     
 
