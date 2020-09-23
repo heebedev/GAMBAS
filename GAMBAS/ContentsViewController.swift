@@ -169,24 +169,30 @@ class ContentsViewController: UIViewController, ContentsViewQueryModelProtocol, 
         return cell
     }
     
+    
+
     // 삭제 할때
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            
-            // 몇번째 인지 확인
-            let item: SubscribeDBModel = commentListFeedItem[indexPath.row] as! SubscribeDBModel // DB 모델타입으로 바꾸고, data 뽑아 쓸 수 있음
-            
-            // 삭제 누르면 cmValidatio = 1 -> 0으로 update
-            let updateModel = CommentInsertUpdateModel() // 인스턴스 생성
-            updateModel.UpdateItems(cmSeqno: item.cmSeqno!)
-            
-            // 댓글 테이블 다시 불러옴
-            let commentListQueryModel = CommentListQueryModel()
-            commentListQueryModel.delegate = self
-            commentListQueryModel.commentListdownloadItems(ctSeqno: receive_ctSeqno)
-            
+        
+        // 몇번째인지 확인
+        let item: SubscribeDBModel = commentListFeedItem[indexPath.row] as! SubscribeDBModel // DB 모델타입으로 바꾸고, data 뽑아 쓸 수 있음
+
+        // 댓글 쓴 사람과 일치할때 삭제하기
+        if uSeqno == item.uSeqno {
+            if editingStyle == .delete {
+                // Delete the row from the data source
+
+                // 삭제 누르면 cmValidatio = 1 -> 0으로 update
+                let updateModel = CommentInsertUpdateModel() // 인스턴스 생성
+                updateModel.UpdateItems(cmSeqno: item.cmSeqno!)
+
+                // 댓글 테이블 다시 불러옴
+                let commentListQueryModel = CommentListQueryModel()
+                commentListQueryModel.delegate = self
+                commentListQueryModel.commentListdownloadItems(ctSeqno: receive_ctSeqno)
+            }
         }
+
 //        else if editingStyle == .insert {
 //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
 //        }
