@@ -26,9 +26,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tvReviewList.dataSource = self
         self.tvReviewList.rowHeight = 115
         
+        let uSeq = UserDefaults.standard.integer(forKey: "uSeqno")
+        let prdSeq = UserDefaults.standard.integer(forKey: "prdSeqno")
+        
         let queryModel = prdReviewQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(prdSeqno: "1", uSeqno: "2")
+        queryModel.downloadItems(prdSeqno: String(prdSeq), uSeqno: String(uSeq))
         
     }
 

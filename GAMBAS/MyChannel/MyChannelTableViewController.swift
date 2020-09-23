@@ -27,6 +27,8 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
     @IBOutlet weak var lblLJHProductPrice: UILabel!
     
     @IBOutlet var tvLJHContentsList: UITableView!
+    
+    var uSeqno = ""
         
     var channelSeqno = ""
     var channelContent = ""
@@ -60,6 +62,8 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+        
         self.MyContentsListSearchBar.delegate = self
         self.tvLJHContentsList.delegate = self
         self.tvLJHContentsList.dataSource = self
@@ -68,15 +72,17 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         // 인스턴트 만들어서 구동시켜야지.
         let myChannelSelect = MyChannelSelect()
         myChannelSelect.delegate = self
-        myChannelSelect.downloadItem_myChannel(userSeqno: "1") // 절대값***
+        myChannelSelect.downloadItem_myChannel(userSeqno: uSeqno)
         
         let myProductSelect = MyProductSelect()
         myProductSelect.delegate = self
-        myProductSelect.downloadItem_myProduct(channelSeqno: "1") // 절대값***
+        myProductSelect.downloadItem_myProduct(channelSeqno: uSeqno)
         
         let myContentsSelect = MyContentsSelect()
         myContentsSelect.delegate = self
-        myContentsSelect.downloadItem_myContents(productSeqno: "1") // 절대값***
+        myContentsSelect.downloadItem_myContents(productSeqno: uSeqno)
+    
+        self.tvLJHContentsList.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         print("viewDidLoad()")
     }
@@ -255,7 +261,7 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         
         let myChannelSelect = MyChannelSelect()
         myChannelSelect.delegate = self
-        myChannelSelect.downloadItem_myChannel(userSeqno: "1") // 절대값***
+        myChannelSelect.downloadItem_myChannel(userSeqno: uSeqno) // 절대값***
         
         let myProductSelect = MyProductSelect()
         myProductSelect.delegate = self

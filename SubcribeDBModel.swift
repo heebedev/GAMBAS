@@ -40,6 +40,19 @@ class SubscribeDBModel: NSObject{
     var ctValidation: String?
     var ctReleaseDate: String?
     
+    // contentview like 추가
+    var countlikecontents: String?
+    var checkmylikecontents: String?
+    
+    // 댓글 리스트 list 추가
+    var cmSeqno: String?
+    var cmcontext: String?
+    var cmRegistDate: String?
+    var cmValidation: String?
+    var uName: String?
+    
+    
+    
     //Empty Constructor
     override init() {
     }
@@ -67,7 +80,7 @@ class SubscribeDBModel: NSObject{
         self.cgName = cgName
     }
     
-    // Constructor : SubsList
+    // Constructor : contetns List
     init(ctSeqno: String, ctTitle:String, ctContext:String, ctfile:String, ctRegistDate: String, ctValidation:String, prdSeqno:String, ctReleaseDate:String) {
         self.ctSeqno = ctSeqno
         self.ctTitle = ctTitle
@@ -77,6 +90,32 @@ class SubscribeDBModel: NSObject{
         self.ctValidation = ctValidation
         self.prdSeqno = prdSeqno
         self.ctReleaseDate = ctReleaseDate
+    }
+    
+    // Constructor : contetns View (좋아요 갯수 포함)
+    init(ctSeqno: String, ctTitle:String, ctContext:String, ctfile:String, ctRegistDate: String, ctValidation:String, prdSeqno:String, ctReleaseDate:String, countlikecontents:String, checkmylikecontents: String) {
+        self.ctSeqno = ctSeqno
+        self.ctTitle = ctTitle
+        self.ctContext = ctContext
+        self.ctfile = ctfile
+        self.ctRegistDate = ctRegistDate
+        self.ctValidation = ctValidation
+        self.prdSeqno = prdSeqno
+        self.ctReleaseDate = ctReleaseDate
+        self.countlikecontents = countlikecontents
+        self.checkmylikecontents = checkmylikecontents
+        
+    }
+    
+    // Constructor : 댓글리스트
+    init(cmSeqno: String, cmcontext:String, cmRegistDate:String, cmValidation:String, ctSeqno: String, uSeqno:String, uName:String) {
+        self.cmSeqno = cmSeqno
+        self.cmcontext = cmcontext
+        self.cmRegistDate = cmRegistDate
+        self.cmValidation = cmValidation
+        self.ctSeqno = ctSeqno
+        self.uSeqno = uSeqno
+        self.uName = uName
     }
     
     

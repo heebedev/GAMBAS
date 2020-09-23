@@ -48,6 +48,7 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     
     func receiveItems(_ prdSeq:String){
         self.prdSeqno = prdSeq
+        
     }
     
     func itemDownloaded(items: NSArray) {
@@ -68,6 +69,7 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         
         imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
             if error != nil {
+                self.ivPrdImage.image = UIImage(named: "appstore.png")
             } else {
                 self.ivPrdImage.image = UIImage(data: data!)
             }
@@ -111,6 +113,7 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     
     
     @IBAction func btnClose(_ sender: UIButton) {
+        UserDefaults.standard.removeObject(forKey: "prdSeqno")
         dismiss(animated: true, completion: nil)
     }
     

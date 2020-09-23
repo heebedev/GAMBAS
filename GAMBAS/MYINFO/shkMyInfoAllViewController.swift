@@ -20,4 +20,8 @@ class shkMyInfoAllViewController: UIViewController {
     
     @IBAction func btnSKHInfo(_ sender: Any) {
     }
+    
+    
+    
+    
 }

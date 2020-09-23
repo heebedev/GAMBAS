@@ -36,20 +36,19 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
         contentsListFeedItem = items
         self.contentsListTableView.reloadData()
     }
-   
+    
     // table 뷰에서 함수 이름으로 데이터를 넘겨 줄 것임. 여기서 함수 이름 정의 먼저하고 -> table뷰로 이동!
     func subsInfoReceiveItems(_ prdSeqno:String){
-         receive_prdSeqno = prdSeqno
-       
+        receive_prdSeqno = prdSeqno
     }
     
     
     
     // DB에서 다시 읽어 들이기
     override func viewWillAppear(_ animated: Bool) {
-       let contentsListQueryModel = ContentsListQueryModel()
-               contentsListQueryModel.delegate = self
-               contentsListQueryModel.contentsListdownloadItems(prdSeqno: receive_prdSeqno)
+        let contentsListQueryModel = ContentsListQueryModel()
+        contentsListQueryModel.delegate = self
+        contentsListQueryModel.contentsListdownloadItems(prdSeqno: receive_prdSeqno)
     }
     
     
@@ -60,33 +59,33 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return contentsListFeedItem.count
     }
-
-
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contentsListCell", for: indexPath) as! ContentsListTableViewCell
-
+        
         // Configure the cell...
         let item: SubscribeDBModel = contentsListFeedItem[indexPath.row] as! SubscribeDBModel // DB 모델타입으로 바꾸고, data 뽑아 쓸 수 있음
-
+        
         //text
         cell.lbl_ctTitle?.text = "\(item.ctTitle!)"
         
-        // 날짜만 자르기 
+        // 날짜+시간만 자르기 
         let formatReleaseDate = "\(item.ctReleaseDate!)"
         let endIdx: String.Index = formatReleaseDate.index(formatReleaseDate.startIndex, offsetBy: 10)
-
+        
         let result = String(formatReleaseDate[...endIdx])
         cell.lbl_ctReleaseDate?.text = result
-
+        
         return cell
     }
     
-   
+    
     
     /*
      // Override to support conditional editing of the table view.
@@ -131,26 +130,24 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "sgContentsList"{
+        if segue.identifier == "sgDetailContents"{
             let cell = sender as! UITableViewCell
             let indexPath = self.contentsListTableView.indexPath(for: cell) // 몇 번쨰 클릭?
-
+            
             let contentsListView = segue.destination as! ContentsViewController // 뷰컨트롤러 목적지
             let item: SubscribeDBModel = contentsListFeedItem[(indexPath! as NSIndexPath).row] as! SubscribeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
             
             // 필요한정보 빼와서
-            let prdSeqno = String(item.ctSeqno!)
+            let ctSeqno = String(item.ctSeqno!)
+            let prdSeqno = String(item.prdSeqno!)
             
             
-            // ctSeqno 보내줌
-            // contentsListView.contentsInfoReceiveItems(ctSeqno) // 펑션만들기
-            
+            // ctSeqno, prdSeqno 보내
+            contentsListView.contentsInfoReceiveItems(ctSeqno, prdSeqno: prdSeqno) // 펑션만들기
         }
-        
     }
-    
 }
-    
+
 
 
 // table view cell

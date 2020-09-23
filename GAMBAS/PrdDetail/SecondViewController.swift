@@ -23,9 +23,12 @@ class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let uSeq = UserDefaults.standard.integer(forKey: "uSeqno")
+        let prdSeq = UserDefaults.standard.integer(forKey: "prdSeqno")
+        
         let queryModel = prdDetailQueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(prdSeqno: "1", uSeqno: "1")
+        queryModel.downloadItems(prdSeqno: String(prdSeq), uSeqno: String(uSeq))
         // Do any additional setup after loading the view.
     }
     
@@ -45,7 +48,7 @@ class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
         
         imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
             if error != nil {
-                
+                self.ivChImage.image = UIImage(named: "emptyImage.png")
             } else {
                 self.ivChImage.image = UIImage(data: data!)
             }

@@ -106,7 +106,7 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         
         imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
             if error != nil {
-                
+                cell.imgView?.image = UIImage(named: "emptyImage.png")
             } else {
                 cell.imgView?.image = UIImage(data: data!)
             }
@@ -170,6 +170,7 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         // 필요한 값 넘겨줌
         let prdSeqno = String(item.prdSeqno!)
         
+        UserDefaults.standard.set(prdSeqno, forKey: "prdSeqno")
         
         // 디테일뷰에 넣어줌
         detailVC.receiveItems(prdSeqno)
