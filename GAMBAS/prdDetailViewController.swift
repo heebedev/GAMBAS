@@ -38,12 +38,8 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         
         formatter.dateFormat = "yyyy-MM-dd"
         
+        
     }
-    
-    func backAction() -> Void {
-        self.navigationController?.popViewController(animated: true)
-        }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -87,6 +83,7 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         checkAlert.addAction(onAction)
         present(checkAlert, animated: true, completion: nil)
     }
+    
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{
             container!.segueIdentifierReceivedFromParent("second")
@@ -111,4 +108,11 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
             container.animationDurationWithOptions = (0.5, .transitionCrossDissolve)
         }
     }
+    
+    
+    @IBAction func btnClose(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

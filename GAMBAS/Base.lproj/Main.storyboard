@@ -358,11 +358,10 @@
         <!--NOTICE-->
         <scene sceneID="DiF-Ae-oSo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pB8-2f-grK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pB8-2f-grK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="NOTICE" id="p8e-Sz-zZf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cmT-gM-DIf">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -972,11 +971,10 @@
         <!--SUBSCRIBE-->
         <scene sceneID="hg1-Bg-Ytd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zfq-el-cqf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zfq-el-cqf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SUBSCRIBE" id="qbz-EP-s7U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X1t-0s-bWw">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1338,7 +1336,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Bn-Ao-See">
-                                <rect key="frame" x="0.0" y="88" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="900"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ym2-0L-qv1">
@@ -1454,13 +1452,19 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="yLP-ei-ecz"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Kj4-ae-9FJ"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-Hw-cIr">
+                                <rect key="frame" x="355" y="52" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="닫기"/>
+                                <connections>
+                                    <action selector="btnClose:" destination="lMy-iS-TcV" eventType="touchUpInside" id="x6m-zJ-11k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7c0-dD-KsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="QMl-KT-SUt">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="D7J-o5-gjA"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="QMl-KT-SUt"/>
                     <connections>
                         <outlet property="btnSubs" destination="h8x-1M-zdv" id="lg1-xB-i0H"/>
                         <outlet property="ivPrdImage" destination="ZSI-wE-uPu" id="VOV-3p-SOf"/>
@@ -1641,11 +1645,10 @@
         <!--HOME-->
         <scene sceneID="gnx-EO-BqN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zXV-Ff-RfS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="zXV-Ff-RfS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="HOME" id="Jex-02-Cn3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3q2-5H-ZOo">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1656,24 +1659,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NpA-Ak-ZmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1647.826086956522" y="-1437.0535714285713"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="wB5-N6-L1K">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RLr-Uo-qbK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tqB-Jv-nJJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lMy-iS-TcV" kind="relationship" relationship="rootViewController" id="045-kN-h65"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ar8-Gf-skD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4713.04347826087" y="-2280.1339285714284"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
