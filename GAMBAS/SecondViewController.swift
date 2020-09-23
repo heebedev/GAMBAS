@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
     
@@ -17,9 +18,7 @@ class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
     @IBOutlet weak var lblChGrade: UILabel!
     @IBOutlet weak var tvPrdContext: UITextView!
     @IBOutlet weak var ivScImage: UIImageView!
-    @IBOutlet weak var ivScImage2: UIImageView!
     @IBOutlet weak var lblScTitle: UILabel!
-    @IBOutlet weak var lblScTitle2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +36,32 @@ class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
         lblChGrade.text = (item.chGrade!)
         tvPrdContext.text = (item.prdContext!)
         lblScTitle.text = (item.sctTitle!)
-
+        
+        //Firebase image download
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        let imgRef = storageRef.child("chImage").child(item.chImage!)
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                
+            } else {
+                self.ivChImage.image = UIImage(data: data!)
+            }
         }
+        
+        let spImgRef = storageRef.child("spContents").child(item.sctImage!)
+        
+        spImgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                
+            } else {
+                self.ivScImage.image = UIImage(data: data!)
+            }
+        }
+        
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -46,15 +69,15 @@ class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

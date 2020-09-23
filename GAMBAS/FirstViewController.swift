@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 
@@ -55,6 +56,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         if(Int(item.uSeqCount!) == 0){
             btnAddReview.isHidden = true
         }
+        
         cell.lblRTitle.text = (item.rTitle!)
         cell.lblUName.text = (item.uName!)
         cell.lblRGrade.text = (item.rGrade!)

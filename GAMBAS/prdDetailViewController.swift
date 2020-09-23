@@ -10,10 +10,12 @@ import UIKit
 import Firebase
 
 class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
-
+    
     var container: ContainerViewController!
     var feedItem: NSArray = NSArray()
     let formatter = DateFormatter()
+    
+    
     
     var prdSeqno:String?
     let uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
@@ -32,11 +34,16 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         queryModel.delegate = self
         queryModel.downloadItems(prdSeqno: prdSeqno!, uSeqno: uSeqno)
         container!.segueIdentifierReceivedFromParent("second")
-
+        
         
         formatter.dateFormat = "yyyy-MM-dd"
-
+        
     }
+    
+    func backAction() -> Void {
+        self.navigationController?.popViewController(animated: true)
+        }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,7 +52,7 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     
     func receiveItems(_ prdSeq:String){
         self.prdSeqno = prdSeq
-       }
+    }
     
     func itemDownloaded(items: NSArray) {
         feedItem = items
@@ -60,19 +67,19 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         //Firebase image download
         let storage = Storage.storage()
         let storageRef = storage.reference()
+        
         let imgRef = storageRef.child("prdImage").child(item.prdImage!)
-
+        
         imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
             if error != nil {
-
             } else {
                 self.ivPrdImage.image = UIImage(data: data!)
             }
         }
         
     }
-
-
+    
+    
     @IBAction func btnSubs(_ sender: UIButton) {
         let current_date_string = formatter.string(from: Date())
         let checkAlert = UIAlertController(title: "구독 하시겠습니까?", message: "가격 : \(lblPrdPrice.text!)/월\n구독일자 : \(current_date_string)" , preferredStyle: UIAlertController.Style.alert)
@@ -85,18 +92,18 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
             container!.segueIdentifierReceivedFromParent("second")
         }else{
             container!.segueIdentifierReceivedFromParent("first")
-
+            
         }
     }
     
-
-//extension prdDetailViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print("Current X,Y are X:\(scrollView.contentOffset.x), Y: \(scrollView.contentOffset.y)")
-//        let currentPage = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
-//        print("current page : \(currentPage)")
-//    }
-//}
+    
+    //extension prdDetailViewController: UIScrollViewDelegate {
+    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //        print("Current X,Y are X:\(scrollView.contentOffset.x), Y: \(scrollView.contentOffset.y)")
+    //        let currentPage = Int(round(scrollView.contentOffset.x / scrollView.frame.size.width))
+    //        print("current page : \(currentPage)")
+    //    }
+    //}
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "container"{
             container = (segue.destination as! ContainerViewController)
