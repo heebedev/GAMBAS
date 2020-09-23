@@ -44,6 +44,7 @@ class CategoryQueryModel: NSObject{
         // jsp에서 데이터에 한글이 들어갈 경우
         if let encodedPath = urlPath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let url:URL = URL(string: encodedPath) {
+            print(url)
             let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
             //print(url)
             let task = defaultSession.dataTask(with: url) {(data, response, error) in

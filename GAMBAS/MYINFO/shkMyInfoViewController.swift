@@ -8,7 +8,22 @@
 
 import UIKit
 
-class shkMyInfoViewController: UIViewController {
+class shkMyInfoViewController: UIViewController, SKHmyInfoQueryModelProtocol {
+    
+    var feedItem: NSArray = NSArray()
+    
+    func itemDownloaded(items: NSArray) {
+        feedItem = items
+        
+        for i in 0..<feedItem.count {
+            let item: SKHmyInfoModel = feedItem[i] as! SKHmyInfoModel
+            lbmyInfoName.text = item.ivSKHname
+            lbmyInfoEmail.text = item.ivSKHemail
+            lbmyInfoPhone.text = item.ivSKHphone
+            lbmyInfoInterest.text = item.ivSKHinterestCategory
+        }
+    }
+    
 
     @IBOutlet var lbmyInfoName: UITextField!
     @IBOutlet var lbmyInfoEmail: UITextField!
@@ -20,16 +35,27 @@ class shkMyInfoViewController: UIViewController {
         // 내 정보에서 이름 수정 불가
         lbmyInfoName.isUserInteractionEnabled = false
 
-        // Do any additional setup after loading the view.
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let queryModel = QueryModel()
+        queryModel.delegate = self
+        queryModel.downloadItems(seq: String(LOGED_IN_SEQ))
     }
     
     @IBAction func barbtnMyInfoUpdate(_ sender: UIBarButtonItem) {
-        let email = lbmyInfoName.text
+        let email = lbmyInfoEmail.text
         let emailCheck = isEmail(email: email!)
         let phone = lbmyInfoPhone.text
         let phoneCheck = isPhone(candidate: phone!)
-        // 유저 구분을 위한 값 저장
-        let seq = String(LOGED_IN_SEQ)
+                
+        if !emailCheck {
+            let emailAlert = UIAlertController(title: "확인 요청", message: "이메일 확인 부탁드립니다", preferredStyle: UIAlertController.Style.alert)
+            let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            emailAlert.addAction(onAction)
+            present(emailAlert, animated: true, completion: nil)
+        }
         
         if !phoneCheck {
             let phoneAlert = UIAlertController(title: "확인 요청", message: "휴대폰 번호 확인 부탁드립니다", preferredStyle: UIAlertController.Style.alert)
@@ -38,22 +64,21 @@ class shkMyInfoViewController: UIViewController {
             present(phoneAlert, animated: true, completion: nil)
         }
         
-        if !emailCheck {
-            let emailAlert = UIAlertController(title: "확인 요청", message: "휴대폰 번호 확인 부탁드립니다", preferredStyle: UIAlertController.Style.alert)
-            let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-            emailAlert.addAction(onAction)
-            present(emailAlert, animated: true, completion: nil)
-        }
-        
         let updateModel = SKHmyInfoUpdateModel()
-        let result = updateModel.SKHmyInfoUpdateItems(email: email!, phone: phone!, seq: seq)
+        let result = updateModel.SKHmyInfoUpdateItems(email: email!, phone: phone!, seq: String(LOGED_IN_SEQ))
         
         if result {
             let resultAlert = UIAlertController(title: "완료", message: "수정이 완료되었습니다", preferredStyle: UIAlertController.Style.alert)
-            let onAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+            let onAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
+                guard let uvc = self.storyboard?.instantiateViewController(identifier: "myInfoAllView")
+                    else {
+                        return
+                }
+                uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+                self.navigationController?.pushViewController(uvc, animated: true)
+            })
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)
-            _ = navigationController?.popViewController(animated: true)
         } else {
             let resultAlert = UIAlertController(title: "실패", message: "에러가 발생 되었습니다.", preferredStyle: UIAlertController.Style.alert)
             let onAction = UIAlertAction(title: "failed", style: UIAlertAction.Style.default, handler: nil)

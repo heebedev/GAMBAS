@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 var uSeqno: String?  // test
 
@@ -75,38 +76,19 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
         // Configure the cell...
         let item: SubscribeDBModel = subsListFeedItem[indexPath.row] as! SubscribeDBModel 
         
-        // 이미지: ftp
-        let url = URL(string: "http://localhost:8080/ftp/\(item.prdImage!)")!
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        //Firebase image download
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("prdImage").child(item.prdImage!)
+        print("Subs Table View \(item.prdImage!)")
         
-        let task = defaultSession.dataTask(with: url){(data, response, error) in
-            if error != nil{
-                print("Failed to download data")
-            }else{
-                print("ftp prdImage is downloaded")
-                DispatchQueue.main.async {
-                    cell.iv_prdImage?.image = UIImage(data: data!)
-                    // jpg
-                    if let image = UIImage(data: data!){
-                        if let data = image.jpegData(compressionQuality: 0.8){// 일반적으로 80% 압축
-                            let filename = self.getDecumentDirectory().appendingPathComponent("subs prdImage.jpg")
-                            try? data.write(to: filename)
-                            print("prdImage.jpg is writed")
-                        }
-                    }
-                    // png
-                    if let image = UIImage(data: data!){
-                        if let data = image.pngData() {//
-                            let filename = self.getDecumentDirectory().appendingPathComponent("subs prdImage.png")
-                            try? data.write(to: filename)
-                            print("prdImage.png is writed")
-                            
-                        }
-                    }
-                }
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+                cell.iv_prdImage?.image = UIImage(named: "emptyImage.png")
+            } else {
+                cell.iv_prdImage?.image = UIImage(data: data!)
             }
         }
-        task.resume() // task 실행
         
         //text
         cell.lbl_prdTitle?.text = "\(item.prdTitle!)"

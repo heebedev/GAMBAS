@@ -651,10 +651,11 @@
         <!--NOTICE-->
         <scene sceneID="DiF-Ae-oSo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pB8-2f-grK" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pB8-2f-grK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="NOTICE" id="p8e-Sz-zZf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cmT-gM-DIf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -840,7 +841,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvC-Xb-4Id">
-                                <rect key="frame" x="-8" y="44" width="422" height="852"/>
+                                <rect key="frame" x="-8" y="88" width="422" height="808"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BOk-jJ-a3d">
                                         <rect key="frame" x="0.0" y="0.0" width="422" height="1447.5"/>
@@ -1047,6 +1048,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ContentsView" id="VDc-pd-l9D"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btn_liked" destination="iWo-Ph-ZIX" id="CYV-d6-bD0"/>
                         <outlet property="btn_unlike" destination="fjh-L3-DEn" id="oQY-if-EDf"/>
@@ -1065,7 +1067,7 @@
         <!--Shk My Info All View Controller-->
         <scene sceneID="A1H-yK-bm5">
             <objects>
-                <viewController id="jxZ-NV-MC8" customClass="shkMyInfoAllViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myInfoAllView" id="jxZ-NV-MC8" customClass="shkMyInfoAllViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nNu-cN-H4c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1123,10 +1125,76 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6K5-Z4-ZGv">
-                                <rect key="frame" x="20" y="304" width="365" height="194"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0WE-rO-goQ">
+                                <rect key="frame" x="0.0" y="304" width="414" height="205"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3w7-Hl-gRl">
+                                    <size key="itemSize" width="258" height="205"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uiG-Wp-5fx">
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="205"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qXH-xN-87x">
+                                            <rect key="frame" x="0.0" y="0.0" width="258" height="205"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2TD-vK-N41">
+                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="144"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Law-lk-fnZ">
+                                                    <rect key="frame" x="15" y="145" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="258" height="205"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zdk-If-zF5">
+                                <rect key="frame" x="0.0" y="566" width="414" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="spK-Pd-eN5">
+                                    <size key="itemSize" width="258" height="205"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="E6d-ON-xhu">
+                                        <rect key="frame" x="0.0" y="0.0" width="258" height="205"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fsj-TM-qje">
+                                            <rect key="frame" x="0.0" y="0.0" width="258" height="205"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i23-du-Wad">
+                                                    <rect key="frame" x="0.0" y="0.0" width="258" height="144"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5v-lL-8Yk">
+                                                    <rect key="frame" x="15" y="145" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="258" height="205"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a6H-jR-1zj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1146,17 +1214,17 @@
         <!--결제내역-->
         <scene sceneID="Rls-Nj-z1w">
             <objects>
-                <tableViewController id="HEy-bp-uc2" sceneMemberID="viewController">
+                <tableViewController id="HEy-bp-uc2" customClass="SKHcashTableViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sq9-AI-P4T">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCash" rowHeight="57" id="bJ3-gg-5Ci">
-                                <rect key="frame" x="0.0" y="28" width="414" height="57"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCash" rowHeight="120" id="bJ3-gg-5Ci">
+                                <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJ3-gg-5Ci" id="Cbr-zu-Lrv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1167,6 +1235,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="결제내역" id="u45-Vu-hRm"/>
+                    <connections>
+                        <outlet property="listCashView" destination="sq9-AI-P4T" id="XkJ-DS-U2m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZW-Yi-CGF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1282,16 +1353,16 @@
         <!--회원 탈퇴-->
         <scene sceneID="uh2-fj-tvf">
             <objects>
-                <viewController id="TOi-jW-OeU" sceneMemberID="viewController">
+                <viewController id="TOi-jW-OeU" customClass="SKHmyInfoDeleteViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P2u-na-H3Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YjF-Wn-Hcb">
-                                <rect key="frame" x="20" y="126" width="374" height="65"/>
+                                <rect key="frame" x="20" y="126" width="374" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">지금까지 감바스를 이용해 주셔서 감사합니다.                               회원 탈퇴를 하시게 되면 모든 정보가 사라지게 되며,                  복구가 불가능하니 이 점 꼭 명심하시길 바랍니다.                       </string>
+                                <string key="text">지금까지 감바스를 이용해 주셔서 감사합니다.                               회원 탈퇴를 하시게 되면 모든 정보가 사라지게 되며,                  복구가 불가능하니 이 점 꼭 명심하시길 바라며                                                비밀번호 확인 후 탈퇴가 진행됩니다.</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1302,16 +1373,19 @@
                                 <state key="normal" title="탈퇴하기">
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnUserDelete:" destination="TOi-jW-OeU" eventType="touchUpInside" id="RL2-S0-dho"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="비밀 번호 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XL6-pv-b1Y">
-                                <rect key="frame" x="20" y="238" width="98" height="21"/>
+                                <rect key="frame" x="20" y="251" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="회원 탈퇴를 위해 비밀번호를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGn-Lj-ZVJ">
-                                <rect key="frame" x="21" y="284" width="373" height="34"/>
+                                <rect key="frame" x="21" y="297" width="373" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1321,10 +1395,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="회원 탈퇴" id="3Av-IG-gpJ"/>
+                    <connections>
+                        <outlet property="lbPwCheck" destination="pGn-Lj-ZVJ" id="4Er-MQ-MTJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgL-5Z-8Oh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4928" y="1377"/>
+            <point key="canvasLocation" x="4379.7101449275369" y="643.52678571428567"/>
         </scene>
         <!--비밀번호 확인-->
         <scene sceneID="wmb-60-uGQ">
@@ -1436,10 +1513,11 @@
         <!--SUBSCRIBE-->
         <scene sceneID="hg1-Bg-Ytd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zfq-el-cqf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zfq-el-cqf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SUBSCRIBE" id="qbz-EP-s7U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="X1t-0s-bWw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1551,11 +1629,11 @@
             <objects>
                 <viewController id="dYM-L6-9fS" customClass="HomeViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Leg-Xv-8xX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayh-Fx-O0e">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tUe-Eh-P7b">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1950"/>
@@ -1654,7 +1732,6 @@
                         <barButtonItem title="Item" id="cSX-j4-f0J"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="k43-dA-sLE"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="drawingView" destination="OEh-B4-nPT" id="zFe-St-b36"/>
                         <outlet property="musicView" destination="Agq-3w-0kf" id="BLx-yt-Uwe"/>
@@ -2122,10 +2199,11 @@
         <!--HOME-->
         <scene sceneID="gnx-EO-BqN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="zXV-Ff-RfS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zXV-Ff-RfS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="HOME" id="Jex-02-Cn3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="3q2-5H-ZOo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
