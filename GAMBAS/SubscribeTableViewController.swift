@@ -12,11 +12,11 @@ var uSeqno: String?  // test
 
 class SubscribeTableViewController: UITableViewController, SubsListQueryModelProtocol {
     
-
+    
     // 연결 //
     @IBOutlet var subsListTableView: UITableView!
     
-
+    
     // 변수 //
     // 받은 변수
     var subsListFeedItem: NSArray = NSArray()
@@ -25,12 +25,12 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         // static uSeqno
         uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
-        print("static uSeqno테스트", uSeqno!)
-        uSeqno = "1" // test
-        print("uSeqno테스트", uSeqno!)
+        //        print("static uSeqno테스트", uSeqno!)
+        //        uSeqno = "1" // test
+        //        print("uSeqno테스트", uSeqno!)
         
         //delegate 처리
         self.subsListTableView.delegate = self
@@ -49,30 +49,30 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
     
     // DB에서 다시 읽어 들이기
     override func viewWillAppear(_ animated: Bool) {
-       let subsListQueryModel = SubsListQueryModel()
+        let subsListQueryModel = SubsListQueryModel()
         subsListQueryModel.delegate = self
         subsListQueryModel.subsListdownloadItems(uSeqno: uSeqno!)
     }
     
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return subsListFeedItem.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: "subsListCell", for: indexPath) as! SubsListTableViewCell
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subsListCell", for: indexPath) as! SubsListTableViewCell
+        
         // Configure the cell...
-        let item: SubscribeDBModel = subsListFeedItem[indexPath.row] as! SubscribeDBModel // DB 모델타입으로 바꾸고, data 뽑아 쓸 수 있음
+        let item: SubscribeDBModel = subsListFeedItem[indexPath.row] as! SubscribeDBModel 
         
         // 이미지: ftp
         let url = URL(string: "http://localhost:8080/ftp/\(item.prdImage!)")!
@@ -116,75 +116,75 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
         
         return cell
     }
-
+    
     // write 위치 (스마트폰의)
     func getDecumentDirectory() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0] // 첫번째 값 앱에 설정한 것의 위치
     }
-
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+     if editingStyle == .delete {
+     // Delete the row from the data source
+     tableView.deleteRows(at: [indexPath], with: .fade)
+     } else if editingStyle == .insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }    
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          // Get the new view controller using segue.destination.
-          // Pass the selected object to the new view controller.
-          
-          if segue.identifier == "sgContentsList"{
-          let cell = sender as! UITableViewCell
-          let indexPath = self.subsListTableView.indexPath(for: cell) // 몇 번쨰 클릭?
-          
-          let contentsListView = segue.destination as! ContentsTableViewController // 뷰컨트롤러 목적지
-          let item: SubscribeDBModel = subsListFeedItem[(indexPath! as NSIndexPath).row] as! SubscribeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
-          
-          // 하나씩 빼와서
-          let prdSeqno = String(item.prdSeqno!)
-          
-          
-          // prdSeqno 보내줌
-          contentsListView.subsInfoReceiveItems(prdSeqno) // 펑션만들기 
-              
-          }
-
-      }
     
-
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "sgContentsList"{
+            let cell = sender as! UITableViewCell
+            let indexPath = self.subsListTableView.indexPath(for: cell) // 몇 번쨰 클릭?
+            
+            let contentsListView = segue.destination as! ContentsTableViewController // 뷰컨트롤러 목적지
+            let item: SubscribeDBModel = subsListFeedItem[(indexPath! as NSIndexPath).row] as! SubscribeDBModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
+            
+            // 하나씩 빼와서
+            let prdSeqno = String(item.prdSeqno!)
+            
+            
+            // prdSeqno 보내줌
+            contentsListView.subsInfoReceiveItems(prdSeqno) // 펑션만들기 
+            
+        }
+        
+    }
+    
+    
 }
 
 // table view cell 

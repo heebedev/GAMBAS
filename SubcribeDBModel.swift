@@ -52,6 +52,7 @@ class SubscribeDBModel: NSObject{
     var uName: String?
     
     
+    
     //Empty Constructor
     override init() {
     }

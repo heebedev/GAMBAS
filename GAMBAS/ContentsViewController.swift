@@ -29,7 +29,7 @@ class ContentsViewController: UIViewController, ContentsViewQueryModelProtocol, 
     
     // 댓글테이블
     @IBOutlet weak var tableview_comment: UITableView!
-   
+    
     
     
     // 변수 //
@@ -153,7 +153,7 @@ class ContentsViewController: UIViewController, ContentsViewQueryModelProtocol, 
         let cell = tableView.dequeueReusableCell(withIdentifier: "contentsViewCell", for: indexPath) as! ContentsViewTableViewCell
         
         // Configure the cell...
-        let item: SubscribeDBModel = commentListFeedItem[indexPath.row] as! SubscribeDBModel // DB 모델타입으로 바꾸고, data 뽑아 쓸 수 있음
+        let item: SubscribeDBModel = commentListFeedItem[indexPath.row] as! SubscribeDBModel
         
         //text
         cell.lbl_uName?.text = "\(item.uName!)"
@@ -163,41 +163,37 @@ class ContentsViewController: UIViewController, ContentsViewQueryModelProtocol, 
         let endIdx: String.Index = formatRegistDate.index(formatRegistDate.startIndex, offsetBy: 15)
         let result = String(formatRegistDate[...endIdx])
         cell.lbl_cmRegistDate?.text = result
-        print("댓글내용", item.cmcontext!)
+        //print("댓글내용", item.cmcontext!)
         cell.tv_cmcontext?.text = "\(item.cmcontext!)"
         
         return cell
     }
     
     
-
+    
     // 삭제 할때
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         // 몇번째인지 확인
         let item: SubscribeDBModel = commentListFeedItem[indexPath.row] as! SubscribeDBModel // DB 모델타입으로 바꾸고, data 뽑아 쓸 수 있음
-
+        
         // 댓글 쓴 사람과 일치할때 삭제하기
         if uSeqno == item.uSeqno {
             if editingStyle == .delete {
                 // Delete the row from the data source
-
+                
                 // 삭제 누르면 cmValidatio = 1 -> 0으로 update
                 let updateModel = CommentInsertUpdateModel() // 인스턴스 생성
                 updateModel.UpdateItems(cmSeqno: item.cmSeqno!)
-
+                
                 // 댓글 테이블 다시 불러옴
                 let commentListQueryModel = CommentListQueryModel()
                 commentListQueryModel.delegate = self
                 commentListQueryModel.commentListdownloadItems(ctSeqno: receive_ctSeqno)
             }
         }
-
-//        else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }
     }
-   
+    
     
     // 삭제시 Delete를 삭제(한글)로 바꿔주기:  추가
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {

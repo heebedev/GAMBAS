@@ -59,18 +59,19 @@ class SubsListQueryModel: NSObject{
     
     func parseJSON(_ data: Data){
         var jsonResult = NSArray()
-           
+        
         do{
             jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
         }catch let error as NSError{
             print("subsList",error)
         }
-            
+        
         var jsonElement = NSDictionary()
         let locations = NSMutableArray()
         
         for i in 0..<jsonResult.count{
-            jsonElement = jsonResult[i] as! NSDictionary // 제일 처음 중괄호 묶여있는 데이터 jsonResult[i]> 0번으로 들어와있고 > Dictionary로 바꿔주고
+            jsonElement = jsonResult[i] as! NSDictionary
+            
             let query = SubscribeDBModel()
             
             if  let subsSeqno = jsonElement["subsSeqno"] as? String,
@@ -136,7 +137,7 @@ class ContentsListQueryModel: NSObject{
     var urlPath = "http://localhost:8080/gambas/contentsListQuery.jsp"
     
     func contentsListdownloadItems(prdSeqno: String?){
-        print("받은prdSeqno", prdSeqno!)
+        //print("받은prdSeqno", prdSeqno!)
         // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         let urlAdd = "?prdSeqno=\(String(prdSeqno!))"
         urlPath += urlAdd
@@ -159,13 +160,13 @@ class ContentsListQueryModel: NSObject{
     
     func parseJSON(_ data: Data){
         var jsonResult = NSArray()
-           
+        
         do{
             jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
         }catch let error as NSError{
             print("contentslist",error)
         }
-            
+        
         var jsonElement = NSDictionary()
         let locations = NSMutableArray()
         
@@ -191,7 +192,7 @@ class ContentsListQueryModel: NSObject{
                 query.ctValidation = ctValidation
                 query.prdSeqno = prdSeqno
                 query.ctReleaseDate = ctReleaseDate
-               
+                
             }
             
             // 배열에 넣어줌
@@ -215,7 +216,7 @@ class ContentsViewQueryModel: NSObject{
     var urlPath = "http://localhost:8080/gambas/contentsViewQuery.jsp"
     
     func contentsViewdownloadItems(ctSeqno: String?, uSeqno: String?){
-        print("받은ctSeqno", ctSeqno!, "받은 uSeqno", uSeqno!)
+        //print("받은ctSeqno", ctSeqno!, "받은 uSeqno", uSeqno!)
         // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         let urlAdd = "?ctSeqno=\(String(ctSeqno!))&uSeqno=\(String(uSeqno!))"
         urlPath += urlAdd
@@ -238,13 +239,13 @@ class ContentsViewQueryModel: NSObject{
     
     func parseJSON(_ data: Data){
         var jsonResult = NSArray()
-           
+        
         do{
             jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
         }catch let error as NSError{
             print("contentsView parse error",error)
         }
-            
+        
         var jsonElement = NSDictionary()
         let locations = NSMutableArray()
         
@@ -297,7 +298,7 @@ class CommentListQueryModel: NSObject{
     var urlPath = "http://localhost:8080/gambas/commentListQuery.jsp" //
     
     func commentListdownloadItems(ctSeqno: String?){
-        print("받은ctSeqno", ctSeqno!)
+        //print("받은ctSeqno", ctSeqno!)
         // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         let urlAdd = "?ctSeqno=\(String(ctSeqno!))"
         urlPath += urlAdd
@@ -320,13 +321,13 @@ class CommentListQueryModel: NSObject{
     
     func parseJSON(_ data: Data){
         var jsonResult = NSArray()
-           
+        
         do{
             jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
         }catch let error as NSError{
             print("comment list parse error",error)
         }
-            
+        
         var jsonElement = NSDictionary()
         let locations = NSMutableArray()
         
