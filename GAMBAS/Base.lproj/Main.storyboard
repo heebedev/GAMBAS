@@ -239,8 +239,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAQ-fS-5qf">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="BAQ-fS-5qf">
+                                    <rect key="frame" x="8" y="0.0" width="332" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -253,6 +253,14 @@
                                     <state key="normal" title="컨텐츠 추가하기"/>
                                     <connections>
                                         <segue destination="pDH-Pt-KRm" kind="show" identifier="sgMyContentsAdd" id="Y7A-pI-zbm"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEb-NY-f4X">
+                                    <rect key="frame" x="363" y="7" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="닫기"/>
+                                    <connections>
+                                        <action selector="btnClose:" destination="w9q-xI-gaA" eventType="touchUpInside" id="sAP-Vv-S8g"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -332,7 +340,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rce-dt-PyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5135" y="-1533"/>
+            <point key="canvasLocation" x="5134.7826086956529" y="-1533.4821428571429"/>
         </scene>
         <!--채널 정보 수정-->
         <scene sceneID="0lB-92-fid">
@@ -380,6 +388,58 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mg-Jm-Wt6">
+                                <rect key="frame" x="14" y="104" width="96" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnLJHChannelEditImage:" destination="Noh-hj-igc" eventType="touchUpInside" id="zaN-yt-fde"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="채널 내용" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrJ-Kk-Ag2">
+                                <rect key="frame" x="124" y="188" width="270" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtZ-u6-R9n">
+                                <rect key="frame" x="20" y="259" width="96" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnLJHProductEditImage:" destination="Noh-hj-igc" eventType="touchUpInside" id="GLM-cV-hqX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHm-am-kgn">
+                                <rect key="frame" x="224" y="747" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="상품 제거">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLJHProductDelete:" destination="Noh-hj-igc" eventType="touchUpInside" id="Z1c-B0-69A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsB-Lg-3HC">
+                                <rect key="frame" x="224" y="747" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="상품 등록"/>
+                                <connections>
+                                    <action selector="btnLJHProductRegister:" destination="Noh-hj-igc" eventType="touchUpInside" id="f0i-N0-ppK"/>
+                                    <segue destination="Pkr-VQ-hkM" kind="show" identifier="sgMyProductRegister" id="Geg-PC-8z2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-xi-iJy">
+                                <rect key="frame" x="115" y="743" width="67" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="수정 완료"/>
+                                <connections>
+                                    <action selector="btnLJHChannelEditOk:" destination="Noh-hj-igc" eventType="touchUpInside" id="O8j-Wn-c99"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="상품 등록 날짜" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-8w-ivt">
                                 <rect key="frame" x="124" y="388" width="270" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -404,49 +464,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mg-Jm-Wt6">
-                                <rect key="frame" x="14" y="104" width="96" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="btnLJHChannelEditImage:" destination="Noh-hj-igc" eventType="touchUpInside" id="zaN-yt-fde"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="채널 내용" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrJ-Kk-Ag2">
-                                <rect key="frame" x="124" y="188" width="270" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtZ-u6-R9n">
-                                <rect key="frame" x="20" y="259" width="96" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="btnLJHProductEditImage:" destination="Noh-hj-igc" eventType="touchUpInside" id="GLM-cV-hqX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHm-am-kgn">
-                                <rect key="frame" x="169" y="745" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="상품 제거">
-                                    <color key="titleColor" systemColor="systemRedColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnLJHProductDelete:" destination="Noh-hj-igc" eventType="touchUpInside" id="Z1c-B0-69A"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsB-Lg-3HC">
-                                <rect key="frame" x="169" y="745" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="상품 등록"/>
-                                <connections>
-                                    <action selector="btnLJHProductRegister:" destination="Noh-hj-igc" eventType="touchUpInside" id="f0i-N0-ppK"/>
-                                    <segue destination="Pkr-VQ-hkM" kind="show" identifier="sgMyProductRegister" id="Geg-PC-8z2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="swS-RL-BEu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -831,8 +848,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNI-TU-dXq">
                                                 <rect key="frame" x="0.0" y="0.0" width="422" height="500"/>
                                                 <subviews>
-                                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtZ-1c-i4h">
-                                                        <rect key="frame" x="10" y="10" width="402" height="480"/>
+                                                    <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XtZ-1c-i4h">
+                                                        <rect key="frame" x="8" y="10" width="414" height="480"/>
                                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <wkWebViewConfiguration key="configuration">
                                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -1043,7 +1060,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zo-bR-8nb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4609" y="-17"/>
+            <point key="canvasLocation" x="4607.2463768115949" y="-17.410714285714285"/>
         </scene>
         <!--Shk My Info All View Controller-->
         <scene sceneID="A1H-yK-bm5">

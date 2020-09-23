@@ -274,6 +274,12 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         print("viewWillAppear()")
     }
     
+    @IBAction func btnClose(_ sender: UIButton) {
+//        UserDefaults.standard.removeObject(forKey: "prdSeqno")
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
 }//----
 
 
