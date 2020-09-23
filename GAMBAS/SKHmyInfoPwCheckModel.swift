@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SkhmyInfoModelProtocol: class {
-    func itemDownloaded(items: String)
+    func itemDownloaded(items: Int)
 }
 
 class SkhmyInfoPwCheckModel: NSObject {
@@ -42,12 +42,12 @@ class SkhmyInfoPwCheckModel: NSObject {
             print(error)
         }
         var jsonElement = NSDictionary()
-        var resultCheck = ""
+        var resultCheck = 2
         
         for i in 0..<jsonResult.count {
             jsonElement = jsonResult[i] as! NSDictionary
             
-            if let count = jsonElement["check"] as? String {
+            if let count = jsonElement["check"] as? Int {
                 resultCheck = count
                 print("SKHmyInfoPWCHECK \(resultCheck)")
             }

@@ -1,28 +1,27 @@
 //
-//  SKHmyInfopwChangeModel.swift
+//  SKHmyInfoDeleteModel.swift
 //  GAMBAS
 //
-//  Created by 신경환 on 2020/09/19.
+//  Created by 신경환 on 2020/09/23.
 //  Copyright © 2020 TJ. All rights reserved.
 //
 
 import Foundation
 
-// 내 감바스 -> 내정보수정 -> 수정된 정보 업데이트 위해 사용
-
-class SKHmyInfopwChangeModel: NSObject {
+class SKHmyInfopwDeleteModel: NSObject {
     
-    var urlPath = "http://localhost:8080/gambas/SKHmyInfoPwChange.jsp"
+    var urlPath = "http://localhost:8080/gambas/SKHmyInfoUser_validation.jsp"
     
-    func SKHmyInfoUpdateItems(password: String, seq: String) -> Bool {
+    func SKHmyInfoUpdateItems(seq: String) -> Bool {
         var result: Bool = true
-        let urlAdd = "?uPassword=\(password)&uSeqno=\(seq)"
+        let urlAdd = "?uSeqno=\(seq)"
         
         urlPath += urlAdd
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         
         let url: URL = URL(string: urlPath)!
+        print("url \(url)")
         let defaultSesseion = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSesseion.dataTask(with: url) {(data, response, error) in

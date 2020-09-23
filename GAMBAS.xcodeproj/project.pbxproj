@@ -24,6 +24,10 @@
 		FA0BB6D52515B90800440FF4 /* SKHmyInfoPwCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */; };
 		FA0BB6D72516048900440FF4 /* SKHmyInfopwChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */; };
 		FA0BB6D9251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */; };
+		FA52729E251ADAF9003D3AA0 /* SKHcashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */; };
+		FA5272A4251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */; };
+		FA590E672519DA2F002021C4 /* SKHmyInfoQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */; };
+		FABC6DE82518877000274124 /* SKHmyInfoDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwCheckModel.swift; sourceTree = "<group>"; };
 		FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfopwChangeModel.swift; sourceTree = "<group>"; };
 		FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwChangeViewController.swift; sourceTree = "<group>"; };
+		FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHcashTableViewController.swift; sourceTree = "<group>"; };
+		FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoDeleteModel.swift; sourceTree = "<group>"; };
+		FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoQueryModel.swift; sourceTree = "<group>"; };
+		FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoDeleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,10 @@
 				FA0BB6D42515B90800440FF4 /* SKHmyInfoPwCheckModel.swift */,
 				FA0BB6D62516048900440FF4 /* SKHmyInfopwChangeModel.swift */,
 				FA0BB6D8251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift */,
+				FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */,
+				FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */,
+				FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */,
+				FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */,
 			);
 			path = GAMBAS;
 			sourceTree = "<group>";
@@ -278,11 +290,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0BB6D325159BAD00440FF4 /* SKHstatic.swift in Sources */,
+				FA5272A4251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift in Sources */,
+				FA52729E251ADAF9003D3AA0 /* SKHcashTableViewController.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
 				FA0BB6A42514521600440FF4 /* shkMyInfoViewController.swift in Sources */,
 				FA0BB6D72516048900440FF4 /* SKHmyInfopwChangeModel.swift in Sources */,
 				FA0BB6D9251609BE00440FF4 /* SKHmyInfoPwChangeViewController.swift in Sources */,
+				FA590E672519DA2F002021C4 /* SKHmyInfoQueryModel.swift in Sources */,
 				FA0BB6CF2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift in Sources */,
+				FABC6DE82518877000274124 /* SKHmyInfoDeleteViewController.swift in Sources */,
 				FA0BB6D52515B90800440FF4 /* SKHmyInfoPwCheckModel.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
 				FA0BB6A22514518900440FF4 /* shkMyInfoAllViewController.swift in Sources */,

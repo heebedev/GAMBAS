@@ -8,14 +8,27 @@
 
 import UIKit
 
+// 비밀번호 확인 - 비밀번호 변경 하기 전 뷰 컨트롤러
+
 class SKHmyInfoPasswordViewController: UIViewController, SkhmyInfoModelProtocol{
     
-    var feedItem: String = ""
-    var ivSKHcount = ""
+    var feedItem: Int = 2
+    var ivSKHcount = 1
     var ivSKHcheckPw = ""
     
-    func itemDownloaded(items: String) {
+    func itemDownloaded(items: Int) {
         feedItem = items
+        print("feedItem \(feedItem)")
+        
+        if feedItem != 1 {
+            let checkAlert = UIAlertController(title: "확인 요청", message: "비밀번호가 일치하지 않습니다. 확인 부탁드립니다.", preferredStyle: UIAlertController.Style.alert)
+            let addAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            checkAlert.addAction(addAction)
+            present(checkAlert, animated: true, completion: nil)
+            print("fail ivSKHcount \(feedItem)")
+        } else if feedItem == 1 {
+            print("feedItemCheck = \(feedItem)")
+        }
     }
     
 
