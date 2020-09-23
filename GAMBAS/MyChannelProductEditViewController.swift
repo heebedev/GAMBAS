@@ -89,6 +89,7 @@ class MyChannelProductEditViewController: UIViewController {
     }
     
     
+
     func receiveItems_myChannelProduct(_ channelSeqno: String, _ channelContent: String, _ channelName: String, _ channelImage: String, _ channelRegisterDate: String, _ channelValidation: String, _ productSeqno: String, _ productTerm: String, _ productReleaseDay: String, _ productTitle: String, _ productPrice: String, _ productContent: String, _ productImage: String, _ productRegisterDate: String, _ productValidation: String, _ productCategorySeqno: String, _ productCategoryName: String){
         
         receiveChannelSeqno = channelSeqno
@@ -118,6 +119,47 @@ class MyChannelProductEditViewController: UIViewController {
     
     @IBAction func btnLJHProductEditImage(_ sender: UIButton) {
     }
+    
+    
+    
+    @IBAction func btnLJHChannelEditOk(_ sender: UIButton) {
+        print("0000")
+        
+        let channelSeqno = receiveChannelSeqno
+        let channelImage = "***"
+        let channelName = tfLJHCannelEditName.text!
+        let channelContent = tfLJHCannelEditContent.text!
+        
+        let productSeqno = receiveProductSeqno
+        let productImage = "***"
+        let productName = tfLJHProductEditName.text!
+        let productContent = tfLJHProductEditContent.text!
+        let productCategory = tfLJHProductEditCategory.text!
+        let productTerm = tfLJHProductEditTerm.text!
+        let productDay = tfLJHProductEditDay.text!
+        let productPrice = tfLJHProductEditPrice.text!
+        
+        let url: URL = URL(string: "http://127.0.0.1:8080/gambas/MyChannelProductUpdate.jsp?channelName=\(channelName)&channelContent=\(channelContent)&productName=\(productName)&productContent=\(productContent)&productCategory=\(productCategory)&productTerm=\(productTerm)&productDay=\(productDay)&productPrice=\(productPrice)&channelImage=\(channelImage)&channelSeqno=\(channelSeqno)&productSeqno=\(productSeqno)&productImage=\(productImage)")!
+        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        
+        let task = defaultSession.dataTask(with: url){(data, response, error) in
+            if error != nil{ // '에러 코드가 있었다'라는 걸 의미
+                print("Failed to update data")
+            }else{
+                print("Channel and Product were updated")
+            }
+        }
+        task.resume()
+        
+        let resultAlert = UIAlertController(title: "알림", message: "수정이 완료되었습니다.", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { [self]ACTION in
+            self.navigationController?.popViewController(animated: true)
+        })
+        resultAlert.addAction(okAction)
+        present(resultAlert, animated: true, completion: nil)
+        
+    }
+    
     
     
     @IBAction func btnLJHProductDelete(_ sender: UIButton) {
