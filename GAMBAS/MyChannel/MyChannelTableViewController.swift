@@ -133,13 +133,6 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
             productCategoryName = myProduct.cgName!
             
         }
-        
-//            if productImage!.isEmpty {
-//                let urlString = "http://127.0.0.1:8080/gambas/imgs/\(productImage)"
-//                let url = URL(string: urlString)
-//                let data = try? Data(contentsOf: url!)
-//                ivLJHProductImage.image = UIImage(data: data!)
-//            }
 
         if productSeqno.isEmpty {
             ivLJHProductImage.isHidden = true
@@ -150,7 +143,7 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
             lblLJHProductTerm.isHidden = true
             lblLJHProductDay.isHidden = true
             lblLJHProductPrice.isHidden = true
-        }else{
+        } else {
             lblLJHProductName.text = productTitle
             lblLJHProductContent.text = productContent
             lblLJHProductCategory.text = productCategoryName

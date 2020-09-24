@@ -15,8 +15,6 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     var feedItem: NSArray = NSArray()
     let formatter = DateFormatter()
     
-    
-    
     var prdSeqno:String?
     let uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
     
@@ -41,6 +39,10 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.viewDidLoad()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,6 +59,7 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         lblChName.text = (item.chNickName)
         lblPrdName.text = (item.prdTitle)
         lblPrdPrice.text = (item.prdPrice)
+        
         if(Int(item.uSeqCount!) != 0){
             btnSubs.isHidden = true
         }
@@ -106,7 +109,6 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "container"{
             container = (segue.destination as! ContainerViewController)
-            
             container.animationDurationWithOptions = (0.5, .transitionCrossDissolve)
         }
     }
