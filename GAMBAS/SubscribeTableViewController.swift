@@ -28,9 +28,9 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
         
         // static uSeqno
         uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
-        //        print("static uSeqno테스트", uSeqno!)
-        //        uSeqno = "1" // test
-        //        print("uSeqno테스트", uSeqno!)
+                print("static uSeqno테스트", uSeqno!)
+                uSeqno = "1" // test
+                print("uSeqno테스트", uSeqno!)
         
         //delegate 처리
         self.subsListTableView.delegate = self
