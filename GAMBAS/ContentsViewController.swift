@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import WebKit //** 추가 
+import WebKit //** 추가
+import Firebase
 
 
 class ContentsViewController: UIViewController, ContentsViewQueryModelProtocol, UITableViewDataSource, UITableViewDelegate, CommentListQueryModelProtocol {
@@ -124,7 +125,19 @@ class ContentsViewController: UIViewController, ContentsViewQueryModelProtocol, 
         // set 콘텐츠뷰
         lbl_countlikecontents.text = itemContentsView.countlikecontents
         lbl_ctContext.text = itemContentsView.ctContext
-        loadWebPage(url: "http://192.168.2.10:8080/ftp/\(itemContentsView.ctfile!)") // 파이어베이스 url로 변경 !
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference(withPath: "contentsFolder/" + itemContentsView.ctfile!)
+        
+        storageRef.downloadURL { url, error in
+          if let error = error {
+            print(error)
+          } else {
+            self.loadWebPage(url: url!.absoluteString)
+          }
+        }
+        
+        //loadWebPage(url: "http://192.168.2.10:8080/ftp/\(itemContentsView.ctfile!)") // 파이어베이스 url로 변경 !
         
         // 내가 좋아요했는지 확인하고 버튼 숨기기 0 = unlike 보이기, 1 = liked 보이기
         if itemContentsView.checkmylikecontents! == "0" {

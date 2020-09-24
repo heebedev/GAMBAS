@@ -6,6 +6,11 @@ target 'GAMBAS' do
   use_frameworks!
 
   # Pods for GAMBAS
+  pod 'KakaoAdSDK'
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKAuth'
+  pod 'KakaoSDKUser'
+  pod 'KakaoSDKTalk'
   pod 'SideMenu', '~> 6.0'
   pod 'KakaoSDK'
   pod 'Firebase/Analytics'
