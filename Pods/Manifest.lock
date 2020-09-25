@@ -1,19 +1,19 @@
 PODS:
   - Alamofire (5.2.2)
-  - Firebase/Analytics (6.32.0):
+  - Firebase/Analytics (6.32.2):
     - Firebase/Core
-  - Firebase/Core (6.32.0):
+  - Firebase/Core (6.32.2):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.8.1)
-  - Firebase/CoreOnly (6.32.0):
+    - FirebaseAnalytics (= 6.8.2)
+  - Firebase/CoreOnly (6.32.2):
     - FirebaseCore (= 6.10.2)
-  - Firebase/Storage (6.32.0):
+  - Firebase/Storage (6.32.2):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 3.9.0)
-  - FirebaseAnalytics (6.8.1):
+  - FirebaseAnalytics (6.8.2):
     - FirebaseCore (~> 6.10)
     - FirebaseInstallations (~> 1.6)
-    - GoogleAppMeasurement (= 6.8.1)
+    - GoogleAppMeasurement (= 6.8.2)
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
@@ -36,7 +36,7 @@ PODS:
   - FirebaseStorage (3.9.0):
     - FirebaseCore (~> 6.10)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleAppMeasurement (6.8.1):
+  - GoogleAppMeasurement (6.8.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
@@ -64,6 +64,7 @@ PODS:
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.4.0)
+  - KakaoAdSDK (0.5.0)
   - KakaoSDK (2.0.2):
     - KakaoSDKAuth (= 2.0.2)
     - KakaoSDKCommon (= 2.0.2)
@@ -105,7 +106,12 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Storage
+  - KakaoAdSDK
   - KakaoSDK
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKTalk
+  - KakaoSDKUser
   - SideMenu (~> 6.0)
 
 SPEC REPOS:
@@ -121,6 +127,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - KakaoAdSDK
     - KakaoSDK
     - KakaoSDKAuth
     - KakaoSDKCommon
@@ -136,16 +143,17 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  Firebase: afa030f17f5421810f379a42b0e5d3302d27eb26
-  FirebaseAnalytics: a4d98464f455f5056063932123fa441025322f30
+  Firebase: 47176280bfba198e531f909cfb1612dad216cb96
+  FirebaseAnalytics: 3c2fee6a922023ccfda7af87e4e641bad1fc11ba
   FirebaseCore: 1d697bb944bf2af5fc248f1a66e165c9dd88bf97
   FirebaseCoreDiagnostics: 7415bfb3883b3500c5a95c42b6ba66baae78f600
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseStorage: 33b92875a9b556824886cc7a65120c7d2cb3a8d8
-  GoogleAppMeasurement: e3618c6e9f5166a6b320b03b759da3b04ec2a101
+  GoogleAppMeasurement: 1a66f478c68ecd6c16ee63ee60c7c3a648e6b337
   GoogleDataTransport: e85fb700c9b027079ce182c3d08e12e0f9618bb4
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
+  KakaoAdSDK: b184296e06a62e79e840db091032707c89f245eb
   KakaoSDK: 5ef36912e9cbeda1206de9979e7daa832981611b
   KakaoSDKAuth: 69698a4a6726f2b43fb43246891a1a747343935e
   KakaoSDKCommon: 2226e13fbbd4a875826c7a348cf4f535392a4b8f
@@ -159,6 +167,6 @@ SPEC CHECKSUMS:
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
 
-PODFILE CHECKSUM: 9d69d4f69e5377ff5c48a1b5804ce40905c3be8b
+PODFILE CHECKSUM: ec0257684967e014b652cd64195d9c50517b7f49
 
 COCOAPODS: 1.9.3
