@@ -56,7 +56,7 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
             uQueryModel.getUserCategoryList(uSeqno: uSeqno) {isValid in
                 DispatchQueue.main.async { () -> Void in
                     if isValid {
-                        let arraytostring = self.categories.joined(separator: ",")
+                        let arraytostring = self.categories.joined(separator: "','")
                         queryModel.downloadRecommendItems(category: arraytostring)
                     }
                 }

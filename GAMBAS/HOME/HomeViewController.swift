@@ -68,8 +68,29 @@ class HomeViewController: UIViewController, CategoryProtocol{
                 DispatchQueue.main.async { () -> Void in
                     if isValid {
                         for category in self.categories {
-                            let index = Int(category)
-                            self.cView[index!-1].isHidden = false
+                            var idx: Int = 0
+                            switch category {
+                            case "글":
+                                idx = 1
+                                break
+                            case "그림":
+                                idx = 2
+                                break
+                            case "영상":
+                                idx = 3
+                                break
+                            case "음악":
+                                idx = 4
+                                break
+                            case "기타":
+                                idx = 5
+                                break
+                            default:
+                                break
+                            }
+                            
+                            let index = Int(idx)
+                            self.cView[index-1].isHidden = false
                         }
                     }
                 }
