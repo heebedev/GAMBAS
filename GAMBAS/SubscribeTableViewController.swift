@@ -26,7 +26,7 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.subsListTableView.rowHeight = 119
         // static uSeqno
         uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
         //        print("static uSeqno테스트", uSeqno!)
@@ -89,6 +89,10 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
                 cell.iv_prdImage?.image = UIImage(data: data!)
             }
         }
+        cell.iv_prdImage.layer.cornerRadius = 97/2
+        
+        cell.layer.cornerRadius = 50
+        cell.layer.masksToBounds = true
         
         //text
         cell.lbl_prdTitle?.text = "\(item.prdTitle!)"

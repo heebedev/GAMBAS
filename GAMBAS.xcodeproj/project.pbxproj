@@ -12,7 +12,6 @@
 		3058BB86251C8A9300F142B3 /* ReviewAddQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3058BB85251C8A9300F142B3 /* ReviewAddQueryModel.swift */; };
 		30A513A825132EC000F81B8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513A725132EC000F81B8B /* LoginViewController.swift */; };
 		30A513AC25132EDB00F81B8B /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */; };
-		30A513B025132F1F00F81B8B /* MakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AF25132F1F00F81B8B /* MakeViewController.swift */; };
 		30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513B42513301600F81B8B /* NoticeViewController.swift */; };
 		30CE930D251891DC00556BE0 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CE930C251891DC00556BE0 /* appstore.png */; };
 		30CE930F25189A9B00556BE0 /* LoginQuaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */; };
@@ -65,7 +64,6 @@
 		9DCAD6662518544500D48783 /* prdDetailDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCAD6652518544500D48783 /* prdDetailDBModel.swift */; };
 		9DCAD6692518544B00D48783 /* prdDetailQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCAD6682518544B00D48783 /* prdDetailQueryModel.swift */; };
 		9DCAD691251864F300D48783 /* reviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCAD690251864F300D48783 /* reviewTableViewCell.swift */; };
-		9DCAD69425188BB300D48783 /* channel.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCAD69325188BB100D48783 /* channel.png */; };
 		9DCAD6C42518AB8A00D48783 /* Pods_GAMBAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; };
 		9DCAD6C52518AB8A00D48783 /* Pods_GAMBAS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9DF22F682513408700199FBE /* prdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF22F672513408700199FBE /* prdDetailViewController.swift */; };
@@ -95,7 +93,6 @@
 		3058BB85251C8A9300F142B3 /* ReviewAddQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAddQueryModel.swift; sourceTree = "<group>"; };
 		30A513A725132EC000F81B8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = GAMBAS/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyInfoViewController.swift; path = GAMBAS/MyInfoViewController.swift; sourceTree = SOURCE_ROOT; };
-		30A513AF25132F1F00F81B8B /* MakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MakeViewController.swift; path = GAMBAS/MakeViewController.swift; sourceTree = SOURCE_ROOT; };
 		30A513B42513301600F81B8B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeViewController.swift; path = GAMBAS/NoticeViewController.swift; sourceTree = SOURCE_ROOT; };
 		30C051892519BC3C0038939D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		30C051A7251A25360038939D /* emptyImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyImage.png; sourceTree = "<group>"; };
@@ -153,7 +150,6 @@
 		9DCAD6652518544500D48783 /* prdDetailDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prdDetailDBModel.swift; sourceTree = "<group>"; };
 		9DCAD6682518544B00D48783 /* prdDetailQueryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prdDetailQueryModel.swift; sourceTree = "<group>"; };
 		9DCAD690251864F300D48783 /* reviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewTableViewCell.swift; sourceTree = "<group>"; };
-		9DCAD69325188BB100D48783 /* channel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel.png; sourceTree = "<group>"; };
 		9DCAD6BF2518AB5B00D48783 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KakaoOpenSDK.framework; path = Pods/KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_GAMBAS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCAD6C62518ABA600D48783 /* KakaoOpenSDK-1.23.4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "KakaoOpenSDK-1.23.4"; path = "Pods/KakaoOpenSDK-1.23.4"; sourceTree = "<group>"; };
@@ -181,6 +177,7 @@
 		3028F058251B497A00E213DE /* MyChannel */ = {
 			isa = PBXGroup;
 			children = (
+				321A3CCE2519BA0E0019F870 /* MyProductDelete.swift */,
 				3246E731251499A400524164 /* MyChannelSelect.swift */,
 				3246E734251499B600524164 /* MyProductSelect.swift */,
 				3246E737251499D500524164 /* MyContentsSelect.swift */,
@@ -199,6 +196,7 @@
 		3028F059251B499D00E213DE /* PrdDetail */ = {
 			isa = PBXGroup;
 			children = (
+				9DCAD65E2518512500D48783 /* ContainerViewController.swift */,
 				9DCAD690251864F300D48783 /* reviewTableViewCell.swift */,
 				9DCAD6612518512E00D48783 /* EmptySegue.swift */,
 				9DCAD6682518544B00D48783 /* prdDetailQueryModel.swift */,
@@ -248,21 +246,17 @@
 				30CE930C251891DC00556BE0 /* appstore.png */,
 				30A513B325132FEF00F81B8B /* NOTICE */,
 				30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */,
-				32A8A09C2511BFFB00FE4CDD /* MAKE */,
 				32A8A09B2511BFF600FE4CDD /* SUBSCRIBE */,
 				32A8A09A2511BFEB00FE4CDD /* MYINFO */,
 				32A8A0992511BFD600FE4CDD /* HOME */,
 				32A8A0982511BFCB00FE4CDD /* LOGIN */,
 				32A8A0812511B52300FE4CDD /* AppDelegate.swift */,
-				9DCAD69325188BB100D48783 /* channel.png */,
 				32A8A0832511B52300FE4CDD /* SceneDelegate.swift */,
 				32A8A0872511B52300FE4CDD /* Main.storyboard */,
-				9DCAD65E2518512500D48783 /* ContainerViewController.swift */,
 				32A8A08D2511B53400FE4CDD /* Assets.xcassets */,
 				32A8A08F2511B53400FE4CDD /* LaunchScreen.storyboard */,
 				32A8A0922511B53400FE4CDD /* Info.plist */,
 				32A8A08A2511B52300FE4CDD /* GAMBAS.xcdatamodeld */,
-				321A3CCE2519BA0E0019F870 /* MyProductDelete.swift */,
 				3028F055251B3F3A00E213DE /* SideMenuTableViewController.swift */,
 			);
 			path = GAMBAS;
@@ -323,14 +317,6 @@
 				6B47B11C251AE35200A79DCF /* CommentInsertUpdateModel.swift */,
 			);
 			path = SUBSCRIBE;
-			sourceTree = "<group>";
-		};
-		32A8A09C2511BFFB00FE4CDD /* MAKE */ = {
-			isa = PBXGroup;
-			children = (
-				30A513AF25132F1F00F81B8B /* MakeViewController.swift */,
-			);
-			path = MAKE;
 			sourceTree = "<group>";
 		};
 		3E088890E9FF30341522A2EB /* Frameworks */ = {
@@ -423,7 +409,6 @@
 				30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */,
 				32A8A08E2511B53400FE4CDD /* Assets.xcassets in Resources */,
 				32A8A0892511B52300FE4CDD /* Main.storyboard in Resources */,
-				9DCAD69425188BB300D48783 /* channel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +470,6 @@
 				9DCAD6662518544500D48783 /* prdDetailDBModel.swift in Sources */,
 				30D91C62251B93B80041D0E6 /* SKHstatic.swift in Sources */,
 				6B47B11E251AE35200A79DCF /* CommentInsertUpdateModel.swift in Sources */,
-				30A513B025132F1F00F81B8B /* MakeViewController.swift in Sources */,
 				6B58DAA925135A1C00B67DC4 /* SubscribeTableViewController.swift in Sources */,
 				30D91C63251B93B80041D0E6 /* shkMyInfoViewController.swift in Sources */,
 				6B7A0F87251448A900A3896A /* SubscribeQueryModel.swift in Sources */,

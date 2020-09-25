@@ -61,7 +61,6 @@ class SideMenuTableViewController: UITableViewController {
             detailVC.modalPresentationStyle = .fullScreen
             // 이동
             self.present(detailVC, animated: true, completion: nil)
-            
         }
     }
     

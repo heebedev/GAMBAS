@@ -71,10 +71,7 @@ class ContentsViewController: UIViewController, ContentsViewQueryModelProtocol, 
         // Do any additional setup after loading the view.
         
         uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
-        // 테스트 지우면됨
-        print("static uSeqno테스트", uSeqno!)
-        uSeqno = "1" // test : 지우면됨
-        print("uSeqno테스트", uSeqno!)
+
         
         //테이블뷰 delegate 처리
         self.tableview_comment.delegate = self

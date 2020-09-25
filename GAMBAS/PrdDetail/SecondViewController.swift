@@ -54,6 +54,8 @@ class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
             }
         }
         
+        self.ivChImage.layer.cornerRadius = 50
+        
         let spImgRef = storageRef.child("spContents").child(item.sctImage!)
         
         spImgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
@@ -63,6 +65,8 @@ class SecondViewController: UIViewController, prdDetailQueryModelProtocol {
                 self.ivScImage.image = UIImage(data: data!)
             }
         }
+        
+        self.ivScImage.layer.cornerRadius = 130/2
         
     }
     
