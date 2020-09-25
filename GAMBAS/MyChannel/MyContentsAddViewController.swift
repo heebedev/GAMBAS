@@ -34,6 +34,11 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
         lbKSHFileRegistered.isHidden = true
         tvKSHFileName.isHidden = true
         
+        tvLJHContentsAddContent.layer.borderWidth = 1
+        tvLJHContentsAddContent.layer.borderColor = UIColor.systemGray5.cgColor
+        tvLJHContentsAddContent.layer.cornerRadius = 5
+        tvLJHContentsAddContent.layer.masksToBounds = true
+        
         documentPickerController.delegate = self
         documentPickerController.modalPresentationStyle = .fullScreen
         self.present(documentPickerController, animated: true, completion: nil)
