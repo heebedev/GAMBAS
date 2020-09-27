@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyChannelTableViewController: UITableViewController, MyChannelSelectProtocol, MyProductSelectProtocol, MyContentsSelectProtocol{
     
@@ -100,14 +101,27 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         channelRegisterDate = myChannel.chRegistDate!
         channelValidation = myChannel.chValidation!
         }
+        
+        
 
-//        if channelImage!.isEmpty {
-//            let urlString = "http://127.0.0.1:8080/gambas/imgs/\(channelImage)"
-//            let url = URL(string: urlString)
-//            let data = try? Data(contentsOf: url!)
-//            ivLJHChannelImage.image = UIImage(data: data!)
-//        }
+        //
+        //
+        //Firebase image download
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("prdImage").child(channelImage)
+        print("Subs Table View \(channelImage)")
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) { [self]data, error in
+            if error != nil {
 
+            } else {
+                self.ivLJHChannelImage.image = UIImage(data: data!)
+            }
+        }
+        //
+        //
+        
         lblLJHChannelName.text = channelName
         lblLJHChannelContent.text = channelContent
         lblLJHChannelRegisterDate.text = channelRegisterDate
@@ -144,6 +158,23 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
             lblLJHProductDay.isHidden = true
             lblLJHProductPrice.isHidden = true
         } else {
+            //
+            //
+            //Firebase image download
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let imgRef = storageRef.child("prdImage").child(productImage)
+            print("Subs Table View \(productImage)")
+            
+            imgRef.getData(maxSize: 1 * 1024 * 1024) { [self]data, error in
+                if error != nil {
+
+                } else {
+                    self.ivLJHProductImage.image = UIImage(data: data!)
+                }
+            }
+            //
+            //
             lblLJHProductName.text = productTitle
             lblLJHProductContent.text = productContent
             lblLJHProductCategory.text = productCategoryName
@@ -179,7 +210,23 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         // Configure the cell...
         let contentsList: MyContentsModel = feeditems_contents[indexPath.row] as! MyContentsModel
         
-//        cell.ivLJHContentsImage
+        //
+        //
+        //Firebase image download
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("prdImage").child(contentsList.ctfile!)
+        print("Subs Table View \(contentsList.ctfile!)")
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if error != nil {
+
+            } else {
+                cell.ivLJHContentsImage.image = UIImage(data: data!)
+            }
+        }
+        //
+        //
         cell.lblLJHContentsTitle?.text = contentsList.ctTitle
         cell.lblLJHContentsRegisterDate?.text = contentsList.ctRegistDate
         cell.lblLJHContentsContent?.text = contentsList.ctContext

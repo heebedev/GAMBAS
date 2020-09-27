@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
-class MyChannelProductEditViewController: UIViewController {
+class MyChannelProductEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+
+    
     
     @IBOutlet weak var ivLJHChannelEditImage: UIImageView!
     @IBOutlet weak var tfLJHCannelEditName: UITextField!
@@ -29,6 +32,11 @@ class MyChannelProductEditViewController: UIViewController {
     @IBOutlet weak var buttonLJHProductRegister: UIButton!
     @IBOutlet weak var buttonLJHProductDelete: UIButton!
     
+    @IBOutlet weak var pvLJHProductEditCategory: UIPickerView!
+    
+    let categorySeqnos = [1,2,3,4,5]
+    let categoryNames = ["글", "그림", "영상", "음악", "기타"]
+    
     var receiveChannelSeqno = ""
     var receiveChannelContent = ""
     var receiveChannelName = ""
@@ -48,12 +56,41 @@ class MyChannelProductEditViewController: UIViewController {
     var receiveProductCategorySeqno = ""
     var receiveProductCategoryName = ""
     
+    var selectedUrl:URL?
+    var selectedName = ""
+    var selectedUrl1:URL?
+    var selectedName1:String?
+    
+    let imagePickerController = UIImagePickerController()
+    
+    var selectCategorySeqno = "0"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-//        ivLJHChannelEditImage
+
+        
+        imagePickerController.delegate = self
+        
+        //
+        //
+        //Firebase image download
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imgRef = storageRef.child("prdImage").child(receiveChannelImage)
+        print("Subs Table View \(receiveChannelImage)")
+        
+        imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            if error != nil {
+
+            } else {
+                self.ivLJHChannelEditImage.image = UIImage(data: data!)
+            }
+        }
+        //
+        //
         tfLJHCannelEditName.text = receiveChannelName
         tfLJHCannelEditRegisterDate.text = receiveChannelRegisterDate
         tfLJHCannelEditContent.text = receiveChannelContent
@@ -71,9 +108,26 @@ class MyChannelProductEditViewController: UIViewController {
             tfLJHProductEditPrice.isHidden = true
             buttonLJHProductRegister.isHidden = false
             buttonLJHProductDelete.isHidden = true
+            pvLJHProductEditCategory.isHidden = true
             
         }else{
-    //        ivLJHProductEditImage
+            //
+            //
+            //Firebase image download
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let imgRef = storageRef.child("prdImage").child(receiveProductImage)
+            print("Subs Table View \(receiveProductImage)")
+            
+            imgRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+                if error != nil {
+
+                } else {
+                    self.ivLJHProductEditImage?.image = UIImage(data: data!)
+                }
+            }
+            //
+            //
             tfLJHProductEditName.text = receiveProductTitle
             tfLJHProductEditContent.text = receiveProductContent
             tfLJHProductEditCategory.text = receiveProductCategoryName
@@ -83,9 +137,28 @@ class MyChannelProductEditViewController: UIViewController {
             tfLJHProductEditPrice.text = receiveProductPrice
             buttonLJHProductRegister.isHidden = true
             buttonLJHProductDelete.isHidden = false
+            pvLJHProductEditCategory.selectRow((Int(receiveProductCategorySeqno ) ?? 1 - 1), inComponent:0, animated:true)
         }
         
+
+        
         print("viewDidLoad()")
+    }
+    
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categoryNames.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryNames[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectCategorySeqno = String(row + 1)
     }
     
     
@@ -118,23 +191,118 @@ class MyChannelProductEditViewController: UIViewController {
     }
     
     @IBAction func btnLJHProductEditImage(_ sender: UIButton) {
+        let imageRoutCheckAlert =  UIAlertController(title: "이미지 업로드", message: "어디서 가져올까요?", preferredStyle: .actionSheet)
+        let libraryAction =  UIAlertAction(title: "앨범", style: .default, handler: { ACTION in
+            if(UIImagePickerController .isSourceTypeAvailable(.photoLibrary)){
+                self.imagePickerController.sourceType = .photoLibrary
+                self.imagePickerController.mediaTypes = ["public.image"]
+                self.present(self.imagePickerController, animated: false, completion: nil)
+            } else {
+                print("Library not available")
+            }
+        })
+        let cameraAction =  UIAlertAction(title: "카메라", style: .default, handler: { ACTION in
+            if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+                self.imagePickerController.sourceType = .camera
+                self.imagePickerController.mediaTypes = ["public.image"]
+                self.present(self.imagePickerController, animated: false, completion: nil)
+            } else {
+                print("Camera not available")
+            }
+        })
+        let imgCancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        imageRoutCheckAlert.addAction(libraryAction)
+        imageRoutCheckAlert.addAction(cameraAction)
+        imageRoutCheckAlert.addAction(imgCancelAction)
+        present(imageRoutCheckAlert, animated: true, completion: nil)
+    }
+    
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String {
+            var url:URL?
+            switch mediaType {
+            case "public.image":
+                url = info[UIImagePickerController.InfoKey.imageURL] as? URL
+                do {
+                    if #available(iOS 13, *) {
+                        //If on iOS13 slice the URL to get the name of the file
+                        var fireURL = url
+                        let urlString = url!.relativeString
+                        let urlSlices = urlString.split(separator: ".")
+                        //Create a temp directory using the file name
+                        let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+                        fireURL = tempDirectoryURL.appendingPathComponent(String(urlSlices[1]))
+                        try FileManager.default.copyItem(at: url!, to: fireURL!)
+                        url = fireURL!
+                    }
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+            default:
+                break
+            }
+            selectedUrl = url
+            
+            selectedName = selectedUrl!.lastPathComponent
+        }
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            
+            ivLJHProductEditImage.image = image
+        }
+        
+        // 켜놓은 앨범 화면 없애기
+        dismiss(animated: true, completion: nil)
+        
     }
     
     
     
     @IBAction func btnLJHChannelEditOk(_ sender: UIButton) {
-        print("0000")
         
         let channelSeqno = receiveChannelSeqno
-        let channelImage = "***"
+        let channelImage = receiveChannelImage
+        
         let channelName = tfLJHCannelEditName.text!
         let channelContent = tfLJHCannelEditContent.text!
         
         let productSeqno = receiveProductSeqno
-        let productImage = "***"
+        var productImage = receiveProductImage
+        if selectedName.isEmpty {
+            
+        }else{
+            //
+            //
+            let storage1 = Storage.storage()
+            let storageRef1 = storage1.reference()
+            
+            // File located on disk
+            let localFile1 = selectedUrl1
+            
+            //이미지 이름을 위한 dataformat
+            let now1 = NSDate()
+            let dateFormatter1 = DateFormatter()
+            dateFormatter1.dateFormat = "yyyyMMddHHmmssEEE"
+            let dateNow1 = dateFormatter1.string(from: now1 as Date)
+            
+            productImage = dateNow1 + selectedName
+            print("productImage : " + productImage)
+            
+            // Create a reference to the file you want to upload
+            let fileRef1 = storageRef1.child("contentsFolder/" + productImage)
+            
+            // Upload the file to the path "images/rivers.jpg"
+            fileRef1.putFile(from: localFile1!, metadata: nil)
+            //
+            //
+        }
         let productName = tfLJHProductEditName.text!
         let productContent = tfLJHProductEditContent.text!
-        let productCategory = tfLJHProductEditCategory.text!
+        let productCategory = selectCategorySeqno
         let productTerm = tfLJHProductEditTerm.text!
         let productDay = tfLJHProductEditDay.text!
         let productPrice = tfLJHProductEditPrice.text!

@@ -100,6 +100,8 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
         present(fileRoutCheckAlert, animated: true, completion: nil)
     }
     
+
+    
     
     @IBAction func btnLJHContentsAddOk(_ sender: UIButton) {
         
@@ -108,6 +110,11 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
         let contentsContent = tvLJHContentsAddContent.text!
         let productSeqno = receiveProductSeqno
         
+        //
+        //
+        // firebase
+        //
+        //
         let storage = Storage.storage()
         let storageRef = storage.reference()
         
@@ -121,13 +128,18 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
         let dateNow = dateFormatter.string(from: now as Date)
         
         contentsFile = dateNow + selectedName!
-        print(contentsFile)
+        print("*****" + contentsFile)
         
         // Create a reference to the file you want to upload
         let fileRef = storageRef.child("contentsFolder/" + contentsFile)
         
         // Upload the file to the path "images/rivers.jpg"
         fileRef.putFile(from: localFile!, metadata: nil)
+        //
+        //
+        // firebase
+        //
+        //
         
         let url: URL = URL(string: "http://127.0.0.1:8080/gambas/MyContentsInsert.jsp?contentsFile=\(contentsFile)&contentsTitle=\(contentsTitle)&contentsContent=\(contentsContent)&productSeqno=\(productSeqno)")!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
