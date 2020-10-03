@@ -25,6 +25,7 @@ class ContentsTableViewController: UITableViewController, ContentsListQueryModel
         //delegate 처리
         self.contentsListTableView.delegate = self
         self.contentsListTableView.dataSource = self
+        self.contentsListTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         let contentsListQueryModel = ContentsListQueryModel()
         contentsListQueryModel.delegate = self

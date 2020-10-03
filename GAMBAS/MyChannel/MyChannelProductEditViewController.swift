@@ -205,12 +205,9 @@ class MyChannelProductEditViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "sgMyProductRegister"{
+        if segue.identifier == "sgMyProductRegister" {
             let myProductRegisterViewController = segue.destination as! MyProductRegisterViewController
-
             myProductRegisterViewController.receiveItems_myChannelSeqno(receiveChannelSeqno)
-            
-            print("prepare()")
         }
     }
         

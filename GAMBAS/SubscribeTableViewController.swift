@@ -97,6 +97,11 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
         cell.lbl_releaseDay?.text = "\(item.releaseDay!)"
         cell.lbl_cgName?.text = "\(item.cgName!)"
         
+//        cell.layer.cornerRadius = 20
+//        cell.layer.masksToBounds = true
+//        cell.layer.borderWidth = 0.5
+//        cell.layer.borderColor = UIColor.systemBlue.cgColor
+        
         return cell
     }
     
