@@ -27,6 +27,9 @@
 		FA52729E251ADAF9003D3AA0 /* SKHcashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */; };
 		FA5272A4251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */; };
 		FA590E672519DA2F002021C4 /* SKHmyInfoQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */; };
+		FA98E82C2528642E00A18F87 /* cashTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98E82B2528642E00A18F87 /* cashTableViewCell.swift */; };
+		FA98E82E2528704C00A18F87 /* SKHcashQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98E82D2528704C00A18F87 /* SKHcashQueryModel.swift */; };
+		FA98E8302528724900A18F87 /* SKHcashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98E82F2528724900A18F87 /* SKHcashModel.swift */; };
 		FABC6DE82518877000274124 /* SKHmyInfoDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHcashTableViewController.swift; sourceTree = "<group>"; };
 		FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoDeleteModel.swift; sourceTree = "<group>"; };
 		FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoQueryModel.swift; sourceTree = "<group>"; };
+		FA98E82B2528642E00A18F87 /* cashTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cashTableViewCell.swift; sourceTree = "<group>"; };
+		FA98E82D2528704C00A18F87 /* SKHcashQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHcashQueryModel.swift; sourceTree = "<group>"; };
+		FA98E82F2528724900A18F87 /* SKHcashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHcashModel.swift; sourceTree = "<group>"; };
 		FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoDeleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +123,9 @@
 				FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */,
 				FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */,
 				FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */,
+				FA98E82B2528642E00A18F87 /* cashTableViewCell.swift */,
+				FA98E82D2528704C00A18F87 /* SKHcashQueryModel.swift */,
+				FA98E82F2528724900A18F87 /* SKHcashModel.swift */,
 			);
 			path = GAMBAS;
 			sourceTree = "<group>";
@@ -299,10 +308,13 @@
 				FA590E672519DA2F002021C4 /* SKHmyInfoQueryModel.swift in Sources */,
 				FA0BB6CF2514B9C900440FF4 /* SKHmyInfoPasswordViewController.swift in Sources */,
 				FABC6DE82518877000274124 /* SKHmyInfoDeleteViewController.swift in Sources */,
+				FA98E8302528724900A18F87 /* SKHcashModel.swift in Sources */,
+				FA98E82E2528704C00A18F87 /* SKHcashQueryModel.swift in Sources */,
 				FA0BB6D52515B90800440FF4 /* SKHmyInfoPwCheckModel.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
 				FA0BB6A22514518900440FF4 /* shkMyInfoAllViewController.swift in Sources */,
 				FA0BB6A625147AB200440FF4 /* SKHmyInfoModel.swift in Sources */,
+				FA98E82C2528642E00A18F87 /* cashTableViewCell.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
 				FA0BB6AA25148EE000440FF4 /* SKHmyInfoUpdateModel.swift in Sources */,
 			);
