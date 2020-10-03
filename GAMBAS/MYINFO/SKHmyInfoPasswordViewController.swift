@@ -16,6 +16,8 @@ class SKHmyInfoPasswordViewController: UIViewController, SkhmyInfoModelProtocol{
     var ivSKHcount = 1
     var ivSKHcheckPw = ""
     
+    let uSeqno = UserDefaults.standard.integer(forKey: "uSeqno")
+    
     func itemDownloaded(items: Int) {
         feedItem = items
         print("feedItem \(feedItem)")
@@ -53,7 +55,7 @@ class SKHmyInfoPasswordViewController: UIViewController, SkhmyInfoModelProtocol{
         
         let queryModel = SkhmyInfoPwCheckModel()
         queryModel.delegate = self
-        queryModel.checkCount(password: ivSKHcheckPw, seq: LOGED_IN_SEQ)
+        queryModel.checkCount(password: ivSKHcheckPw, seq: uSeqno)
         
         
         

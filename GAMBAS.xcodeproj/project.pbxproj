@@ -11,20 +11,31 @@
 		3058BB84251C3EC300F142B3 /* ReviewAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3058BB83251C3EC300F142B3 /* ReviewAddViewController.swift */; };
 		3058BB86251C8A9300F142B3 /* ReviewAddQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3058BB85251C8A9300F142B3 /* ReviewAddQueryModel.swift */; };
 		30A513A825132EC000F81B8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513A725132EC000F81B8B /* LoginViewController.swift */; };
-		30A513AC25132EDB00F81B8B /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */; };
 		30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A513B42513301600F81B8B /* NoticeViewController.swift */; };
+		30AAB6752522161A00EC0BBB /* AddSubscribeQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AAB6742522161A00EC0BBB /* AddSubscribeQueryModel.swift */; };
 		30CE930D251891DC00556BE0 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CE930C251891DC00556BE0 /* appstore.png */; };
 		30CE930F25189A9B00556BE0 /* LoginQuaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */; };
 		30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */; };
 		30D91C60251B93B80041D0E6 /* SKHmyInfopwChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C57251B93B80041D0E6 /* SKHmyInfopwChangeModel.swift */; };
 		30D91C61251B93B80041D0E6 /* SKHmyInfoPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C58251B93B80041D0E6 /* SKHmyInfoPasswordViewController.swift */; };
-		30D91C62251B93B80041D0E6 /* SKHstatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C59251B93B80041D0E6 /* SKHstatic.swift */; };
 		30D91C63251B93B80041D0E6 /* shkMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C5A251B93B80041D0E6 /* shkMyInfoViewController.swift */; };
 		30D91C64251B93B80041D0E6 /* shkMyInfoAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C5B251B93B80041D0E6 /* shkMyInfoAllViewController.swift */; };
 		30D91C65251B93B80041D0E6 /* SKHmyInfoPwCheckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C5C251B93B80041D0E6 /* SKHmyInfoPwCheckModel.swift */; };
 		30D91C66251B93B80041D0E6 /* SKHmyInfoUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C5D251B93B80041D0E6 /* SKHmyInfoUpdateModel.swift */; };
 		30D91C67251B93B80041D0E6 /* SKHmyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C5E251B93B80041D0E6 /* SKHmyInfoModel.swift */; };
 		30D91C68251B93B80041D0E6 /* SKHmyInfoPwChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D91C5F251B93B80041D0E6 /* SKHmyInfoPwChangeViewController.swift */; };
+		30DF05D82521B83900417962 /* FindIdPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05D72521B83900417962 /* FindIdPwViewController.swift */; };
+		30DF05DA2521B85900417962 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05D92521B85900417962 /* SignUpViewController.swift */; };
+		30DF05DC2521BC1B00417962 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DF05DB2521BC1B00417962 /* checked.png */; };
+		30DF05DE2521BC2800417962 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 30DF05DD2521BC2800417962 /* unchecked.png */; };
+		30DF05E02521BE2700417962 /* ChangePwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05DF2521BE2700417962 /* ChangePwViewController.swift */; };
+		30DF05E72521BF7100417962 /* SigupDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E12521BF7100417962 /* SigupDBModel.swift */; };
+		30DF05E82521BF7100417962 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E22521BF7100417962 /* LoginModel.swift */; };
+		30DF05E92521BF7100417962 /* EmailChkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E32521BF7100417962 /* EmailChkModel.swift */; };
+		30DF05EA2521BF7100417962 /* CheckFindIdPwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E42521BF7100417962 /* CheckFindIdPwModel.swift */; };
+		30DF05EB2521BF7100417962 /* passwordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E52521BF7100417962 /* passwordChangeModel.swift */; };
+		30DF05EC2521BF7100417962 /* SigupInsertDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E62521BF7100417962 /* SigupInsertDBModel.swift */; };
+		30DF05ED2521D2C800417962 /* emptyImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C051A7251A25360038939D /* emptyImage.png */; };
 		321A3CC3251993F50019F870 /* MyChannelProductEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A3CC2251993F50019F870 /* MyChannelProductEditViewController.swift */; };
 		321A3CC7251997120019F870 /* MyProductRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A3CC6251997120019F870 /* MyProductRegisterViewController.swift */; };
 		321A3CCB251999DF0019F870 /* MyContentsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A3CCA251999DF0019F870 /* MyContentsAddViewController.swift */; };
@@ -91,23 +102,33 @@
 		3028F055251B3F3A00E213DE /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		3058BB83251C3EC300F142B3 /* ReviewAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAddViewController.swift; sourceTree = "<group>"; };
 		3058BB85251C8A9300F142B3 /* ReviewAddQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAddQueryModel.swift; sourceTree = "<group>"; };
-		30A513A725132EC000F81B8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = GAMBAS/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyInfoViewController.swift; path = GAMBAS/MyInfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		30A513A725132EC000F81B8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = GAMBAS/LOGIN/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		30A513B42513301600F81B8B /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoticeViewController.swift; path = GAMBAS/NoticeViewController.swift; sourceTree = SOURCE_ROOT; };
+		30AAB6742522161A00EC0BBB /* AddSubscribeQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubscribeQueryModel.swift; sourceTree = "<group>"; };
 		30C051892519BC3C0038939D /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		30C051A7251A25360038939D /* emptyImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emptyImage.png; sourceTree = "<group>"; };
 		30CE930C251891DC00556BE0 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = GAMBAS/appstore.png; sourceTree = SOURCE_ROOT; };
-		30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginQuaryModel.swift; path = GAMBAS/LoginQuaryModel.swift; sourceTree = SOURCE_ROOT; };
+		30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginQuaryModel.swift; path = GAMBAS/LOGIN/LoginQuaryModel.swift; sourceTree = SOURCE_ROOT; };
 		30D38F2A2513202D00AFDC39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30D91C57251B93B80041D0E6 /* SKHmyInfopwChangeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHmyInfopwChangeModel.swift; sourceTree = "<group>"; };
 		30D91C58251B93B80041D0E6 /* SKHmyInfoPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPasswordViewController.swift; sourceTree = "<group>"; };
-		30D91C59251B93B80041D0E6 /* SKHstatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHstatic.swift; sourceTree = "<group>"; };
 		30D91C5A251B93B80041D0E6 /* shkMyInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shkMyInfoViewController.swift; sourceTree = "<group>"; };
 		30D91C5B251B93B80041D0E6 /* shkMyInfoAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shkMyInfoAllViewController.swift; sourceTree = "<group>"; };
 		30D91C5C251B93B80041D0E6 /* SKHmyInfoPwCheckModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwCheckModel.swift; sourceTree = "<group>"; };
 		30D91C5D251B93B80041D0E6 /* SKHmyInfoUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHmyInfoUpdateModel.swift; sourceTree = "<group>"; };
 		30D91C5E251B93B80041D0E6 /* SKHmyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHmyInfoModel.swift; sourceTree = "<group>"; };
 		30D91C5F251B93B80041D0E6 /* SKHmyInfoPwChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHmyInfoPwChangeViewController.swift; sourceTree = "<group>"; };
+		30DF05D72521B83900417962 /* FindIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwViewController.swift; sourceTree = "<group>"; };
+		30DF05D92521B85900417962 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		30DF05DB2521BC1B00417962 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		30DF05DD2521BC2800417962 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		30DF05DF2521BE2700417962 /* ChangePwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePwViewController.swift; sourceTree = "<group>"; };
+		30DF05E12521BF7100417962 /* SigupDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigupDBModel.swift; sourceTree = "<group>"; };
+		30DF05E22521BF7100417962 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		30DF05E32521BF7100417962 /* EmailChkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailChkModel.swift; sourceTree = "<group>"; };
+		30DF05E42521BF7100417962 /* CheckFindIdPwModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckFindIdPwModel.swift; sourceTree = "<group>"; };
+		30DF05E52521BF7100417962 /* passwordChangeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passwordChangeModel.swift; sourceTree = "<group>"; };
+		30DF05E62521BF7100417962 /* SigupInsertDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigupInsertDBModel.swift; sourceTree = "<group>"; };
 		321A3CC2251993F50019F870 /* MyChannelProductEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelProductEditViewController.swift; sourceTree = "<group>"; };
 		321A3CC6251997120019F870 /* MyProductRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductRegisterViewController.swift; sourceTree = "<group>"; };
 		321A3CCA251999DF0019F870 /* MyContentsAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContentsAddViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +227,7 @@
 				9DF22F672513408700199FBE /* prdDetailViewController.swift */,
 				3058BB83251C3EC300F142B3 /* ReviewAddViewController.swift */,
 				3058BB85251C8A9300F142B3 /* ReviewAddQueryModel.swift */,
+				30AAB6742522161A00EC0BBB /* AddSubscribeQueryModel.swift */,
 			);
 			path = PrdDetail;
 			sourceTree = "<group>";
@@ -239,6 +261,8 @@
 		32A8A0802511B52300FE4CDD /* GAMBAS */ = {
 			isa = PBXGroup;
 			children = (
+				30DF05DD2521BC2800417962 /* unchecked.png */,
+				30DF05DB2521BC1B00417962 /* checked.png */,
 				3028F059251B499D00E213DE /* PrdDetail */,
 				3028F058251B497A00E213DE /* MyChannel */,
 				30C051A7251A25360038939D /* emptyImage.png */,
@@ -265,8 +289,17 @@
 		32A8A0982511BFCB00FE4CDD /* LOGIN */ = {
 			isa = PBXGroup;
 			children = (
+				30DF05E42521BF7100417962 /* CheckFindIdPwModel.swift */,
+				30DF05E32521BF7100417962 /* EmailChkModel.swift */,
+				30DF05E22521BF7100417962 /* LoginModel.swift */,
+				30DF05E52521BF7100417962 /* passwordChangeModel.swift */,
+				30DF05E12521BF7100417962 /* SigupDBModel.swift */,
+				30DF05E62521BF7100417962 /* SigupInsertDBModel.swift */,
 				30A513A725132EC000F81B8B /* LoginViewController.swift */,
 				30CE930E25189A9B00556BE0 /* LoginQuaryModel.swift */,
+				30DF05D72521B83900417962 /* FindIdPwViewController.swift */,
+				30DF05D92521B85900417962 /* SignUpViewController.swift */,
+				30DF05DF2521BE2700417962 /* ChangePwViewController.swift */,
 			);
 			path = LOGIN;
 			sourceTree = "<group>";
@@ -295,12 +328,10 @@
 				30D91C5F251B93B80041D0E6 /* SKHmyInfoPwChangeViewController.swift */,
 				30D91C5C251B93B80041D0E6 /* SKHmyInfoPwCheckModel.swift */,
 				30D91C5D251B93B80041D0E6 /* SKHmyInfoUpdateModel.swift */,
-				30D91C59251B93B80041D0E6 /* SKHstatic.swift */,
 				FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */,
 				FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */,
 				FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */,
 				FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */,
-				30A513AB25132EDB00F81B8B /* MyInfoViewController.swift */,
 			);
 			path = MYINFO;
 			sourceTree = "<group>";
@@ -407,8 +438,11 @@
 				30CE930D251891DC00556BE0 /* appstore.png in Resources */,
 				32A8A0912511B53400FE4CDD /* LaunchScreen.storyboard in Resources */,
 				30D38F2B2513202D00AFDC39 /* GoogleService-Info.plist in Resources */,
+				30DF05ED2521D2C800417962 /* emptyImage.png in Resources */,
+				30DF05DC2521BC1B00417962 /* checked.png in Resources */,
 				32A8A08E2511B53400FE4CDD /* Assets.xcassets in Resources */,
 				32A8A0892511B52300FE4CDD /* Main.storyboard in Resources */,
+				30DF05DE2521BC2800417962 /* unchecked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,36 +502,44 @@
 				9DCAD691251864F300D48783 /* reviewTableViewCell.swift in Sources */,
 				9DCAD6692518544B00D48783 /* prdDetailQueryModel.swift in Sources */,
 				9DCAD6662518544500D48783 /* prdDetailDBModel.swift in Sources */,
-				30D91C62251B93B80041D0E6 /* SKHstatic.swift in Sources */,
 				6B47B11E251AE35200A79DCF /* CommentInsertUpdateModel.swift in Sources */,
 				6B58DAA925135A1C00B67DC4 /* SubscribeTableViewController.swift in Sources */,
+				30DF05EC2521BF7100417962 /* SigupInsertDBModel.swift in Sources */,
 				30D91C63251B93B80041D0E6 /* shkMyInfoViewController.swift in Sources */,
 				6B7A0F87251448A900A3896A /* SubscribeQueryModel.swift in Sources */,
 				30A513A825132EC000F81B8B /* LoginViewController.swift in Sources */,
 				54E5472E251856E500914586 /* RecommendCell.swift in Sources */,
 				54E54730251856E500914586 /* UCategoryQueryModel.swift in Sources */,
 				FA5272A4251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift in Sources */,
+				30DF05DA2521B85900417962 /* SignUpViewController.swift in Sources */,
+				30DF05E92521BF7100417962 /* EmailChkModel.swift in Sources */,
 				FA52729E251ADAF9003D3AA0 /* SKHcashTableViewController.swift in Sources */,
+				30DF05E82521BF7100417962 /* LoginModel.swift in Sources */,
 				3058BB84251C3EC300F142B3 /* ReviewAddViewController.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
 				FA590E672519DA2F002021C4 /* SKHmyInfoQueryModel.swift in Sources */,
 				FABC6DE82518877000274124 /* SKHmyInfoDeleteViewController.swift in Sources */,
 				321A3CCF2519BA0E0019F870 /* MyProductDelete.swift in Sources */,
 				32A8A08C2511B52300FE4CDD /* GAMBAS.xcdatamodeld in Sources */,
+				30AAB6752522161A00EC0BBB /* AddSubscribeQueryModel.swift in Sources */,
 				30D91C64251B93B80041D0E6 /* shkMyInfoAllViewController.swift in Sources */,
+				30DF05EA2521BF7100417962 /* CheckFindIdPwModel.swift in Sources */,
+				30DF05D82521B83900417962 /* FindIdPwViewController.swift in Sources */,
 				54E5472B251856E500914586 /* HomeViewController.swift in Sources */,
-				30A513AC25132EDB00F81B8B /* MyInfoViewController.swift in Sources */,
+				30DF05EB2521BF7100417962 /* passwordChangeModel.swift in Sources */,
 				6B7A0F952519F72400A3896A /* LikeInsertUpdateModel.swift in Sources */,
 				6B7A0F892514610100A3896A /* SubcribeDBModel.swift in Sources */,
 				3058BB86251C8A9300F142B3 /* ReviewAddQueryModel.swift in Sources */,
 				30D91C68251B93B80041D0E6 /* SKHmyInfoPwChangeViewController.swift in Sources */,
 				30D91C66251B93B80041D0E6 /* SKHmyInfoUpdateModel.swift in Sources */,
 				6B58DAAD25135CE000B67DC4 /* ContentsTableViewController.swift in Sources */,
+				30DF05E02521BE2700417962 /* ChangePwViewController.swift in Sources */,
 				30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */,
 				54E5472F251856E500914586 /* CategoryDBModel.swift in Sources */,
 				54E5472D251856E500914586 /* CategoryQueryModel.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
 				30D91C60251B93B80041D0E6 /* SKHmyInfopwChangeModel.swift in Sources */,
+				30DF05E72521BF7100417962 /* SigupDBModel.swift in Sources */,
 				30CE930F25189A9B00556BE0 /* LoginQuaryModel.swift in Sources */,
 				6B58DAAB25135B6000B67DC4 /* ContentsViewController.swift in Sources */,
 				3246E732251499A400524164 /* MyChannelSelect.swift in Sources */,

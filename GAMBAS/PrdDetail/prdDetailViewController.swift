@@ -9,16 +9,20 @@
 import UIKit
 import Firebase
 
-class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
+class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol, AddSubscribeQueryModelProtocol {
     
     var container: ContainerViewController!
     var feedItem: NSArray = NSArray()
     let formatter = DateFormatter()
-    
+    var chSeqno:String?
     var prdSeqno:String?
     let uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+    let addSubscribeModel = AddSubscribeQueryModel()
+    let queryModel = prdDetailQueryModel()
+    
     
     @IBOutlet weak var btnSubs: UIButton!
+    @IBOutlet weak var btnSubsCancel: UIButton!
     @IBOutlet weak var lblChName: UILabel!
     @IBOutlet weak var ivPrdImage: UIImageView!
     @IBOutlet weak var lblPrdPrice: UILabel!
@@ -26,16 +30,17 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let queryModel = prdDetailQueryModel()
         
         
         queryModel.delegate = self
+        addSubscribeModel.delegate = self
+        
         queryModel.downloadItems(prdSeqno: prdSeqno!, uSeqno: uSeqno)
         container!.segueIdentifierReceivedFromParent("second")
         
+        btnSubsCancel.isHidden = true
         
         formatter.dateFormat = "yyyy-MM-dd"
-        
         
     }
     
@@ -53,15 +58,24 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
         
     }
     
+    func addSubsResultDownloaded(result: Bool) {
+        if result {
+            
+        } else {
+            
+        }
+    }
+    
     func itemDownloaded(items: NSArray) {
         feedItem = items
         let item: prdDetailDBModel = feedItem[0] as! prdDetailDBModel
         lblChName.text = (item.chNickName)
         lblPrdName.text = (item.prdTitle)
         lblPrdPrice.text = (item.prdPrice)
-        
-        if(Int(item.uSeqCount!) != 0){
+        chSeqno = item.chSeqno
+        if(Int(item.uSeqCount!)! > 0){
             btnSubs.isHidden = true
+            btnSubsCancel.isHidden = false
         }
         
         //Firebase image download
@@ -84,10 +98,28 @@ class prdDetailViewController: UIViewController, prdDetailQueryModelProtocol {
     @IBAction func btnSubs(_ sender: UIButton) {
         let current_date_string = formatter.string(from: Date())
         let checkAlert = UIAlertController(title: "구독 하시겠습니까?", message: "가격 : \(lblPrdPrice.text!)/월\n구독일자 : \(current_date_string)" , preferredStyle: UIAlertController.Style.alert)
-        let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+        let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { ACTION in
+            self.addSubscribeModel.addSubscribeInsertloadItems(uSeqno: self.uSeqno, prdSeqno: self.prdSeqno!, code: "add")
+            self.btnSubs.isHidden = true
+            self.btnSubsCancel.isHidden = false
+        })
         checkAlert.addAction(onAction)
         present(checkAlert, animated: true, completion: nil)
     }
+    
+    @IBAction func btnSubsCancel(_ sender: UIButton) {
+        let checkAlert = UIAlertController(title: "확인", message: "구독을 취소하시겠습니까?" , preferredStyle: UIAlertController.Style.alert)
+        let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { ACTION in
+            self.addSubscribeModel.addSubscribeInsertloadItems(uSeqno: self.uSeqno, prdSeqno: self.prdSeqno!, code: "cancel")
+            self.btnSubs.isHidden = false
+            self.btnSubsCancel.isHidden = true
+        })
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+        checkAlert.addAction(onAction)
+        checkAlert.addAction(cancelAction)
+        present(checkAlert, animated: true, completion: nil)
+    }
+    
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0{

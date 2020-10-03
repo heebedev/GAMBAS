@@ -13,6 +13,7 @@ import UIKit
 class SKHmyInfoDeleteViewController: UIViewController, SkhmyInfoModelProtocol {
     
     var feedItem: Int = 2
+    let uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
     
     func itemDownloaded(items: Int) {
         feedItem = items
@@ -25,7 +26,7 @@ class SKHmyInfoDeleteViewController: UIViewController, SkhmyInfoModelProtocol {
             //print("fail ivSKHcount \(feedItem)")
         } else if feedItem == 1 {
             let skhMyinfoDeleteModel = SKHmyInfopwDeleteModel()
-            let result = skhMyinfoDeleteModel.SKHmyInfoUpdateItems(seq: String(LOGED_IN_SEQ))
+            let result = skhMyinfoDeleteModel.SKHmyInfoUpdateItems(seq: uSeqno)
             
             if result {
                 let resultAlert = UIAlertController(title: "완료", message: "그동안 GAMBAS를 이용해주셔서 감사합니다.", preferredStyle: UIAlertController.Style.alert)
@@ -72,7 +73,7 @@ class SKHmyInfoDeleteViewController: UIViewController, SkhmyInfoModelProtocol {
         
         let checkModel = SkhmyInfoPwCheckModel()
         checkModel.delegate = self
-        checkModel.checkCount(password: ivSKHpassword, seq: LOGED_IN_SEQ)
+        checkModel.checkCount(password: ivSKHpassword, seq: Int(uSeqno)!)
     }
     
 

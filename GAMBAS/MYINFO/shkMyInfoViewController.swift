@@ -12,6 +12,8 @@ class shkMyInfoViewController: UIViewController, SKHmyInfoQueryModelProtocol {
     
     var feedItem: NSArray = NSArray()
     
+    let uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+    
     func itemDownloaded(items: NSArray) {
         feedItem = items
         
@@ -41,7 +43,7 @@ class shkMyInfoViewController: UIViewController, SKHmyInfoQueryModelProtocol {
     override func viewWillAppear(_ animated: Bool) {
         let queryModel = QueryModel()
         queryModel.delegate = self
-        queryModel.downloadItems(seq: String(LOGED_IN_SEQ))
+        queryModel.downloadItems(seq: uSeqno)
     }
     
     @IBAction func barbtnMyInfoUpdate(_ sender: UIBarButtonItem) {
@@ -65,17 +67,12 @@ class shkMyInfoViewController: UIViewController, SKHmyInfoQueryModelProtocol {
         }
         
         let updateModel = SKHmyInfoUpdateModel()
-        let result = updateModel.SKHmyInfoUpdateItems(email: email!, phone: phone!, seq: String(LOGED_IN_SEQ))
+        let result = updateModel.SKHmyInfoUpdateItems(email: email!, phone: phone!, seq: uSeqno)
         
         if result {
             let resultAlert = UIAlertController(title: "완료", message: "수정이 완료되었습니다", preferredStyle: UIAlertController.Style.alert)
             let onAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
-                guard let uvc = self.storyboard?.instantiateViewController(identifier: "myInfoAllView")
-                    else {
-                        return
-                }
-                uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-                self.navigationController?.pushViewController(uvc, animated: true)
+                self.navigationController?.popViewController(animated: true)
             })
             resultAlert.addAction(onAction)
             present(resultAlert, animated: true, completion: nil)
