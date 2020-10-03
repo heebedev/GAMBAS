@@ -18,6 +18,8 @@ class SKHmyInfoPwChangeViewController: UIViewController {
     var ivSKHpwChange = ""
     var ivSKHpwChangeCheck = ""
     
+    let uSeqno: String = String(UserDefaults.standard.integer(forKey: "uSeqno"))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,19 +39,14 @@ class SKHmyInfoPwChangeViewController: UIViewController {
         } else {        // 비밀번호가 일치하는지 체크
             if (ivSKHpwChange == ivSKHpwChangeCheck) {
                 let skhmyInfopwChangeModel = SKHmyInfopwChangeModel()
-                let result = skhmyInfopwChangeModel.SKHmyInfoUpdateItems(password: ivSKHpwChange, seq: String(LOGED_IN_SEQ))
+                let result = skhmyInfopwChangeModel.SKHmyInfoUpdateItems(password: ivSKHpwChange, seq: uSeqno)
                 
                 // 아래 identifier - myInfoAllView - 내 감바스(마이 인포 메인) 뜻함
                 
                 if result {
                     let resultAlert = UIAlertController(title: "완료", message: "수정이 완료되었습니다", preferredStyle: UIAlertController.Style.alert)
                     let onAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { action in
-                        guard let uvc = self.storyboard?.instantiateViewController(identifier: "myInfoAllView")
-                            else {
-                                return
-                        }
-                        uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-                        self.navigationController?.pushViewController(uvc, animated: true)
+                        self.dismiss(animated: true, completion: nil)
                     })
                     resultAlert.addAction(onAction)
                     present(resultAlert, animated: true, completion: nil)

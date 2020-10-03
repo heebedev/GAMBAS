@@ -129,7 +129,10 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
         // Upload the file to the path "images/rivers.jpg"
         fileRef.putFile(from: localFile!, metadata: nil)
         
-        let url: URL = URL(string: "http://127.0.0.1:8080/gambas/MyContentsInsert.jsp?contentsFile=\(contentsFile)&contentsTitle=\(contentsTitle)&contentsContent=\(contentsContent)&productSeqno=\(productSeqno)")!
+        let filePath = "http://127.0.0.1:8080/gambas/MyContentsInsert.jsp?contentsFile=\(contentsFile)&contentsTitle=\(contentsTitle)&contentsContent=\(contentsContent)&productSeqno=\(productSeqno)"
+        print(filePath)
+        
+        let url: URL = URL(string: filePath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url){(data, response, error) in

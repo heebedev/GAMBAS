@@ -1,5 +1,5 @@
 //
-//  MakeViewController.swift
+//  NoticeViewController.swift
 //  GAMBAS
 //
 //  Created by 김승희 on 2020/09/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakeViewController: UIViewController {
+class NoticeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

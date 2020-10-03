@@ -34,13 +34,14 @@ class LoginViewController: UIViewController, LoginQuaryModelProtocol {
 
     }
     
-    func LoginChkDownloaded(uSeqno: String, uResult: String) {
+    func LoginChkDownloaded(uSeqno: String, uResult: String, uCreatorCode: String) {
         if uResult == "false" {
             myAlert(alertTitle: "확인", alertMessage: "등록되지 않은 정보입니다.", actionTitle: "OK", handler: nil)
         } else if uResult != tfKSHloginPw.text! {
             myAlert(alertTitle: "비밀번호 오류", alertMessage: "비밀번호가 일치하지 않습니다.", actionTitle: "OK", handler: nil)
         } else {
             UserDefaults.standard.set(Int(uSeqno), forKey: "uSeqno")
+            UserDefaults.standard.set(Int(uCreatorCode), forKey: "uCRCode")
             self.performSegue(withIdentifier: "sgLogin", sender: nil)
         }
     }

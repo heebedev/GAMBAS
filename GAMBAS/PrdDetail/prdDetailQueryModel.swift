@@ -13,10 +13,8 @@ protocol prdDetailQueryModelProtocol {
 
 class prdDetailQueryModel: NSObject{
     var delegate: prdDetailQueryModelProtocol!
-    var urlPath = "http://localhost:8080/gambas/gambas_prdInfo_query.jsp"
     func downloadItems(prdSeqno:String, uSeqno:String){
-        let urlAdd = "?prdSeqno=\(prdSeqno)&uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
-        urlPath += urlAdd
+        let urlPath = "http://localhost:8080/gambas/gambas_prdInfo_query.jsp?prdSeqno=\(prdSeqno)&uSeqno=\(uSeqno)"  // urlPath 뒤에 ? 물음표 부터 뒤에 넣을 것 세팅
         print(urlPath)
         let url: URL = URL(string: urlPath)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

@@ -106,17 +106,47 @@ class ReviewAddViewController: UIViewController, prdDetailQueryModelProtocol {
             }
         } else {
             grade = sender.tag
-            for i in 1...5 {
-                if (i < sender.tag+1) {
-                    let star = self.view.viewWithTag(i) as! UIButton
-                    star.setImage(imgFullStar, for: UIControl.State.normal)
-                } else {
-                    let star = self.view.viewWithTag(i) as! UIButton
-                    star.setImage(imgEmptyStar, for: UIControl.State.normal)
-                }
+            switch sender.tag {
+            case 1:
+                btnStarNum1.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum2.setImage(imgEmptyStar, for: UIControl.State.normal)
+                btnStarNum3.setImage(imgEmptyStar, for: UIControl.State.normal)
+                btnStarNum4.setImage(imgEmptyStar, for: UIControl.State.normal)
+                btnStarNum5.setImage(imgEmptyStar, for: UIControl.State.normal)
+                break
+            case 2:
+                btnStarNum1.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum2.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum3.setImage(imgEmptyStar, for: UIControl.State.normal)
+                btnStarNum4.setImage(imgEmptyStar, for: UIControl.State.normal)
+                btnStarNum5.setImage(imgEmptyStar, for: UIControl.State.normal)
+                break
+            case 3:
+                btnStarNum1.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum2.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum3.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum4.setImage(imgEmptyStar, for: UIControl.State.normal)
+                btnStarNum5.setImage(imgEmptyStar, for: UIControl.State.normal)
+                break
+            case 4:
+                btnStarNum1.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum2.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum3.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum4.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum5.setImage(imgEmptyStar, for: UIControl.State.normal)
+                break
+            case 5:
+                btnStarNum1.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum2.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum3.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum4.setImage(imgFullStar, for: UIControl.State.normal)
+                btnStarNum5.setImage(imgFullStar, for: UIControl.State.normal)
+                break
+            default:
+                break
             }
+            
         }
-        
     }
     
     func checkValue() -> Bool {

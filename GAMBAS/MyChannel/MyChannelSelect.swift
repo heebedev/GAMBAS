@@ -35,7 +35,7 @@ class MyChannelSelect: NSObject{
         urlPath += urlAdd
         // 한글 url encoding (utf8이랑 아무런 상관없음)
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
+        print(urlPath)
         let url: URL = URL(string: urlPath)!
         
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)

@@ -83,7 +83,7 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
             return UICollectionViewCell()
         }
         
-        cell.layer.cornerRadius = 20
+        cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
         
         let item: CategoryDBModel = feedItem[indexPath.item] as! CategoryDBModel
@@ -93,7 +93,7 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         cell.releaseDay.text = item.releaseDay
         cell.term.text = "(\(item.term!))"
         cell.price.text = "\(item.prdPrice!) 원"
-        cell.subsNumber.text = "\(item.prdcount!) 구독"
+        cell.subsNumber.text = "👀 \(item.prdcount!)"
         cell.totalLike.text = item.clike
         
         cell.imgView.layer.cornerRadius = 5

@@ -16,6 +16,8 @@ class SKHmyInfoPasswordViewController: UIViewController, SkhmyInfoModelProtocol{
     var ivSKHcount = 1
     var ivSKHcheckPw = ""
     
+    let uSeqno = UserDefaults.standard.integer(forKey: "uSeqno")
+    
     func itemDownloaded(items: Int) {
         feedItem = items
         print("feedItem \(feedItem)")
@@ -28,6 +30,7 @@ class SKHmyInfoPasswordViewController: UIViewController, SkhmyInfoModelProtocol{
             print("fail ivSKHcount \(feedItem)")
         } else if feedItem == 1 {
             print("feedItemCheck = \(feedItem)")
+            self.performSegue(withIdentifier: "changePWmyInfo", sender: nil)
         }
     }
     
@@ -49,14 +52,11 @@ class SKHmyInfoPasswordViewController: UIViewController, SkhmyInfoModelProtocol{
             let onAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
             phoneAlert.addAction(onAction)
             present(phoneAlert, animated: true, completion: nil)
+        } else {
+            let queryModel = SkhmyInfoPwCheckModel()
+            queryModel.delegate = self
+            queryModel.checkCount(password: ivSKHcheckPw, seq: uSeqno)
         }
-        
-        let queryModel = SkhmyInfoPwCheckModel()
-        queryModel.delegate = self
-        queryModel.checkCount(password: ivSKHcheckPw, seq: LOGED_IN_SEQ)
-        
-        
-        
         
     }
     
