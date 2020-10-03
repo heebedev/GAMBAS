@@ -15,17 +15,14 @@ protocol SKHmyInfoQueryModelProtocol: class {
 class QueryModel:NSObject {
     
     var delegate: SKHmyInfoQueryModelProtocol!
-    var urlPath = "http://localhost:8080/gambas/gambas_query_ios.jsp"
     
     func downloadItems(seq: String) {
-        
-        let urlAdd = "?uSeqno=\(seq)"
-        urlPath += urlAdd
+        var urlPath = "http://localhost:8080/gambas/gambas_query_ios.jsp?uSeqno=\(seq)"
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
+        print(urlPath)
         let url: URL = URL(string: urlPath)!
-        print("url \(url)")
+
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url){(data, response, error) in
@@ -55,13 +52,15 @@ class QueryModel:NSObject {
             let query = SKHmyInfoModel()
             
             if let name = jsonElement["name"] as? String,
-               let email = jsonElement["email"] as? String,
+               let email = jsonElement["birth"] as? String,
                let phone = jsonElement["phone"] as? String,
-                let interest = jsonElement["interest"] as? String {
+               let image = jsonElement["image"] as? String,
+               let interest = jsonElement["interest"] as? String {
                 
                 query.ivSKHname = name
                 query.ivSKHemail = email
                 query.ivSKHphone = phone
+                query.ivSKHimage = image
                 query.ivSKHinterestCategory = interest
             }
         

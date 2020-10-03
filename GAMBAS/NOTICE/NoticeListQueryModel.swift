@@ -57,14 +57,11 @@ class NoticeListQueryModel: NSObject {
         case "name":
             let jsonResult = String(data: data, encoding: .utf8)!
             self.uName = jsonResult
-            print(jsonResult)
-            print(uName)
             DispatchQueue.main.async(execute: {() -> Void in
                 self.delegate.userNameDownloaded(uName: self.uName)
             })
             break
         default:
-            print("code default")
             var jsonResult = NSArray()
             do {
                 jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
@@ -75,8 +72,8 @@ class NoticeListQueryModel: NSObject {
             let items = NSMutableArray()
             
             for i in 0..<jsonResult.count {
+                print(jsonResult.count)
                 jsonElement = jsonResult[i] as! NSDictionary
-                print(jsonElement)
                 let query = NoticeListModel()
                 
                 if let nCode = jsonElement["nCode"] as? String,
@@ -86,7 +83,6 @@ class NoticeListQueryModel: NSObject {
                     query.nName = nName
                     query.nDetailName = nDetailName
                     query.nCode = nCode
-                    print("\(nName), \(nDetailName), \(nCode)")
                 }
                 items.add(query)
             }
