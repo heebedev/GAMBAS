@@ -43,6 +43,11 @@
 		30DF05EB2521BF7100417962 /* passwordChangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E52521BF7100417962 /* passwordChangeModel.swift */; };
 		30DF05EC2521BF7100417962 /* SigupInsertDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DF05E62521BF7100417962 /* SigupInsertDBModel.swift */; };
 		30DF05ED2521D2C800417962 /* emptyImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 30C051A7251A25360038939D /* emptyImage.png */; };
+		30FA3B6F2528A542000B962C /* LikeReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA3B6E2528A542000B962C /* LikeReviewModel.swift */; };
+		30FA3B732528C3A8000B962C /* MyLikeListQuaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA3B722528C3A8000B962C /* MyLikeListQuaryModel.swift */; };
+		30FA3B752528C3B6000B962C /* MyReviewListQuaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA3B742528C3B6000B962C /* MyReviewListQuaryModel.swift */; };
+		30FA3B7B2528D33E000B962C /* LikeReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA3B7A2528D33E000B962C /* LikeReviewTableViewCell.swift */; };
+		30FA3B962528DBF6000B962C /* CreatorRegistQuaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA3B952528DBF6000B962C /* CreatorRegistQuaryModel.swift */; };
 		321A3CC3251993F50019F870 /* MyChannelProductEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A3CC2251993F50019F870 /* MyChannelProductEditViewController.swift */; };
 		321A3CC7251997120019F870 /* MyProductRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A3CC6251997120019F870 /* MyProductRegisterViewController.swift */; };
 		321A3CCB251999DF0019F870 /* MyContentsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321A3CCA251999DF0019F870 /* MyContentsAddViewController.swift */; };
@@ -85,7 +90,6 @@
 		9DCAD6C42518AB8A00D48783 /* Pods_GAMBAS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; };
 		9DCAD6C52518AB8A00D48783 /* Pods_GAMBAS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCAD6C32518AB8A00D48783 /* Pods_GAMBAS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9DF22F682513408700199FBE /* prdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF22F672513408700199FBE /* prdDetailViewController.swift */; };
-		FA52729E251ADAF9003D3AA0 /* SKHcashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */; };
 		FA5272A4251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */; };
 		FA590E672519DA2F002021C4 /* SKHmyInfoQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */; };
 		FABC6DE82518877000274124 /* SKHmyInfoDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */; };
@@ -143,6 +147,11 @@
 		30DF05E42521BF7100417962 /* CheckFindIdPwModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckFindIdPwModel.swift; sourceTree = "<group>"; };
 		30DF05E52521BF7100417962 /* passwordChangeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passwordChangeModel.swift; sourceTree = "<group>"; };
 		30DF05E62521BF7100417962 /* SigupInsertDBModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigupInsertDBModel.swift; sourceTree = "<group>"; };
+		30FA3B6E2528A542000B962C /* LikeReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeReviewModel.swift; sourceTree = "<group>"; };
+		30FA3B722528C3A8000B962C /* MyLikeListQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLikeListQuaryModel.swift; sourceTree = "<group>"; };
+		30FA3B742528C3B6000B962C /* MyReviewListQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewListQuaryModel.swift; sourceTree = "<group>"; };
+		30FA3B7A2528D33E000B962C /* LikeReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeReviewTableViewCell.swift; sourceTree = "<group>"; };
+		30FA3B952528DBF6000B962C /* CreatorRegistQuaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorRegistQuaryModel.swift; sourceTree = "<group>"; };
 		321A3CC2251993F50019F870 /* MyChannelProductEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelProductEditViewController.swift; sourceTree = "<group>"; };
 		321A3CC6251997120019F870 /* MyProductRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProductRegisterViewController.swift; sourceTree = "<group>"; };
 		321A3CCA251999DF0019F870 /* MyContentsAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContentsAddViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +199,6 @@
 		9DCAD6C62518ABA600D48783 /* KakaoOpenSDK-1.23.4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "KakaoOpenSDK-1.23.4"; path = "Pods/KakaoOpenSDK-1.23.4"; sourceTree = "<group>"; };
 		9DF22F672513408700199FBE /* prdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prdDetailViewController.swift; sourceTree = "<group>"; };
 		DC3275FC3D48C487695FBB04 /* Pods-GAMBAS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GAMBAS.debug.xcconfig"; path = "Target Support Files/Pods-GAMBAS/Pods-GAMBAS.debug.xcconfig"; sourceTree = "<group>"; };
-		FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHcashTableViewController.swift; sourceTree = "<group>"; };
 		FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoDeleteModel.swift; sourceTree = "<group>"; };
 		FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoQueryModel.swift; sourceTree = "<group>"; };
 		FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHmyInfoDeleteViewController.swift; sourceTree = "<group>"; };
@@ -351,8 +359,12 @@
 				30D91C5D251B93B80041D0E6 /* SKHmyInfoUpdateModel.swift */,
 				FABC6DE72518877000274124 /* SKHmyInfoDeleteViewController.swift */,
 				FA590E662519DA2F002021C4 /* SKHmyInfoQueryModel.swift */,
-				FA52729D251ADAF9003D3AA0 /* SKHcashTableViewController.swift */,
 				FA5272A3251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift */,
+				30FA3B6E2528A542000B962C /* LikeReviewModel.swift */,
+				30FA3B722528C3A8000B962C /* MyLikeListQuaryModel.swift */,
+				30FA3B742528C3B6000B962C /* MyReviewListQuaryModel.swift */,
+				30FA3B7A2528D33E000B962C /* LikeReviewTableViewCell.swift */,
+				30FA3B952528DBF6000B962C /* CreatorRegistQuaryModel.swift */,
 			);
 			path = MYINFO;
 			sourceTree = "<group>";
@@ -524,12 +536,14 @@
 				9DF22F682513408700199FBE /* prdDetailViewController.swift in Sources */,
 				6B64B16F25281B3600B219A5 /* HomeViewController.swift in Sources */,
 				9DCAD65F2518512500D48783 /* ContainerViewController.swift in Sources */,
+				30FA3B962528DBF6000B962C /* CreatorRegistQuaryModel.swift in Sources */,
 				30703CFF252842E500FB5FAF /* NoticeTableViewCell.swift in Sources */,
 				9DCAD6622518512E00D48783 /* EmptySegue.swift in Sources */,
 				9DCAD691251864F300D48783 /* reviewTableViewCell.swift in Sources */,
 				9DCAD6692518544B00D48783 /* prdDetailQueryModel.swift in Sources */,
 				9DCAD6662518544500D48783 /* prdDetailDBModel.swift in Sources */,
 				6B47B11E251AE35200A79DCF /* CommentInsertUpdateModel.swift in Sources */,
+				30FA3B752528C3B6000B962C /* MyReviewListQuaryModel.swift in Sources */,
 				6B58DAA925135A1C00B67DC4 /* SubscribeTableViewController.swift in Sources */,
 				30DF05EC2521BF7100417962 /* SigupInsertDBModel.swift in Sources */,
 				30D91C63251B93B80041D0E6 /* shkMyInfoViewController.swift in Sources */,
@@ -540,7 +554,6 @@
 				FA5272A4251AEC71003D3AA0 /* SKHmyInfoDeleteModel.swift in Sources */,
 				30DF05DA2521B85900417962 /* SignUpViewController.swift in Sources */,
 				30DF05E92521BF7100417962 /* EmailChkModel.swift in Sources */,
-				FA52729E251ADAF9003D3AA0 /* SKHcashTableViewController.swift in Sources */,
 				30DF05E82521BF7100417962 /* LoginModel.swift in Sources */,
 				3058BB84251C3EC300F142B3 /* ReviewAddViewController.swift in Sources */,
 				32A8A0822511B52300FE4CDD /* AppDelegate.swift in Sources */,
@@ -555,6 +568,7 @@
 				30DF05EA2521BF7100417962 /* CheckFindIdPwModel.swift in Sources */,
 				30DF05D82521B83900417962 /* FindIdPwViewController.swift in Sources */,
 				54E5472B251856E500914586 /* HomeViewController.swift in Sources */,
+				30FA3B732528C3A8000B962C /* MyLikeListQuaryModel.swift in Sources */,
 				30DF05EB2521BF7100417962 /* passwordChangeModel.swift in Sources */,
 				6B7A0F952519F72400A3896A /* LikeInsertUpdateModel.swift in Sources */,
 				6B7A0F892514610100A3896A /* SubcribeDBModel.swift in Sources */,
@@ -566,6 +580,7 @@
 				30DF05E02521BE2700417962 /* ChangePwViewController.swift in Sources */,
 				30A513B52513301600F81B8B /* NoticeViewController.swift in Sources */,
 				54E5472F251856E500914586 /* CategoryDBModel.swift in Sources */,
+				30FA3B6F2528A542000B962C /* LikeReviewModel.swift in Sources */,
 				54E5472D251856E500914586 /* CategoryQueryModel.swift in Sources */,
 				32A8A0842511B52300FE4CDD /* SceneDelegate.swift in Sources */,
 				30D91C60251B93B80041D0E6 /* SKHmyInfopwChangeModel.swift in Sources */,
@@ -584,6 +599,7 @@
 				30D91C67251B93B80041D0E6 /* SKHmyInfoModel.swift in Sources */,
 				3246E738251499D500524164 /* MyContentsSelect.swift in Sources */,
 				30D91C61251B93B80041D0E6 /* SKHmyInfoPasswordViewController.swift in Sources */,
+				30FA3B7B2528D33E000B962C /* LikeReviewTableViewCell.swift in Sources */,
 				321A3CCB251999DF0019F870 /* MyContentsAddViewController.swift in Sources */,
 				3246E72C251497B100524164 /* MyProductModel.swift in Sources */,
 				54E5472C251856E500914586 /* RecommendListViewController.swift in Sources */,

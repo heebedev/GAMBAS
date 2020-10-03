@@ -26,6 +26,8 @@ class NoticeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tvNoticeList.dataSource = self
         tvNoticeList.rowHeight = 64
         
+        tvNoticeList.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
         let queryModel = NoticeListQueryModel()
         queryModel.delegate = self
         queryModel.getUserName(userSeqno: uSeqno)
@@ -54,12 +56,8 @@ class NoticeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeListCell", for: indexPath) as! NoticeTableViewCell
-        
         let item: NoticeListModel = feedItem[indexPath.row] as! NoticeListModel
-        print(item.nCode!)
-        print(item.nName!)
         if item.nName == uName {
             switch item.nCode {
             case "like":
