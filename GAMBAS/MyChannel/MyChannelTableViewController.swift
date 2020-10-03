@@ -76,11 +76,11 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         
         let myProductSelect = MyProductSelect()
         myProductSelect.delegate = self
-        myProductSelect.downloadItem_myProduct(channelSeqno: uSeqno)
+        myProductSelect.downloadItem_myProduct(channelSeqno: channelSeqno)
         
         let myContentsSelect = MyContentsSelect()
         myContentsSelect.delegate = self
-        myContentsSelect.downloadItem_myContents(productSeqno: uSeqno)
+        myContentsSelect.downloadItem_myContents(productSeqno: productSeqno)
     
         self.tvLJHContentsList.separatorStyle = UITableViewCell.SeparatorStyle.none
         
@@ -258,11 +258,11 @@ class MyChannelTableViewController: UITableViewController, MyChannelSelectProtoc
         
         let myProductSelect = MyProductSelect()
         myProductSelect.delegate = self
-        myProductSelect.downloadItem_myProduct(channelSeqno: "1") // 절대값***
+        myProductSelect.downloadItem_myProduct(channelSeqno: channelSeqno) // 절대값***
         
         let myContentsSelect = MyContentsSelect()
         myContentsSelect.delegate = self
-        myContentsSelect.downloadItem_myContents(productSeqno: "1") // 절대값***
+        myContentsSelect.downloadItem_myContents(productSeqno: productSeqno) // 절대값***
         
         print("viewWillAppear()")
     }

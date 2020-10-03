@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LoginQuaryModelProtocol: class {
-    func LoginChkDownloaded(uSeqno: String, uResult: String)
+    func LoginChkDownloaded(uSeqno: String, uResult: String, uCreatorCode: String)
 }
 
 class LoginQuaryModel: NSObject {
@@ -40,6 +40,7 @@ class LoginQuaryModel: NSObject {
         
         var falseOrPw = "false"
         var uSeqnoResult = "0"
+        var uCreatorCode = "1"
         
         do{
             jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
@@ -52,17 +53,20 @@ class LoginQuaryModel: NSObject {
             jsonElement = jsonResult[i] as! NSDictionary
             // 첫번째 중괄호 안의 변수명 값들을 받아옴.
             if let uSeq = jsonElement["uSeqno"] as? String,
-                let ckResult = jsonElement["result"] as? String {
+               
+               let ckResult = jsonElement["result"] as? String,
+            let uCreaterSubs = jsonElement["uCreaterSubs"] as? String{
                 
                 
                 uSeqnoResult = uSeq
                 falseOrPw = ckResult
+                uCreatorCode = uCreaterSubs
             
             }
 
         }
         DispatchQueue.main.async(execute: {() -> Void in
-        self.delegate.LoginChkDownloaded(uSeqno: uSeqnoResult, uResult: falseOrPw)
+            self.delegate.LoginChkDownloaded(uSeqno: uSeqnoResult, uResult: falseOrPw, uCreatorCode : uCreatorCode)
         })
     }
     

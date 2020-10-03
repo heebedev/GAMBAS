@@ -10,7 +10,11 @@ import UIKit
 
 class SideMenuTableViewController: UITableViewController {
     
-    var menuList = ["채널관리", "로그아웃"]
+    var menuList = ["로그아웃", "채널관리"]
+    var menuListSolo = ["로그아웃"]
+    
+    let uCRCode: Int = UserDefaults.standard.integer(forKey: "uCRCode")
+    
     @IBOutlet var sideTableView: UITableView!
     
     override func viewDidLoad() {
@@ -32,15 +36,28 @@ class SideMenuTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return menuList.count
+        // #warning Incomplete implementation, return the number of rows'
+        var result = 0
+        
+        if uCRCode == 1 {
+            result = menuListSolo.count
+        } else {
+            result =  menuList.count
+        }
+        return result
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-
-        cell.textLabel?.text = menuList[indexPath.row]
+        
+        
+        if uCRCode == 1 {
+            cell.textLabel?.text = menuListSolo[indexPath.row]
+        } else {
+            cell.textLabel?.text = menuList[indexPath.row]
+        }
+        
 
         return cell
     }
@@ -48,16 +65,16 @@ class SideMenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row == 0) {
             let board = UIStoryboard.init(name: "Main", bundle: nil)
-            guard let detailVC = board.instantiateViewController(withIdentifier: "chManager") as? MyChannelTableViewController else {return}
+            guard let detailVC = board.instantiateViewController(withIdentifier: "LoginPage") as? LoginViewController else {return}
+            detailVC.modalPresentationStyle = .fullScreen
+            
+            UserDefaults.standard.removeObject(forKey: "uSeqno")
             detailVC.modalPresentationStyle = .fullScreen
             // 이동
             self.present(detailVC, animated: true, completion: nil)
         } else {
             let board = UIStoryboard.init(name: "Main", bundle: nil)
-            guard let detailVC = board.instantiateViewController(withIdentifier: "LoginPage") as? LoginViewController else {return}
-            detailVC.modalPresentationStyle = .fullScreen
-            
-            UserDefaults.standard.removeObject(forKey: "uSeqno")
+            guard let detailVC = board.instantiateViewController(withIdentifier: "chManager") as? MyChannelTableViewController else {return}
             detailVC.modalPresentationStyle = .fullScreen
             // 이동
             self.present(detailVC, animated: true, completion: nil)
