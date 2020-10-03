@@ -69,7 +69,7 @@ class HomeViewController: UIViewController, CategoryProtocol{
                     if isValid {
                         for category in self.categories {
                             let index = Int(category)
-                            self.cView[index!-1].isHidden = false
+                            //self.cView[index!-1].isHidden = false
                         }
                     }
                 }
