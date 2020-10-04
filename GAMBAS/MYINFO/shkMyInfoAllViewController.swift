@@ -13,10 +13,12 @@ class shkMyInfoAllViewController: UIViewController, UITableViewDelegate, UITable
     
     func myLikeDownloaded(likes: NSArray) {
         likeItems = likes
+        tvMyLikeTableView.reloadData()
     }
     
     func myReviewDownloaded(reviews: NSArray) {
         reviewItems = reviews
+        tvMyReviewTableView.reloadData()
     }
     
     func itemDownloaded(items: NSArray) {
@@ -56,6 +58,8 @@ class shkMyInfoAllViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("ViewDidLoad Start")
+        
         tvMyLikeTableView.delegate = self
         tvMyLikeTableView.dataSource = self
         tvMyLikeTableView.rowHeight = 68
@@ -86,17 +90,8 @@ class shkMyInfoAllViewController: UIViewController, UITableViewDelegate, UITable
         
         ivMyInfoProfile.layer.cornerRadius = 30
         
-        tvMyReviewTableView.reloadData()
-        tvMyLikeTableView.reloadData()
-        
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        tvMyReviewTableView.reloadData()
-        tvMyLikeTableView.reloadData()
-        
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         tvMyReviewTableView.reloadData()
         tvMyLikeTableView.reloadData()
@@ -118,7 +113,6 @@ class shkMyInfoAllViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cell구성")
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikeReviewCell", for: indexPath) as! LikeReviewTableViewCell
         if tableView == tvMyLikeTableView {
             let item: LikeReviewModel = likeItems[indexPath.row] as! LikeReviewModel
