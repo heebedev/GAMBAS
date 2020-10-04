@@ -534,9 +534,6 @@
                                     <rect key="frame" x="311" y="433" width="95" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="컨텐츠 추가하기"/>
-                                    <connections>
-                                        <segue destination="pDH-Pt-KRm" kind="show" identifier="sgMyContentsAdd" id="Y7A-pI-zbm"/>
-                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEb-NY-f4X">
                                     <rect key="frame" x="363" y="7" width="30" height="30"/>
@@ -928,12 +925,12 @@
             </objects>
             <point key="canvasLocation" x="6530" y="-1533"/>
         </scene>
-        <!--컨텐츠 추가 화면-->
+        <!--콘텐츠 추가-->
         <scene sceneID="u1b-M9-phJ">
             <objects>
                 <viewController id="pDH-Pt-KRm" customClass="MyContentsAddViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6pR-3O-gwA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udP-wX-Ruk">
@@ -990,7 +987,7 @@
                         <viewLayoutGuide key="safeArea" id="9g7-bh-WFP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="컨텐츠 추가 화면" id="YJB-58-3CJ"/>
+                    <navigationItem key="navigationItem" title="콘텐츠 추가" id="YJB-58-3CJ"/>
                     <connections>
                         <outlet property="btnFileUpload" destination="vbd-sf-hAH" id="3eR-e5-sJB"/>
                         <outlet property="lbKSHFileRegistered" destination="hle-9X-BZx" id="Fwg-Od-USJ"/>
@@ -1001,7 +998,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6H-kX-GzI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5134.7826086956529" y="-850.44642857142856"/>
+            <point key="canvasLocation" x="11970" y="-528"/>
         </scene>
         <!--Notice View Controller-->
         <scene sceneID="7No-yq-Yxv">
@@ -2947,7 +2944,6 @@
                                                         </constraints>
                                                         <state key="normal" backgroundImage="plus" catalog="system"/>
                                                         <connections>
-                                                            <action selector="btn_add_product:" destination="BMX-oo-hRF" eventType="touchUpInside" id="0C2-bI-yU8"/>
                                                             <segue destination="99y-tL-e05" kind="show" identifier="sgChannelAddProduct" id="DfJ-Lh-owQ"/>
                                                         </connections>
                                                     </button>
@@ -3770,7 +3766,7 @@
                                                         </constraints>
                                                         <state key="normal" backgroundImage="plus" catalog="system"/>
                                                         <connections>
-                                                            <segue destination="RnW-X6-BDo" kind="show" identifier="sgChannelAddContents" id="WVb-TD-GAX"/>
+                                                            <segue destination="pDH-Pt-KRm" kind="show" identifier="sgMyContentsAdd" id="lo6-tx-qrq"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -3880,78 +3876,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qM3-pb-a97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="10934.782608695654" y="-989.0625"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="vdh-FH-Fj3">
-            <objects>
-                <viewController id="RnW-X6-BDo" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Mj3-i6-Nb8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VL-a8-bQ8">
-                                <rect key="frame" x="176" y="650" width="63" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="추가하기">
-                                    <color key="titleColor" red="0.78416448829999996" green="0.61294144390000005" blue="0.76864367720000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnLJHContentsAddOk:" destination="pDH-Pt-KRm" eventType="touchUpInside" id="naL-cH-U0M"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jsa-9n-5Gm">
-                                <rect key="frame" x="72" y="419" width="270" height="218"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="파일이 선택되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X93-PS-X9J">
-                                <rect key="frame" x="72" y="158" width="270" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hHQ-8n-4HZ">
-                                <rect key="frame" x="72" y="215" width="270" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="컨텐츠 제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cfa-dI-NIc">
-                                <rect key="frame" x="72" y="354" width="270" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZB-gX-pDw">
-                                <rect key="frame" x="166" y="198" width="82" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="파일 업로드">
-                                    <color key="titleColor" red="0.78416448829999996" green="0.61294144390000005" blue="0.76864367720000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="콘텐츠 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rY-0P-HII">
-                                <rect key="frame" x="72" y="396" width="78" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fiA-h0-XKm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="TBt-UH-NDf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CD5-5W-Jlc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="11970" y="-540"/>
         </scene>
         <!--채널 관리-->
         <scene sceneID="q19-Ug-56H">

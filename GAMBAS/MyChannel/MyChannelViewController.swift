@@ -161,14 +161,7 @@ class MyChannelViewController: UIViewController, MyChannelSelectProtocol,UITable
         // 네비게이션 컨트롤러 제거 
         self.navigationController?.popViewController(animated: true) }
     
-    
-    @IBAction func btn_manage_channel(_ sender: UIButton) {
-    }
-    
-    @IBAction func btn_add_product(_ sender: UIButton) {
-    }
-    
-    
+   
     
     
    
