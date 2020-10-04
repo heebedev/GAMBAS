@@ -161,14 +161,7 @@ class MyChannelViewController: UIViewController, MyChannelSelectProtocol,UITable
         // 네비게이션 컨트롤러 제거 
         self.navigationController?.popViewController(animated: true) }
     
-    
-    @IBAction func btn_manage_channel(_ sender: UIButton) {
-    }
-    
-    @IBAction func btn_add_product(_ sender: UIButton) {
-    }
-    
-    
+   
     
     
    
@@ -180,9 +173,6 @@ class MyChannelViewController: UIViewController, MyChannelSelectProtocol,UITable
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "sgChannelAddProduct"{
-//            let cell = sender as! UITableViewCell
-//            let indexPath = self.subsListTableView.indexPath(for: cell) // 몇 번쨰 클릭?
-            
             let addProductView = segue.destination as! MyChannelAddProductViewController // 뷰컨트롤러 목적지
             let itemMychannelInfo: MyChannelModel = feedItemMychannelInfo[0] as! MyChannelModel // 받은 내용 DBModel로 변환한 후
             
@@ -195,6 +185,31 @@ class MyChannelViewController: UIViewController, MyChannelSelectProtocol,UITable
             
             // prdSeqno 보내줌
             addProductView.AddReceiveItems(chSeqno: chSeqno) // 펑션만들기
+            
+        } // 콘텐츠 리스트에 넘겨주기
+        else if segue.identifier == "sgChannelContentsList"{
+            let cell = sender as! UITableViewCell
+            let indexPath = self.tableview_productlist.indexPath(for: cell) // 몇 번쨰 클릭?
+            
+            let myProductView = segue.destination as! MyProductViewController // 뷰컨트롤러 목적지
+            
+            let item: MyProductModel = feedItemMyProductList[(indexPath! as NSIndexPath).row] as! MyProductModel // 받은 내용 몇번째인지 확인하고 DBModel로 변환한 후
+            
+            // 하나씩 빼와서
+            let prdSeqno = String(item.prdSeqno!)
+            let term = String(item.term!)
+            let releaseDay = String(item.releaseDay!)
+            let prdTitle = String(item.prdTitle!)
+            let prdPrice = String(item.prdPrice!)
+            let prdContext = String(item.prdContext!)
+            let prdImage = String(item.prdImage!)
+            let prdRegistDate = String(item.prdRegistDate!)
+            let prdValidation = String(item.prdValidation!)
+            let chSeqno = String(item.chSeqno!)
+            let cgSeqno = String(item.cgSeqno!)
+            
+            // 넣어줌
+            myProductView.receiveItemsSelectedProduct(prdSeqno, term, releaseDay, prdTitle, prdPrice, prdContext, prdImage, prdRegistDate, prdValidation, chSeqno, cgSeqno)
             
         }
         
@@ -217,8 +232,5 @@ class MyChannelProductTableViewCell: UITableViewCell {
     @IBOutlet weak var lbl_prdPrice: UILabel!
     @IBOutlet weak var lbl_term: UILabel!
     @IBOutlet weak var lbl_releaseDay: UILabel!
-    
-    
-    
     
 }

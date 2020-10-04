@@ -19,12 +19,13 @@ class MyContentsModel: NSObject{
     var ctRegistDate: String?
     var ctValidation: String?
     var prdSeqno: String?
+    var ctReleaseDate: String?
     
     override init() {
         
     }
     
-    init(ctSeqno: String, ctTitle: String, ctContext: String, ctfile: String, ctRegistDate: String, ctValidation: String, prdSeqno: String) {
+    init(ctSeqno: String, ctTitle: String, ctContext: String, ctfile: String, ctRegistDate: String, ctValidation: String, prdSeqno: String, ctReleaseDate: String) {
         self.ctSeqno = ctSeqno
         self.ctTitle = ctTitle
         self.ctContext = ctContext
@@ -32,6 +33,7 @@ class MyContentsModel: NSObject{
         self.ctRegistDate = ctRegistDate
         self.ctValidation = ctValidation
         self.prdSeqno = prdSeqno
+        self.ctReleaseDate = ctReleaseDate
     }
     
 }//----

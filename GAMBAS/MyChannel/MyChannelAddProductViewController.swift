@@ -300,6 +300,8 @@ class MyChannelAddProductViewController: UIViewController, UIImagePickerControll
             myAlert(alertTitle: "확인", alertMessage: "월별 가격을 입력해주세요", actionTitle: "OK", handler: nil)
         } else if prdContext.isEmpty {
             myAlert(alertTitle: "확인", alertMessage: "상품내용을 입력해주세요", actionTitle: "OK", handler: nil)
+        } else if (cgSeqnoChecked[0] + cgSeqnoChecked[1] + cgSeqnoChecked[2] + cgSeqnoChecked[3] + cgSeqnoChecked[4] + cgSeqnoChecked[5] == 0) {
+            myAlert(alertTitle: "확인", alertMessage: "콘텐츠 종류를 선택해주세요.", actionTitle: "OK", handler: nil)
         } else if (termChecked[0] + termChecked[1] == 0) {
             myAlert(alertTitle: "확인", alertMessage: "콘텐츠 업로드 주기를 선택해주세요.", actionTitle: "OK", handler: nil)
         } else if (releaseDayChecked[0] + releaseDayChecked[1] + releaseDayChecked[2] + releaseDayChecked[3] + releaseDayChecked[4] + releaseDayChecked[5] + releaseDayChecked[6] == 0) {

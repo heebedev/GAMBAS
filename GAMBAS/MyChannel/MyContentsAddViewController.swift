@@ -41,7 +41,7 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
         
         documentPickerController.delegate = self
         documentPickerController.modalPresentationStyle = .fullScreen
-        self.present(documentPickerController, animated: true, completion: nil)
+        //self.present(documentPickerController, animated: true, completion: nil)
     }
     
     
@@ -129,11 +129,17 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
         // Upload the file to the path "images/rivers.jpg"
         fileRef.putFile(from: localFile!, metadata: nil)
         
-        let filePath = "http://127.0.0.1:8080/gambas/MyContentsInsert.jsp?contentsFile=\(contentsFile)&contentsTitle=\(contentsTitle)&contentsContent=\(contentsContent)&productSeqno=\(productSeqno)"
+        // jsp에서 데이터에 한글이 들어갈 경우
+       let filePath = "http://127.0.0.1:8080/gambas/MyContentsInsert.jsp?contentsFile=\(contentsFile)&contentsTitle=\(contentsTitle)&contentsContent=\(contentsContent)&productSeqno=\(productSeqno)"
         print(filePath)
         
-        let url: URL = URL(string: filePath)!
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        // 한글 안들어갈 떄
+        if let encodedPath = filePath.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let url:URL = URL(string: encodedPath) {
+            let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+        
+//        let url: URL = URL(string: filePath)!
+//        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{ // '에러 코드가 있었다'라는 걸 의미
@@ -143,10 +149,10 @@ class MyContentsAddViewController: UIViewController, UIImagePickerControllerDele
             }
         }
         task.resume()
-        
+        }
         let resultAlert = UIAlertController(title: "완료", message: "컨텐츠가 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { [self]ACTION in
-            dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true) // 네비게이션 뒤로가기 
         })
         resultAlert.addAction(okAction)
         present(resultAlert, animated: true, completion: nil)
