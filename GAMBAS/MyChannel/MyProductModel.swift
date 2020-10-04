@@ -23,13 +23,13 @@ class MyProductModel: NSObject{
     var prdValidation: String?
     var chSeqno: String?
     var cgSeqno: String?
-    var cgName: String?
+   
     
     override init() {
         
     }
     
-    init(prdSeqno: String, term: String, releaseDay: String, prdTitle: String, prdPrice: String, prdContext: String, prdImage: String, prdRegistDate: String, prdValidation: String, chSeqno: String, cgSeqno: String, cgName: String) {
+    init(prdSeqno: String, term: String, releaseDay: String, prdTitle: String, prdPrice: String, prdContext: String, prdImage: String, prdRegistDate: String, prdValidation: String, chSeqno: String, cgSeqno: String) {
         self.prdSeqno = prdSeqno
         self.term = term
         self.releaseDay = releaseDay
@@ -41,7 +41,7 @@ class MyProductModel: NSObject{
         self.prdValidation = prdValidation
         self.chSeqno = chSeqno
         self.cgSeqno = cgSeqno
-        self.cgName = cgName
+     
     }
     
 }//----

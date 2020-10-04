@@ -74,10 +74,16 @@ class SideMenuTableViewController: UITableViewController {
             self.present(detailVC, animated: true, completion: nil)
         } else {
             let board = UIStoryboard.init(name: "Main", bundle: nil)
-            guard let detailVC = board.instantiateViewController(withIdentifier: "chManager") as? MyChannelTableViewController else {return}
-            detailVC.modalPresentationStyle = .fullScreen
-            // 이동
-            self.present(detailVC, animated: true, completion: nil)
+            // 네비게이션 컨트롤러 연결
+            guard let detailVC = board.instantiateViewController(withIdentifier: "chManager") as? MyChannelViewController else {return} // 송희 수정
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+//            guard let detailVC = board.instantiateViewController(withIdentifier: "chManager") as? MyChannelViewController else {return} // 송희 수정
+//            detailVC.modalPresentationStyle = .fullScreen
+//            // 이동
+//            self.present(detailVC, animated: true, completion: nil)
+            
+            
         }
     }
     
