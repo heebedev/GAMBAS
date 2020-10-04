@@ -3676,7 +3676,7 @@
         <!--게시물이름-->
         <scene sceneID="e7M-JS-puS">
             <objects>
-                <viewController id="3tp-o3-Ksi" sceneMemberID="viewController">
+                <viewController id="3tp-o3-Ksi" customClass="MyProductViewController" customModule="GAMBAS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4eI-iX-h4N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3815,10 +3815,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="609"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myChannelContentsCell" rowHeight="128" id="1XV-3y-nO2" customClass="MyChannelProductTableViewCell" customModule="GAMBAS" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myChannelContentsCell" rowHeight="128" id="1XV-3y-nO2" customClass="MyProductContentsTableViewCell" customModule="GAMBAS" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="414" height="128"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
-                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1XV-3y-nO2" id="wjC-yH-LcP">
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1XV-3y-nO2" id="wjC-yH-LcP" customClass="MyProductContentsTableViewCell" customModule="GAMBAS" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
@@ -3826,13 +3826,6 @@
                                                                             <rect key="frame" x="17" y="14" width="382" height="99"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnW-hD-Cp1">
-                                                                                    <rect key="frame" x="138" y="43" width="189" height="22"/>
-                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ctReleaseDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUN-50-ZCg">
                                                                                     <rect key="frame" x="16" y="70" width="353" height="21"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3860,7 +3853,9 @@
                                                                     </subviews>
                                                                 </tableViewCellContentView>
                                                                 <connections>
-                                                                    <outlet property="lbl_prdPrice" destination="QnW-hD-Cp1" id="9ih-cu-QUx"/>
+                                                                    <outlet property="lbl_ctContext" destination="prv-uo-ltF" id="KVC-9p-RUO"/>
+                                                                    <outlet property="lbl_ctReleaseDate" destination="yUN-50-ZCg" id="WmM-wh-1w2"/>
+                                                                    <outlet property="lbl_ctTitle" destination="6lh-s2-8eb" id="IZb-3q-zMP"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -3894,6 +3889,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="게시물이름" id="G5a-WE-VLK"/>
+                    <connections>
+                        <outlet property="iv_prdImage" destination="krk-jk-bGP" id="gpD-PA-Uig"/>
+                        <outlet property="lbl_prdContext" destination="gtR-fF-1rO" id="CRb-p9-qPo"/>
+                        <outlet property="lbl_prdPrice" destination="qCp-jn-n8M" id="PTe-01-LRc"/>
+                        <outlet property="lbl_prdTitle" destination="LIK-Zy-J1V" id="xcm-9i-gi7"/>
+                        <outlet property="lbl_prdValidation" destination="oRP-Nd-59x" id="y2T-Zo-EqS"/>
+                        <outlet property="lbl_releaseDay" destination="TXh-SX-3iG" id="hsI-Y1-7yf"/>
+                        <outlet property="lbl_term" destination="qV0-pq-6U7" id="zjE-uY-Ab8"/>
+                        <outlet property="tableview_contentslist" destination="6hY-EE-oA1" id="wAj-bS-YHU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qM3-pb-a97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
