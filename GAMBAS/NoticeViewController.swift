@@ -16,6 +16,7 @@ class NoticeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
     var uName:String = ""
     var feedItem: NSArray = NSArray()
+    let queryModel = NoticeListQueryModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class NoticeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tvNoticeList.separatorStyle = UITableViewCell.SeparatorStyle.none
         
-        let queryModel = NoticeListQueryModel()
+        
         queryModel.delegate = self
         queryModel.getUserName(userSeqno: uSeqno)
         queryModel.downloadItems(userSeqno: uSeqno)
@@ -37,7 +38,7 @@ class NoticeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tvNoticeList.reloadData()
+        queryModel.downloadItems(userSeqno: uSeqno)
     }
     
     func userNameDownloaded(uName: String) {
@@ -46,7 +47,7 @@ class NoticeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func listItemDownloaded(items: NSArray) {
         feedItem = items
-        self.tvNoticeList?.reloadData()
+        tvNoticeList?.reloadData()
     }
     
     
