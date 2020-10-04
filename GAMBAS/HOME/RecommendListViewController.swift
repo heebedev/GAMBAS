@@ -93,7 +93,7 @@ class RecommendListViewController: UIViewController, UICollectionViewDelegate, U
         cell.releaseDay.text = item.releaseDay
         cell.term.text = "(\(item.term!))"
         cell.price.text = "\(item.prdPrice!) 원"
-        cell.subsNumber.text = "👀 \(item.prdcount!)"
+        cell.subsNumber.text = "9️⃣🐶 \(item.prdcount!)"
         cell.totalLike.text = item.clike
         
         cell.imgView.layer.cornerRadius = 5
