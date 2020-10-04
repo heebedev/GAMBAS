@@ -24,9 +24,7 @@ class MyChannelSelect: NSObject{
     var urlPath = "http://127.0.0.1:8080/gambas/" // 이거 실행하면 jsp 파일이 json 으로 만들어짐.
     
     // 우리가 실행할 함수
-    func downloadItem_myChannel(userSeqno: String) -> Bool{
-        // 에러 처리용.
-        var result: Bool = true
+    func downloadItem_myChannel(userSeqno: String) {
         
         // "jsp" 뒤에 Get 방식으로 ? 물음표 뒤에 넣어줄 부분.
         // 만약 값이 한글일 경우, url 에러가 나기 때문에. (2바이트를 %a1uc어쩌고저쩌고로 바뀌어야함)
@@ -43,18 +41,18 @@ class MyChannelSelect: NSObject{
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{ // '에러 코드가 있었다'라는 걸 의미
                 print("Failed to download data")
-                result = false
+               
             }else{
                 print("Data is downloaded")
                 /// -->> 파싱해야죠.
                 self.parseJSON(data!)
-                result = true
+               
             }
         }
 
         // 구동.
         task.resume()
-        return result
+     
     }
    
     

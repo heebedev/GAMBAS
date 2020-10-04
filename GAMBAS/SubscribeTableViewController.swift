@@ -29,18 +29,20 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
         self.subsListTableView.rowHeight = 119
         // static uSeqno
         uSeqno = String(UserDefaults.standard.integer(forKey: "uSeqno"))
-                print("static uSeqno테스트", uSeqno!)
-                uSeqno = "1" // test
-                print("uSeqno테스트", uSeqno!)
+                //print("static uSeqno테스트", uSeqno!)
+                //uSeqno = "1" // test
+                //print("uSeqno테스트", uSeqno!)
         
         //delegate 처리
         self.subsListTableView.delegate = self
         self.subsListTableView.dataSource = self
         self.subsListTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
+        
         let subsListQueryModel = SubsListQueryModel()
         subsListQueryModel.delegate = self
         subsListQueryModel.subsListdownloadItems(uSeqno: uSeqno!)
+        
     }
     
     // 프로토콜로부터 받은 item
@@ -109,11 +111,11 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
         return cell
     }
     
-    // write 위치 (스마트폰의)
-    func getDecumentDirectory() -> URL{
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0] // 첫번째 값 앱에 설정한 것의 위치
-    }
+//    // write 위치 (스마트폰의)
+//    func getDecumentDirectory() -> URL{
+//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        return paths[0] // 첫번째 값 앱에 설정한 것의 위치
+//    }
     
     /*
      // Override to support conditional editing of the table view.

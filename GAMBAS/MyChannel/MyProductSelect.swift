@@ -24,37 +24,36 @@ class MyProductSelect: NSObject{
     var urlPath = "http://127.0.0.1:8080/gambas/" // 이거 실행하면 jsp 파일이 json 으로 만들어짐.
     
     // 우리가 실행할 함수
-    func downloadItem_myProduct(channelSeqno: String) -> Bool{
+    func downloadItem_myProduct(uSeqno: String) { // uSeqno 로 가져오게 수정
         // 에러 처리용.
-        var result: Bool = true
         
         // "jsp" 뒤에 Get 방식으로 ? 물음표 뒤에 넣어줄 부분.
         // 만약 값이 한글일 경우, url 에러가 나기 때문에. (2바이트를 %a1uc어쩌고저쩌고로 바뀌어야함)
-        let urlAdd = "MyProductSelect.jsp?channelSeqno=\(channelSeqno)"
+        let urlAdd = "MyProductSelect.jsp?uSeqno=\(uSeqno)" // uSeqno 로 가져오게 수정
         // 완전한 url.
         urlPath += urlAdd
         // 한글 url encoding (utf8이랑 아무런 상관없음)
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        
+        print(urlPath)
         let url: URL = URL(string: urlPath)!
         
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url){(data, response, error) in
             if error != nil{ // '에러 코드가 있었다'라는 걸 의미
-                print("Failed to download data")
-                result = false
+                print("채널 상품 리스트 Failed to download data")
+              
             }else{
-                print("Data is downloaded")
+                print("채널 상품 리스트 Data is downloaded")
                 /// -->> 파싱해야죠.
                 self.parseJSON(data!)
-                result = true
+             
             }
         }
 
         // 구동.
         task.resume()
-        return result
+      
     }
    
     
@@ -95,8 +94,7 @@ class MyProductSelect: NSObject{
                 let prdRegistDate = jsonElement["productRegisterDate"] as? String,
                 let prdValidation = jsonElement["productValidation"] as? String,
                 let chSeqno = jsonElement["channelSeqno"] as? String,
-                let cgSeqno = jsonElement["categorySeqno"] as? String,
-                let cgName = jsonElement["categoryName"] as? String{
+                let cgSeqno = jsonElement["categorySeqno"] as? String{
                 
                 query.prdSeqno = prdSeqno
                 query.term = term
@@ -109,7 +107,7 @@ class MyProductSelect: NSObject{
                 query.prdValidation = prdValidation
                 query.chSeqno = chSeqno
                 query.cgSeqno = cgSeqno
-                query.cgName = cgName
+            
             }
             // for문 안에 if 문 하나 끝남.
             
