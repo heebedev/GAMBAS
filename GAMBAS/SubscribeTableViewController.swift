@@ -91,7 +91,6 @@ class SubscribeTableViewController: UITableViewController, SubsListQueryModelPro
                 cell.iv_prdImage?.image = UIImage(data: data!)
             }
         }
-        cell.iv_prdImage.layer.cornerRadius = 97/2
         
         cell.layer.cornerRadius = 50
         cell.layer.masksToBounds = true

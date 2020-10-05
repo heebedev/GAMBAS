@@ -10,8 +10,8 @@ import Foundation
 
 class ReviewAddQueryModel: NSObject {
     
-    func InsertReviewItems(rTitle: String, rContent: String, rGrade: String, subsSeq:String, uSeq:String) {
-        var urlPath =  "http://localhost:8080/gambas/PrdReviewInsert.jsp?rTitle=\(rTitle)&rContent=\(rContent)&rGrade=\(rGrade)&subsSeqno=\(subsSeq)&uSeqno=\(uSeq)"
+    func InsertReviewItems(rTitle: String, rContent: String, rGrade: String, uSeq:String, prdSeq:String) {
+        var urlPath =  "http://localhost:8080/gambas/PrdReviewInsert.jsp?rTitle=\(rTitle)&rContent=\(rContent)&rGrade=\(rGrade)&uSeqno=\(uSeq)&prdSeqno=\(prdSeq)"
         
         // 한글 url encoding: url 타입은 한글들어가면 에러나기 때문에 addingPercentEncoding 퍼센트 들어가는걸로 바꿔줘야 함
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!

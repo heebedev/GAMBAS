@@ -35,7 +35,6 @@ class ReviewAddViewController: UIViewController, prdDetailQueryModelProtocol {
     
     let uSeq = UserDefaults.standard.integer(forKey: "uSeqno")
     let prdSeq = UserDefaults.standard.integer(forKey: "prdSeqno")
-    let subsSeq = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +96,7 @@ class ReviewAddViewController: UIViewController, prdDetailQueryModelProtocol {
                 let rTitle = tfKSHReviewTitle.text!.trimmingCharacters(in: [" "])
                 let rContent = trKSHReviewContent.text!.trimmingCharacters(in: [" "])
                 let reviewAddqueryModel = ReviewAddQueryModel()
-                reviewAddqueryModel.InsertReviewItems(rTitle: rTitle, rContent: rContent, rGrade: String(grade), subsSeq: String(subsSeq), uSeq: String(uSeq))
+                reviewAddqueryModel.InsertReviewItems(rTitle: rTitle, rContent: rContent, rGrade: String(grade), uSeq: String(uSeq), prdSeq: String(prdSeq))
                 
                 myAlert(alertTitle: "결과", alertMessage: "리뷰가 등록되었습니다.", actionTitle: "OK", handler: { ACTION in
                     self.dismiss(animated: true, completion: nil)
